@@ -17,7 +17,7 @@ As such I will not be adding any features that are :
   - Camera movement ( like in FNAF 1 )
   - Support for smaller cameras while still supporting camera movement ( thanks to Godot's image region system )
   - Support for animated images on the camera ( no examples provided but I know you can do it easily )
-- Character AI ( No Jumpscares )
+- Character AI ( no Jumpscares )
   - AI system faithful to the original FNAF games
   - AI difficutly based on a scale from 0 to 20 ( basically Custom Night )
   - Custom character states for alternate poses on Cameras
@@ -28,5 +28,5 @@ If you encounter any bugs with an **unmodified version of the framework**, pleas
 If you want to contribute to the project, do a pull request on Github and I'll take a look at it.
 
 The Cupcakes Framework is licensed under the MIT license.
-Meaning that you can do whatever you want as long as you include the original copyright and license notice in any copy of the software/source.
+Meaning that you can do whatever you want as long as credit me, and include the MIT liscence contained within this repository with your software/source.
 Reminder, this is my understanding of the MIT license. I'm not a lawyer, do your own research.
