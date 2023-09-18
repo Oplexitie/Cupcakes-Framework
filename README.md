@@ -1,8 +1,12 @@
 # Cupcakes Framework
 
-A FNAF framework made for Godot 3. There are currently no plans to port this to Godot 4.
+<p align="center">
+<img src="cupcake_logo.png" alt="Cupcakes Framework logo">
+</p>
 
-<img src="https://github.com/Oplexitie/Cupcakes-Framework/blob/main/icon.png" alt="Cupcakes Framework logo">
+## Description
+
+A FNAF framework made for Godot 3. There are currently no plans to port this to Godot 4.
 
 This framework only contains the very basic nescessities to build your FNAF inspired game.
 As such I will not be adding any features that are :
@@ -26,6 +30,8 @@ As such I will not be adding any features that are :
   - Custom character states for alternate poses on Cameras
  
  ## Other info
+
+With the exception of the Cupcakes Framework logo, every visual asset has been made by either Emil Macko or Scott Cawthon.
 
 If you encounter any bugs with an **unmodified version of the framework**, please post the issue on Github with a video attached.
 If you want to contribute to the project, do a pull request on Github and I'll take a look at it.
