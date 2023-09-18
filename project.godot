@@ -11,8 +11,12 @@ config_version=4
 [application]
 
 config/name="FNAF Framework"
-run/main_scene="res://Scenes/main.tscn"
+run/main_scene="res://Scenes/Night/night.tscn"
 config/icon="res://icon.png"
+
+[autoload]
+
+Global="*res://Scripts/Autoload/Global.gd"
 
 [display]
 
@@ -32,4 +36,5 @@ common/enable_pause_aware_picking=true
 [rendering]
 
 quality/driver/driver_name="GLES2"
+environment/default_clear_color=Color( 0, 0, 0, 1 )
 environment/default_environment="res://default_env.tres"

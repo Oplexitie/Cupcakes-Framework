@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/132.png-bca862f42161cc76a28ddab36c83b288.stex"
+path="res://.import/static_anim.png-069ea90e944b0f1c74e4193dfe550aa7.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Tablet/132.png"
-dest_files=[ "res://.import/132.png-bca862f42161cc76a28ddab36c83b288.stex" ]
+source_file="res://Sprites/Static/static_anim.png"
+dest_files=[ "res://.import/static_anim.png-069ea90e944b0f1c74e4193dfe550aa7.stex" ]
 
 [params]
 
