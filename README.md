@@ -13,6 +13,8 @@ As such I will not be adding any features that are :
   - A - Very easy to make on your own
   - B - Not necessary for a FNAF fan game
 
+Also, there's the [CF-Example-Project](https://github.com/Oplexitie/CF-Example-Project/tree/main) that was made using this framework that can be used as a reference.
+
 ## Features
 
 - Office
@@ -23,7 +25,7 @@ As such I will not be adding any features that are :
   - A flip up and down camera animation that won't break when spammed !
   - Camera movement ( like in FNAF 1 )
   - Support for smaller cameras while still supporting camera movement ( thanks to Godot's image region system )
-  - Support for animated images on the camera ( no examples provided but I know you can do it easily )
+  - Support for animated images on the camera ( an example of this can be seen within the [CF-Example-Project](https://github.com/Oplexitie/CF-Example-Project/tree/main) )
 - Character AI ( no Jumpscares )
   - AI system faithful to the original FNAF games
   - AI difficutly based on a scale from 0 to 20 ( basically Custom Night )
