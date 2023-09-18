@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/20.png-843c140c273685c518a7838695b04dc2.stex"
+path="res://.import/r_buttons.png-aa07d7b54f880d5f697055ef1dcd9898.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Static/20.png"
-dest_files=[ "res://.import/20.png-843c140c273685c518a7838695b04dc2.stex" ]
+source_file="res://Sprites/HUD/r_buttons.png"
+dest_files=[ "res://.import/r_buttons.png-aa07d7b54f880d5f697055ef1dcd9898.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

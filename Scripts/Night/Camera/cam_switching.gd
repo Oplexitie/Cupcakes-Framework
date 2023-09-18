@@ -1,6 +1,6 @@
 extends Node2D
 
-onready var animtree = $"../AnimationTree"
+onready var animtree = $AnimationTree
 onready var tree_state_machine = animtree["parameters/StaticState/playback"]
 
 onready var cam_rooms = $Cam_Rooms
@@ -21,7 +21,7 @@ func _ready():
 		cam_room_array.append(i)
 	for i in cam_buttons.get_children():
 		cam_button_array.append(i)
-	cam_button_array[0].modulate.r = 0.0
+	cam_button_array[0].disabled = true
 	update_rooms([0,1,2,3])
 
 func _on_click_cam(extra_arg_0 : int):
@@ -31,10 +31,10 @@ func _on_click_cam(extra_arg_0 : int):
 		tree_state_machine.start("static_boot")
 		
 		cam_room_array[curr_cam].visible = false
-		cam_button_array[curr_cam].modulate.r = 1.0
+		cam_button_array[curr_cam].disabled = false
 		
 		cam_room_array[extra_arg_0].visible = true
-		cam_button_array[extra_arg_0].modulate.r = 0.0
+		cam_button_array[extra_arg_0].disabled = true
 		
 		curr_cam = extra_arg_0
 
