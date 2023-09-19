@@ -327,7 +327,7 @@ texture = ExtResource( 14 )
 centered = false
 vframes = 4
 region_enabled = true
-region_rect = Rect2( 320, 0, 1280, 2880 )
+region_rect = Rect2( 93.5047, 0, 1280, 2880 )
 
 [node name="room3" type="Sprite" parent="Camera_Elements/Cam_Rooms"]
 visible = false
@@ -336,7 +336,7 @@ texture = ExtResource( 11 )
 centered = false
 vframes = 2
 region_enabled = true
-region_rect = Rect2( 56.3015, 0, 1280, 1440 )
+region_rect = Rect2( 320, 0, 1280, 1440 )
 
 [node name="room4" type="Sprite" parent="Camera_Elements/Cam_Rooms"]
 visible = false
@@ -345,7 +345,7 @@ texture = ExtResource( 10 )
 centered = false
 vframes = 2
 region_enabled = true
-region_rect = Rect2( 50.3652, 0, 1280, 1440 )
+region_rect = Rect2( 119.829, 0, 1280, 1440 )
 
 [node name="Cam_Buttons" type="Node2D" parent="Camera_Elements"]
 z_index = 19
@@ -393,7 +393,7 @@ z_index = 18
 [node name="Static" type="AnimatedSprite" parent="Camera_Elements/Cam_HUD"]
 modulate = Color( 1, 1, 1, 0.235294 )
 frames = SubResource( 3 )
-frame = 2
+frame = 3
 speed_scale = 5.0
 playing = true
 centered = false
