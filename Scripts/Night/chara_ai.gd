@@ -41,7 +41,7 @@ func update_ai_pos(animatronic : int):
 					char_pos[1] = 0
 					update_ai_pos(1)
 
-func ai_move(from_room : int, var to_room : int, character : int, checknextroom : bool = true, newstate : int = 1):
+func ai_move(from_room : int, var to_room : int, character : int, checknextroom : bool = false, newstate : int = 1):
 	# (1) This function handles the movement from one room to another or changing the characters
 	# state in a room (handled by newstate), while also playing the boot_static animation
 	# (2) You can also have the animatronic check the next room it's going to, to see if it's empty

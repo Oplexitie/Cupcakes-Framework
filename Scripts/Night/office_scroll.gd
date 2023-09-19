@@ -40,8 +40,8 @@ func _physics_process(delta):
 	position.x = clamp(position.x + clamp(pan_value * delta, -40,40), -780,780)
 	
 	# Modifies the buttons collision postion, makes it so the button is pressable with the shader
-	for i in list_offset_corrections:
-		_apply_offset(i,delta)
+	_apply_offset(delta)
 
-func _apply_offset(var offset_list : Array, delta):
-	offset_list[0].position.x = clamp(offset_list[0].position.x  + clamp(pan_value/offset_list[1] * delta, -offset_list[2],offset_list[2]), -offset_list[3], offset_list[3])
+func _apply_offset(delta):
+	for i in list_offset_corrections:
+		i[0].position.x = clamp(i[0].position.x  + clamp(pan_value/i[1] * delta, -i[2],i[2]), -i[3], i[3])
