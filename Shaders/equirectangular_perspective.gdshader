@@ -16,9 +16,10 @@ void fragment(){
 	vec2 uv = SCREEN_UV;
 	
 	vec2 pan = (uv * 2.0 - 1.0) * fov * vec2(PI, HALF_PI);
-	float set = sqrt(pan.x * pan.x + pan.y * pan.y); 
-	float long = atan((pan.x * sin(atan(set)) ) / (set * cos(atan(set)) )) / PI_TWO + 0.5;	
-	float lati = asin((pan.y * sin(atan(set)) ) / set) / PI + 0.5;
+	float set = sqrt(pan.x * pan.x + pan.y * pan.y);
+	float atset = atan(set), siatset = sin(atset);
+	float long = atan((pan.x * siatset ) / (set * cos(atset) )) / PI_TWO + 0.5;	
+	float lati = asin((pan.y * siatset ) / set) / PI + 0.5;
 	vec2 pers = vec2(long,lati);
 	
 	vec2 imst;
