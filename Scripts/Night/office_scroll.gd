@@ -1,8 +1,8 @@
-extends Sprite
+extends Sprite2D
 
 # An export made for objects that need a slight offset due to the equirectangular shader
 # [NodePath, PanOffset(int), SpeedClamp(int), SizeClamp(int)]
-export var list_offset_corrections : Array
+@export var list_offset_corrections : Array
 
 var border_distance : Vector2
 var mouse_position : Vector2

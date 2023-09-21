@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dc67eesh5l50u"
-path="res://.godot/imported/static_anim.png-069ea90e944b0f1c74e4193dfe550aa7.ctex"
+uid="uid://bkxsx62seddfa"
+path="res://.godot/imported/cupcake_logo.png-63d350dde3cc57892282e398749f0e78.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Static/static_anim.png"
-dest_files=["res://.godot/imported/static_anim.png-069ea90e944b0f1c74e4193dfe550aa7.ctex"]
+source_file="res://cupcake_logo.png"
+dest_files=["res://.godot/imported/cupcake_logo.png-63d350dde3cc57892282e398749f0e78.ctex"]
 
 [params]
 

@@ -6,12 +6,13 @@
 ;   [section] ; section goes between []
 ;   param=value ; assign values to parameters
 
-config_version=4
+config_version=5
 
 [application]
 
-config/name="FNAF Framework"
+config/name="Cupcake Framework"
 run/main_scene="res://Scenes/Night/night.tscn"
+config/features=PackedStringArray("4.1", "GL Compatibility")
 config/icon="res://icon.png"
 
 [autoload]
@@ -20,21 +21,13 @@ Global="*res://Scripts/Autoload/Global.gd"
 
 [display]
 
-window/size/width=1920
-window/size/height=1080
-window/size/fullscreen=true
-window/stretch/mode="viewport"
-
-[gui]
-
-common/drop_mouse_on_gui_input_disabled=true
-
-[physics]
-
-common/enable_pause_aware_picking=true
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/size/mode=4
 
 [rendering]
 
-quality/driver/driver_name="GLES2"
-environment/default_clear_color=Color( 0, 0, 0, 1 )
-environment/default_environment="res://default_env.tres"
+textures/canvas_textures/default_texture_filter=0
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
+environment/defaults/default_clear_color=Color(0, 0, 0, 1)

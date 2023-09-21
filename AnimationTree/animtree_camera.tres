@@ -1,37 +1,35 @@
-[gd_resource type="AnimationNodeBlendTree" load_steps=8 format=2]
+[gd_resource type="AnimationNodeBlendTree" load_steps=8 format=3 uid="uid://siq8sv1mpgct"]
 
-[sub_resource type="AnimationNodeBlend2" id=10]
+[sub_resource type="AnimationNodeAdd2" id="AnimationNodeAdd2_lqf0e"]
 
-[sub_resource type="AnimationNodeAnimation" id=11]
-animation = "cam_scroll"
+[sub_resource type="AnimationNodeAnimation" id="11"]
+animation = &"cam_scroll"
 
-[sub_resource type="AnimationNodeAnimation" id=12]
-animation = "static_boot"
+[sub_resource type="AnimationNodeAnimation" id="12"]
+animation = &"static_boot"
 
-[sub_resource type="AnimationNodeAnimation" id=13]
-animation = "static_idle"
+[sub_resource type="AnimationNodeAnimation" id="13"]
+animation = &"static_idle"
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=14]
+[sub_resource type="AnimationNodeStateMachineTransition" id="14"]
 switch_mode = 2
-auto_advance = true
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=15]
+[sub_resource type="AnimationNodeStateMachineTransition" id="15"]
 
-[sub_resource type="AnimationNodeStateMachine" id=16]
-states/static_boot/node = SubResource( 12 )
-states/static_boot/position = Vector2( 380, 104 )
-states/static_idle/node = SubResource( 13 )
-states/static_idle/position = Vector2( 622, 62 )
-transitions = [ "static_boot", "static_idle", SubResource( 14 ), "static_idle", "static_boot", SubResource( 15 ) ]
-start_node = "static_boot"
+[sub_resource type="AnimationNodeStateMachine" id="16"]
+states/static_boot/node = SubResource("12")
+states/static_boot/position = Vector2(380, 104)
+states/static_idle/node = SubResource("13")
+states/static_idle/position = Vector2(622, 62)
+transitions = ["static_boot", "static_idle", SubResource("14"), "static_idle", "static_boot", SubResource("15")]
 
 [resource]
-graph_offset = Vector2( -136.874, 53.1463 )
-nodes/Blend/node = SubResource( 10 )
-nodes/Blend/position = Vector2( 480, 60 )
-nodes/CameraScroll/node = SubResource( 11 )
-nodes/CameraScroll/position = Vector2( 260, 180 )
-nodes/StaticState/node = SubResource( 16 )
-nodes/StaticState/position = Vector2( 260, 40 )
-nodes/output/position = Vector2( 680, 80 )
-node_connections = [ "output", 0, "Blend", "Blend", 0, "StaticState", "Blend", 1, "CameraScroll" ]
+graph_offset = Vector2(-219.476, 27.2953)
+nodes/Add2/node = SubResource("AnimationNodeAdd2_lqf0e")
+nodes/Add2/position = Vector2(500, 60)
+nodes/CameraScroll/node = SubResource("11")
+nodes/CameraScroll/position = Vector2(260, 180)
+nodes/StaticState/node = SubResource("16")
+nodes/StaticState/position = Vector2(260, 40)
+nodes/output/position = Vector2(680, 80)
+node_connections = [&"output", 0, &"Add2", &"Add2", 0, &"StaticState", &"Add2", 1, &"CameraScroll"]

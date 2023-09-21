@@ -1,10 +1,10 @@
 extends Node2D
 
-onready var animtree = $AnimationTree
-onready var tree_state_machine = animtree["parameters/StaticState/playback"]
+@onready var animtree = $AnimationTree
+@onready var tree_state_machine = animtree["parameters/StaticState/playback"]
 
-onready var cam_rooms = $Cam_Rooms
-onready var cam_buttons = $Cam_Buttons
+@onready var cam_rooms = $Cam_Rooms
+@onready var cam_buttons = $Cam_Buttons
 
 var curr_cam : int = 0
 
