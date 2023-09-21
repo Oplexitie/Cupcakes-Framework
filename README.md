@@ -6,14 +6,14 @@
 
 ## Description
 
-A FNAF framework made for Godot 3. There are currently no plans to port this to Godot 4.
+A FNAF framework made for Godot 4, with a [Godot 3 version also available](https://github.com/Oplexitie/Cupcakes-Framework/tree/godot3).
 
 This framework only contains the very basic nescessities to build your FNAF inspired game.
 As such I will not be adding any features that are :
   - A - Very easy to make on your own
   - B - Not necessary for a FNAF fan game
 
-Also, there's the [CF-Example-Project](https://github.com/Oplexitie/CF-Example-Project/tree/main) that was made using this framework that can be used as a reference.
+Also, there's the [CF-Example-Project](https://github.com/Oplexitie/CF-Example-Project/tree/main) (**made in the Godot 3**) that was made using this framework that can be used as a reference.
 
 ## Features
 
