@@ -6,7 +6,7 @@
 
 ## Description
 
-A FNAF framework made for Godot 3, with a [Godot 4 version also available](https://github.com/Oplexitie/Cupcakes-Framework/tree/main).
+A Five Nights at Freddy's ( or FNAF ) framework made for Godot 3, with a [Godot 4 version also available](https://github.com/Oplexitie/Cupcakes-Framework/tree/main).
 
 This framework only contains the very basic nescessities to build your FNAF inspired game.
 As such I will not be adding any features that are :
@@ -19,7 +19,7 @@ Also, there's the [CF-Example-Project](https://github.com/Oplexitie/CF-Example-P
 
 - Office
 	- A simple scrolling system where the speed is based on how close your mouse is to the screens edge.
-	- An equirectangular perspective shader ( like the one seen in FNAC )
+	- An equirectangular perspective shader ( like the one seen in [Five Nights at Candy's Remastered](https://gamejolt.com/games/five-nights-at-candy-s-remastered/426659) )
 - Camera System
 	- A simple camera system that can be easily expanded to include more rooms
   - A flip up and down camera animation that won't break when spammed !
