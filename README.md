@@ -1,7 +1,7 @@
 # Cupcakes Framework
 
 <p align="center">
-<img src="cupcake_logo.png" alt="Cupcakes Framework logo">
+<img src=".github/cupcake_logo.png" alt="Cupcakes Framework logo">
 </p>
 
 ## Description
