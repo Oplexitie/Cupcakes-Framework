@@ -1,0 +1,5 @@
+* text=auto eol=lf
+
+/.github	export-ignore
+.gitignore	export-ignore
+.gitattributes	export-ignore
