@@ -11,7 +11,7 @@ A Five Nights at Freddy's ( or FNAF ) framework made for Godot 3, with a [Godot 
 This framework only contains the very basic nescessities to build your FNAF inspired game.
 As such I will not be adding any features that are :
   - A - Very easy to make on your own
-  - B - Not necessary for a FNAF fan game
+  - B - Not necessary for a FNAF like game
 
 Also, there's the [CF-Example-Project](https://github.com/Oplexitie/CF-Example-Project/tree/main) that was made using this framework that can be used as a reference.
 
