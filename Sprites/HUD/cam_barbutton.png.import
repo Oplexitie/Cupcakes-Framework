@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://du8v8n577r5of"
-path="res://.godot/imported/map.png-f02e564f45460b7b7c2743604c145b53.ctex"
+uid="uid://nhd5vjnlj5y8"
+path="res://.godot/imported/cam_barbutton.png-74c8b45727cf65c2f05ed106b812365b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/HUD/map.png"
-dest_files=["res://.godot/imported/map.png-f02e564f45460b7b7c2743604c145b53.ctex"]
+source_file="res://Sprites/HUD/cam_barbutton.png"
+dest_files=["res://.godot/imported/cam_barbutton.png-74c8b45727cf65c2f05ed106b812365b.ctex"]
 
 [params]
 

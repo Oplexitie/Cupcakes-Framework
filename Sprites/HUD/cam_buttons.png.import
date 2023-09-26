@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://doij14ckrfbcd"
-path="res://.godot/imported/bar_click.png-7375e32840b38058c60250067ab2c992.ctex"
+uid="uid://8qq5rkryuskp"
+path="res://.godot/imported/cam_buttons.png-13b0b51f44f6dac008d5769b5a89cadd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/HUD/bar_click.png"
-dest_files=["res://.godot/imported/bar_click.png-7375e32840b38058c60250067ab2c992.ctex"]
+source_file="res://Sprites/HUD/cam_buttons.png"
+dest_files=["res://.godot/imported/cam_buttons.png-13b0b51f44f6dac008d5769b5a89cadd.ctex"]
 
 [params]
 

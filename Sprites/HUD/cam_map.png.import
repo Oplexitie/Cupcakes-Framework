@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ccnjx3c7odf8u"
-path="res://.godot/imported/r_buttons.png-aa07d7b54f880d5f697055ef1dcd9898.ctex"
+uid="uid://jpvoa65eas3n"
+path="res://.godot/imported/cam_map.png-a561f056ed90ad120716ec3d5110eb52.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/HUD/r_buttons.png"
-dest_files=["res://.godot/imported/r_buttons.png-aa07d7b54f880d5f697055ef1dcd9898.ctex"]
+source_file="res://Sprites/HUD/cam_map.png"
+dest_files=["res://.godot/imported/cam_map.png-a561f056ed90ad120716ec3d5110eb52.ctex"]
 
 [params]
 

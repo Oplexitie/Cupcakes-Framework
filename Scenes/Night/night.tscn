@@ -1,169 +1,162 @@
-[gd_scene load_steps=48 format=3 uid="uid://cthhku8fsrdeq"]
+[gd_scene load_steps=47 format=3 uid="uid://cthhku8fsrdeq"]
 
-[ext_resource type="Texture2D" uid="uid://bolfnamab5iio" path="res://Sprites/Office/office.png" id="1_nilh1"]
+[ext_resource type="Texture2D" uid="uid://ce3drug37ontk" path="res://Sprites/Office/office.png" id="1_nilh1"]
 [ext_resource type="Script" path="res://Scripts/Night/office_scroll.gd" id="2_okpib"]
 [ext_resource type="Shader" path="res://Shaders/equirectangular_perspective.gdshader" id="3_t06hd"]
 [ext_resource type="Script" path="res://Scripts/Night/Camera/tablet_button.gd" id="4_0ml6l"]
-[ext_resource type="Texture2D" uid="uid://dwyslxvb0bomm" path="res://Sprites/Tablet/tablet_anim.png" id="4_q88ar"]
-[ext_resource type="Texture2D" uid="uid://doij14ckrfbcd" path="res://Sprites/HUD/bar_click.png" id="5_fh64q"]
-[ext_resource type="Texture2D" uid="uid://drdovhb6vjnqk" path="res://Sprites/CamRooms/room1.png" id="6_eiyrw"]
+[ext_resource type="Texture2D" uid="uid://bwp12gkddlnns" path="res://Sprites/Tablet/tablet_anim.png" id="4_q88ar"]
+[ext_resource type="Texture2D" uid="uid://nhd5vjnlj5y8" path="res://Sprites/HUD/cam_barbutton.png" id="5_pnj6f"]
+[ext_resource type="Texture2D" uid="uid://di62ngt3q4476" path="res://Sprites/CamRooms/room1.png" id="6_eiyrw"]
 [ext_resource type="Script" path="res://Scripts/Night/Camera/cam_switching.gd" id="6_sfjgy"]
-[ext_resource type="Texture2D" uid="uid://co8fp3b71x2mf" path="res://Sprites/CamRooms/room2.png" id="7_6isfp"]
-[ext_resource type="Texture2D" uid="uid://4petupilp2sn" path="res://Sprites/CamRooms/room3.png" id="8_a0gfj"]
-[ext_resource type="Texture2D" uid="uid://xlt2d5gkavy2" path="res://Sprites/CamRooms/room4.png" id="9_bm1o6"]
-[ext_resource type="Texture2D" uid="uid://ccnjx3c7odf8u" path="res://Sprites/HUD/r_buttons.png" id="10_2355y"]
-[ext_resource type="Texture2D" uid="uid://dc67eesh5l50u" path="res://Sprites/Static/static_anim.png" id="12_e8sbt"]
-[ext_resource type="Texture2D" uid="uid://du8v8n577r5of" path="res://Sprites/HUD/map.png" id="13_s5lq5"]
+[ext_resource type="Texture2D" uid="uid://6meury7w6l8r" path="res://Sprites/CamRooms/room2.png" id="7_6isfp"]
+[ext_resource type="Texture2D" uid="uid://b80o5ai6umpdd" path="res://Sprites/CamRooms/room3.png" id="8_a0gfj"]
+[ext_resource type="Texture2D" uid="uid://chjjpqp7e5mrg" path="res://Sprites/CamRooms/room4.png" id="9_bm1o6"]
+[ext_resource type="Texture2D" uid="uid://8qq5rkryuskp" path="res://Sprites/HUD/cam_buttons.png" id="11_kpl72"]
+[ext_resource type="Texture2D" uid="uid://c0d0jmshu18hk" path="res://Sprites/Static/static_anim.png" id="12_e8sbt"]
+[ext_resource type="Texture2D" uid="uid://jpvoa65eas3n" path="res://Sprites/HUD/cam_map.png" id="13_kkuqh"]
 [ext_resource type="AnimationNodeBlendTree" uid="uid://siq8sv1mpgct" path="res://AnimationTree/animtree_camera.tres" id="14_spxkt"]
 [ext_resource type="Script" path="res://Scripts/Night/chara_ai.gd" id="15_1ap1l"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_7mfac"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_b5glu"]
 atlas = ExtResource("4_q88ar")
-region = Rect2(0, 0, 1280, 720)
+region = Rect2(3520, 653, 880, 653)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_og3cr"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_mkimb"]
 atlas = ExtResource("4_q88ar")
-region = Rect2(1280, 0, 1280, 720)
+region = Rect2(2640, 653, 880, 653)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_bwr0d"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_esmof"]
 atlas = ExtResource("4_q88ar")
-region = Rect2(2560, 0, 1280, 720)
+region = Rect2(1760, 653, 880, 653)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_qq406"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_fyqqd"]
 atlas = ExtResource("4_q88ar")
-region = Rect2(0, 720, 1280, 720)
+region = Rect2(880, 653, 880, 653)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_gx02k"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_tv3v2"]
 atlas = ExtResource("4_q88ar")
-region = Rect2(1280, 720, 1280, 720)
+region = Rect2(0, 653, 880, 653)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_rbvoi"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_011q1"]
 atlas = ExtResource("4_q88ar")
-region = Rect2(2560, 720, 1280, 720)
+region = Rect2(3520, 0, 880, 653)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_apvsr"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_he7im"]
 atlas = ExtResource("4_q88ar")
-region = Rect2(0, 1440, 1280, 720)
+region = Rect2(2640, 0, 880, 653)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_vyt5j"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_vt4va"]
 atlas = ExtResource("4_q88ar")
-region = Rect2(1280, 1440, 1280, 720)
+region = Rect2(1760, 0, 880, 653)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_go6vm"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_rytrd"]
 atlas = ExtResource("4_q88ar")
-region = Rect2(2560, 1440, 1280, 720)
+region = Rect2(880, 0, 880, 653)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_3g532"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_dnds1"]
 atlas = ExtResource("4_q88ar")
-region = Rect2(0, 2160, 1280, 720)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_1bqcj"]
-atlas = ExtResource("4_q88ar")
-region = Rect2(1280, 2160, 1280, 720)
+region = Rect2(0, 0, 880, 653)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_5t1j5"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_7mfac")
+"texture": SubResource("AtlasTexture_b5glu")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_og3cr")
+"texture": SubResource("AtlasTexture_mkimb")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_bwr0d")
+"texture": SubResource("AtlasTexture_esmof")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_qq406")
+"texture": SubResource("AtlasTexture_fyqqd")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_gx02k")
+"texture": SubResource("AtlasTexture_tv3v2")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_rbvoi")
+"texture": SubResource("AtlasTexture_011q1")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_apvsr")
+"texture": SubResource("AtlasTexture_he7im")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_vyt5j")
+"texture": SubResource("AtlasTexture_vt4va")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_go6vm")
+"texture": SubResource("AtlasTexture_rytrd")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_3g532")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_1bqcj")
+"texture": SubResource("AtlasTexture_dnds1")
 }],
 "loop": false,
 "name": &"lift",
-"speed": 60.0
+"speed": 70.0
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_y1mul"]
-atlas = ExtResource("10_2355y")
+atlas = ExtResource("11_kpl72")
 region = Rect2(0, 0, 48, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lrm77"]
-atlas = ExtResource("10_2355y")
-region = Rect2(96, 0, 48, 32)
+atlas = ExtResource("11_kpl72")
+region = Rect2(48, 0, 48, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_us2yt"]
-atlas = ExtResource("10_2355y")
+atlas = ExtResource("11_kpl72")
 region = Rect2(0, 32, 48, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qe3yf"]
-atlas = ExtResource("10_2355y")
-region = Rect2(96, 32, 48, 32)
+atlas = ExtResource("11_kpl72")
+region = Rect2(48, 32, 48, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lcwij"]
-atlas = ExtResource("10_2355y")
+atlas = ExtResource("11_kpl72")
 region = Rect2(0, 64, 48, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_60mtv"]
-atlas = ExtResource("10_2355y")
-region = Rect2(96, 64, 48, 32)
+atlas = ExtResource("11_kpl72")
+region = Rect2(48, 64, 48, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_deh3i"]
-atlas = ExtResource("10_2355y")
+atlas = ExtResource("11_kpl72")
 region = Rect2(0, 96, 48, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lbcdr"]
-atlas = ExtResource("10_2355y")
-region = Rect2(96, 96, 48, 32)
+atlas = ExtResource("11_kpl72")
+region = Rect2(48, 96, 48, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_pdjs7"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_oj4qn"]
 atlas = ExtResource("12_e8sbt")
-region = Rect2(0, 0, 1280, 720)
+region = Rect2(0, 0, 1198, 890)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_oxdbk"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_skfkt"]
 atlas = ExtResource("12_e8sbt")
-region = Rect2(0, 720, 1280, 720)
+region = Rect2(1198, 0, 1198, 890)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_fg3p6"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_80udy"]
 atlas = ExtResource("12_e8sbt")
-region = Rect2(0, 1440, 1280, 720)
+region = Rect2(0, 890, 1198, 890)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_j1lch"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_moqym"]
 atlas = ExtResource("12_e8sbt")
-region = Rect2(0, 2160, 1280, 720)
+region = Rect2(1198, 890, 1198, 890)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1ioo0"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_pdjs7")
+"texture": SubResource("AtlasTexture_oj4qn")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_oxdbk")
+"texture": SubResource("AtlasTexture_skfkt")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_fg3p6")
+"texture": SubResource("AtlasTexture_80udy")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_j1lch")
+"texture": SubResource("AtlasTexture_moqym")
 }],
 "loop": true,
 "name": &"default",
@@ -247,7 +240,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(3, 5, 11, 13),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Rect2(0, 0, 1280, 2880), Rect2(0, 0, 1280, 2880), Rect2(320, 0, 1280, 2880), Rect2(320, 0, 1280, 2880)]
+"values": [Rect2(0, 0, 798, 2372), Rect2(0, 0, 798, 2372), Rect2(268, 0, 798, 2372), Rect2(268, 0, 798, 2372)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -259,7 +252,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 2, 8, 10),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Rect2(320, 0, 1280, 2880), Rect2(320, 0, 1280, 2880), Rect2(0, 0, 1280, 2880), Rect2(0, 0, 1280, 2880)]
+"values": [Rect2(268, 0, 798, 2372), Rect2(268, 0, 798, 2372), Rect2(0, 0, 798, 2372), Rect2(0, 0, 798, 2372)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -271,7 +264,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(2, 4, 10, 12),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Rect2(0, 0, 1280, 1440), Rect2(0, 0, 1280, 1440), Rect2(320, 0, 1280, 1440), Rect2(320, 0, 1280, 1440)]
+"values": [Rect2(0, 0, 798, 1186), Rect2(0, 0, 798, 1186), Rect2(268, 0, 798, 1186), Rect2(268, 0, 798, 1186)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -283,7 +276,7 @@ tracks/3/keys = {
 "times": PackedFloat32Array(6, 8, 14, 16),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Rect2(320, 0, 1280, 1440), Rect2(320, 0, 1280, 1440), Rect2(0, 0, 1280, 1440), Rect2(0, 0, 1280, 1440)]
+"values": [Rect2(268, 0, 798, 1186), Rect2(268, 0, 798, 1186), Rect2(0, 0, 798, 1186), Rect2(0, 0, 798, 1186)]
 }
 
 [sub_resource type="Animation" id="Animation_kche4"]
@@ -329,9 +322,9 @@ _data = {
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_kco4d"]
 shader = ExtResource("3_t06hd")
-shader_parameter/fov = 0.4
-shader_parameter/x_stretch = 70.0
-shader_parameter/y_stretch = 32.0
+shader_parameter/fov = 0.37
+shader_parameter/x_stretch = 54.0
+shader_parameter/y_stretch = 30.0
 
 [node name="Night" type="Node2D"]
 
@@ -351,11 +344,12 @@ path_cam_stuff = NodePath("../Camera_Elements")
 
 [node name="Tablet_Sprite" type="AnimatedSprite2D" parent="Tablet_Elements"]
 visible = false
+position = Vector2(0, 34)
 sprite_frames = SubResource("SpriteFrames_5t1j5")
 animation = &"lift"
 
 [node name="Tablet_Button" type="TextureButton" parent="Tablet_Elements"]
-modulate = Color(1, 1, 1, 0.290196)
+modulate = Color(1, 1, 1, 0.2)
 z_index = 2
 anchors_preset = 14
 anchor_top = 0.5
@@ -367,7 +361,7 @@ offset_right = 320.0
 offset_bottom = 361.0
 grow_horizontal = 2
 grow_vertical = 2
-texture_normal = ExtResource("5_fh64q")
+texture_normal = ExtResource("5_pnj6f")
 
 [node name="Camera_Elements" type="Node2D" parent="."]
 visible = false
@@ -377,6 +371,7 @@ script = ExtResource("6_sfjgy")
 [node name="Cam_Rooms" type="Node2D" parent="Camera_Elements"]
 
 [node name="room_1" type="Sprite2D" parent="Camera_Elements/Cam_Rooms"]
+position = Vector2(361.5, 147.5)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("6_eiyrw")
 centered = false
@@ -386,6 +381,7 @@ region_rect = Rect2(0, 0, 1280, 2880)
 
 [node name="room_2" type="Sprite2D" parent="Camera_Elements/Cam_Rooms"]
 visible = false
+position = Vector2(361.5, 147.5)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("7_6isfp")
 centered = false
@@ -395,6 +391,7 @@ region_rect = Rect2(320, 0, 1280, 2880)
 
 [node name="room_3" type="Sprite2D" parent="Camera_Elements/Cam_Rooms"]
 visible = false
+position = Vector2(361.5, 147.5)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("8_a0gfj")
 centered = false
@@ -404,6 +401,7 @@ region_rect = Rect2(0, 0, 1280, 1440)
 
 [node name="room_4" type="Sprite2D" parent="Camera_Elements/Cam_Rooms"]
 visible = false
+position = Vector2(361.5, 147.5)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("9_bm1o6")
 centered = false
@@ -415,66 +413,67 @@ region_rect = Rect2(320, 0, 1280, 1440)
 z_index = 1
 
 [node name="room_1" type="TextureButton" parent="Camera_Elements/Cam_Buttons"]
-offset_left = 1532.0
-offset_top = 542.0
-offset_right = 1580.0
-offset_bottom = 574.0
+offset_left = 1300.0
+offset_top = 635.0
+offset_right = 1348.0
+offset_bottom = 667.0
 scale = Vector2(1.5, 1.5)
 action_mode = 0
 texture_normal = SubResource("AtlasTexture_y1mul")
 texture_disabled = SubResource("AtlasTexture_lrm77")
 
 [node name="room_2" type="TextureButton" parent="Camera_Elements/Cam_Buttons"]
-offset_left = 1526.0
-offset_top = 685.0
-offset_right = 1574.0
-offset_bottom = 717.0
+offset_left = 1299.0
+offset_top = 757.0
+offset_right = 1347.0
+offset_bottom = 789.0
 scale = Vector2(1.5, 1.5)
 action_mode = 0
 texture_normal = SubResource("AtlasTexture_us2yt")
 texture_disabled = SubResource("AtlasTexture_qe3yf")
 
 [node name="room_3" type="TextureButton" parent="Camera_Elements/Cam_Buttons"]
-offset_left = 1280.0
-offset_top = 640.0
-offset_right = 1328.0
-offset_bottom = 672.0
+offset_left = 1169.0
+offset_top = 777.0
+offset_right = 1217.0
+offset_bottom = 809.0
 scale = Vector2(1.5, 1.5)
 action_mode = 0
 texture_normal = SubResource("AtlasTexture_lcwij")
 texture_disabled = SubResource("AtlasTexture_60mtv")
 
 [node name="room_4" type="TextureButton" parent="Camera_Elements/Cam_Buttons"]
-offset_left = 1643.0
-offset_top = 916.0
-offset_right = 1691.0
-offset_bottom = 948.0
+offset_left = 1453.0
+offset_top = 819.0
+offset_right = 1501.0
+offset_bottom = 851.0
 scale = Vector2(1.5, 1.5)
 action_mode = 0
 texture_normal = SubResource("AtlasTexture_deh3i")
 texture_disabled = SubResource("AtlasTexture_lbcdr")
 
 [node name="Cam_HUD" type="Node2D" parent="Camera_Elements"]
-scale = Vector2(1.5, 1.5)
 
 [node name="static" type="AnimatedSprite2D" parent="Camera_Elements/Cam_HUD"]
 modulate = Color(1, 1, 1, 0.392157)
+position = Vector2(361.5, 147.5)
 sprite_frames = SubResource("SpriteFrames_1ioo0")
 autoplay = "default"
 centered = false
 
 [node name="map" type="Sprite2D" parent="Camera_Elements/Cam_HUD"]
-position = Vector2(1070, 510)
-texture = ExtResource("13_s5lq5")
+position = Vector2(1319, 782)
+scale = Vector2(3, 3)
+texture = ExtResource("13_kkuqh")
 
 [node name="cam_edge" type="ReferenceRect" parent="Camera_Elements/Cam_HUD"]
-offset_left = 10.0
-offset_top = 10.6667
-offset_right = 1270.0
-offset_bottom = 710.667
+offset_left = 373.0
+offset_top = 159.0
+offset_right = 1545.0
+offset_bottom = 1024.0
 mouse_filter = 2
 border_color = Color(1, 1, 1, 1)
-border_width = 2.0
+border_width = 3.0
 editor_only = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Camera_Elements"]
@@ -491,11 +490,11 @@ parameters/Add2/add_amount = 1.0
 [node name="CharacterAI" type="Node2D" parent="."]
 script = ExtResource("15_1ap1l")
 
-[node name="FreddyTimer" type="Timer" parent="CharacterAI"]
+[node name="GreenTimer" type="Timer" parent="CharacterAI"]
 wait_time = 3.02
 autostart = true
 
-[node name="BonnieTimer" type="Timer" parent="CharacterAI"]
+[node name="RedTimer" type="Timer" parent="CharacterAI"]
 wait_time = 4.97
 autostart = true
 
@@ -514,5 +513,5 @@ mouse_filter = 2
 [connection signal="pressed" from="Camera_Elements/Cam_Buttons/room_2" to="Camera_Elements" method="_on_click_cam" binds= [1]]
 [connection signal="pressed" from="Camera_Elements/Cam_Buttons/room_3" to="Camera_Elements" method="_on_click_cam" binds= [2]]
 [connection signal="pressed" from="Camera_Elements/Cam_Buttons/room_4" to="Camera_Elements" method="_on_click_cam" binds= [3]]
-[connection signal="timeout" from="CharacterAI/FreddyTimer" to="CharacterAI" method="_char_timer_timeout" binds= [1]]
-[connection signal="timeout" from="CharacterAI/BonnieTimer" to="CharacterAI" method="_char_timer_timeout" binds= [0]]
+[connection signal="timeout" from="CharacterAI/GreenTimer" to="CharacterAI" method="_char_timer_timeout" binds= [1]]
+[connection signal="timeout" from="CharacterAI/RedTimer" to="CharacterAI" method="_char_timer_timeout" binds= [0]]
