@@ -1,6 +1,6 @@
-[gd_scene load_steps=48 format=2]
+[gd_scene load_steps=47 format=2]
 
-[ext_resource path="res://Sprites/HUD/map.png" type="Texture" id=1]
+[ext_resource path="res://Sprites/HUD/cam_map.png" type="Texture" id=1]
 [ext_resource path="res://Sprites/CamRooms/room1.png" type="Texture" id=2]
 [ext_resource path="res://Scripts/Night/Camera/cam_switching.gd" type="Script" id=3]
 [ext_resource path="res://Scripts/Night/office_scroll.gd" type="Script" id=4]
@@ -8,133 +8,118 @@
 [ext_resource path="res://AnimationTree/animtree_camera.tres" type="AnimationNodeBlendTree" id=6]
 [ext_resource path="res://Sprites/Tablet/tablet_anim.png" type="Texture" id=7]
 [ext_resource path="res://Sprites/Static/static_anim.png" type="Texture" id=8]
-[ext_resource path="res://Sprites/HUD/r_buttons.png" type="Texture" id=9]
 [ext_resource path="res://Sprites/CamRooms/room4.png" type="Texture" id=10]
-[ext_resource path="res://Sprites/CamRooms/room3.png" type="Texture" id=11]
+[ext_resource path="res://Sprites/CamRooms/room2.png" type="Texture" id=11]
 [ext_resource path="res://Scripts/Night/chara_ai.gd" type="Script" id=12]
 [ext_resource path="res://Scripts/Night/Camera/tablet_button.gd" type="Script" id=13]
-[ext_resource path="res://Sprites/CamRooms/room2.png" type="Texture" id=14]
-[ext_resource path="res://Sprites/HUD/bar_click.png" type="Texture" id=15]
+[ext_resource path="res://Sprites/CamRooms/room3.png" type="Texture" id=14]
+[ext_resource path="res://Sprites/HUD/cam_barbutton.png" type="Texture" id=15]
 [ext_resource path="res://Sprites/Office/office.png" type="Texture" id=16]
+[ext_resource path="res://Sprites/HUD/cam_buttons.png" type="Texture" id=17]
 
 [sub_resource type="AtlasTexture" id=31]
-flags = 4
 atlas = ExtResource( 7 )
-region = Rect2( 0, 0, 1280, 720 )
+region = Rect2( 3520, 653, 880, 653 )
 
 [sub_resource type="AtlasTexture" id=32]
-flags = 4
 atlas = ExtResource( 7 )
-region = Rect2( 1280, 0, 1280, 720 )
+region = Rect2( 2640, 653, 880, 653 )
 
 [sub_resource type="AtlasTexture" id=33]
-flags = 4
 atlas = ExtResource( 7 )
-region = Rect2( 2560, 0, 1280, 720 )
+region = Rect2( 1760, 653, 880, 653 )
 
 [sub_resource type="AtlasTexture" id=34]
-flags = 4
 atlas = ExtResource( 7 )
-region = Rect2( 0, 720, 1280, 720 )
+region = Rect2( 880, 653, 880, 653 )
 
 [sub_resource type="AtlasTexture" id=35]
-flags = 4
 atlas = ExtResource( 7 )
-region = Rect2( 1280, 720, 1280, 720 )
+region = Rect2( 0, 653, 880, 653 )
 
 [sub_resource type="AtlasTexture" id=36]
-flags = 4
 atlas = ExtResource( 7 )
-region = Rect2( 2560, 720, 1280, 720 )
+region = Rect2( 3520, 0, 880, 653 )
 
 [sub_resource type="AtlasTexture" id=37]
-flags = 4
 atlas = ExtResource( 7 )
-region = Rect2( 0, 1440, 1280, 720 )
+region = Rect2( 2640, 0, 880, 653 )
 
 [sub_resource type="AtlasTexture" id=38]
-flags = 4
 atlas = ExtResource( 7 )
-region = Rect2( 1280, 1440, 1280, 720 )
+region = Rect2( 1760, 0, 880, 653 )
 
 [sub_resource type="AtlasTexture" id=39]
-flags = 4
 atlas = ExtResource( 7 )
-region = Rect2( 2560, 1440, 1280, 720 )
+region = Rect2( 880, 0, 880, 653 )
 
 [sub_resource type="AtlasTexture" id=40]
-flags = 4
 atlas = ExtResource( 7 )
-region = Rect2( 0, 2160, 1280, 720 )
-
-[sub_resource type="AtlasTexture" id=41]
-flags = 4
-atlas = ExtResource( 7 )
-region = Rect2( 1280, 2160, 1280, 720 )
+region = Rect2( 0, 0, 880, 653 )
 
 [sub_resource type="SpriteFrames" id=5]
 animations = [ {
-"frames": [ SubResource( 31 ), SubResource( 32 ), SubResource( 33 ), SubResource( 34 ), SubResource( 35 ), SubResource( 36 ), SubResource( 37 ), SubResource( 38 ), SubResource( 39 ), SubResource( 40 ), SubResource( 41 ) ],
+"frames": [ SubResource( 31 ), SubResource( 32 ), SubResource( 33 ), SubResource( 34 ), SubResource( 35 ), SubResource( 36 ), SubResource( 37 ), SubResource( 38 ), SubResource( 39 ), SubResource( 40 ) ],
 "loop": false,
 "name": "lift",
 "speed": 60.0
 } ]
 
 [sub_resource type="AtlasTexture" id=23]
-atlas = ExtResource( 9 )
+atlas = ExtResource( 17 )
 region = Rect2( 0, 0, 48, 32 )
 
 [sub_resource type="AtlasTexture" id=24]
-atlas = ExtResource( 9 )
-region = Rect2( 96, 0, 48, 32 )
+atlas = ExtResource( 17 )
+region = Rect2( 48, 0, 48, 32 )
 
 [sub_resource type="AtlasTexture" id=25]
-atlas = ExtResource( 9 )
+atlas = ExtResource( 17 )
 region = Rect2( 0, 32, 48, 32 )
 
 [sub_resource type="AtlasTexture" id=26]
-atlas = ExtResource( 9 )
-region = Rect2( 96, 32, 48, 32 )
+atlas = ExtResource( 17 )
+region = Rect2( 48, 32, 48, 32 )
 
 [sub_resource type="AtlasTexture" id=27]
-atlas = ExtResource( 9 )
+atlas = ExtResource( 17 )
 region = Rect2( 0, 64, 48, 32 )
 
 [sub_resource type="AtlasTexture" id=28]
-atlas = ExtResource( 9 )
-region = Rect2( 96, 64, 48, 32 )
+atlas = ExtResource( 17 )
+region = Rect2( 48, 64, 48, 32 )
 
 [sub_resource type="AtlasTexture" id=29]
-atlas = ExtResource( 9 )
+atlas = ExtResource( 17 )
 region = Rect2( 0, 96, 48, 32 )
 
 [sub_resource type="AtlasTexture" id=30]
-atlas = ExtResource( 9 )
-region = Rect2( 96, 96, 48, 32 )
+atlas = ExtResource( 17 )
+region = Rect2( 48, 96, 48, 32 )
 
-[sub_resource type="AtlasTexture" id=19]
+[sub_resource type="AtlasTexture" id=41]
 flags = 4
 atlas = ExtResource( 8 )
-region = Rect2( 0, 0, 1280, 720 )
+region = Rect2( 0, 0, 1198, 890 )
 
-[sub_resource type="AtlasTexture" id=20]
+[sub_resource type="AtlasTexture" id=42]
 flags = 4
 atlas = ExtResource( 8 )
-region = Rect2( 0, 720, 1280, 720 )
+region = Rect2( 1198, 0, 1198, 890 )
 
-[sub_resource type="AtlasTexture" id=21]
+[sub_resource type="AtlasTexture" id=43]
 flags = 4
 atlas = ExtResource( 8 )
-region = Rect2( 0, 1440, 1280, 720 )
+region = Rect2( 0, 890, 1198, 890 )
 
-[sub_resource type="AtlasTexture" id=22]
+[sub_resource type="AtlasTexture" id=44]
 flags = 4
 atlas = ExtResource( 8 )
-region = Rect2( 0, 2160, 1280, 720 )
+region = Rect2( 1198, 890, 1198, 890 )
 
 [sub_resource type="SpriteFrames" id=3]
 animations = [ {
-"frames": [ SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ) ],
+"frames": [ SubResource( 41 ), SubResource( 42 ), SubResource( 43 ), SubResource( 44 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
@@ -182,7 +167,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 3, 5, 11, 13 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Rect2( 0, 0, 1280, 2880 ), Rect2( 0, 0, 1280, 2880 ), Rect2( 320, 0, 1280, 2880 ), Rect2( 320, 0, 1280, 2880 ) ]
+"values": [ Rect2( 0, 0, 798, 2372 ), Rect2( 0, 0, 798, 2372 ), Rect2( 268, 0, 798, 2372 ), Rect2( 268, 0, 798, 2372 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Camera_Elements/Cam_Rooms/room2:region_rect")
@@ -194,7 +179,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 2, 8, 10 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Rect2( 320, 0, 1280, 2880 ), Rect2( 320, 0, 1280, 2880 ), Rect2( 0, 0, 1280, 2880 ), Rect2( 0, 0, 1280, 2880 ) ]
+"values": [ Rect2( 268, 0, 798, 2372 ), Rect2( 268, 0, 798, 2372 ), Rect2( 0, 0, 798, 2372 ), Rect2( 0, 0, 798, 2372 ) ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("Camera_Elements/Cam_Rooms/room3:region_rect")
@@ -206,7 +191,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 2, 4, 10, 12 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Rect2( 0, 0, 1280, 1440 ), Rect2( 0, 0, 1280, 1440 ), Rect2( 320, 0, 1280, 1440 ), Rect2( 320, 0, 1280, 1440 ) ]
+"values": [ Rect2( 0, 0, 798, 1186 ), Rect2( 0, 0, 798, 1186 ), Rect2( 268, 0, 798, 1186 ), Rect2( 268, 0, 798, 1186 ) ]
 }
 tracks/3/type = "value"
 tracks/3/path = NodePath("Camera_Elements/Cam_Rooms/room4:region_rect")
@@ -218,7 +203,7 @@ tracks/3/keys = {
 "times": PoolRealArray( 6, 8, 14, 16 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Rect2( 320, 0, 1280, 1440 ), Rect2( 320, 0, 1280, 1440 ), Rect2( 0, 0, 1280, 1440 ), Rect2( 0, 0, 1280, 1440 ) ]
+"values": [ Rect2( 268, 0, 798, 1186 ), Rect2( 268, 0, 798, 1186 ), Rect2( 0, 0, 798, 1186 ), Rect2( 0, 0, 798, 1186 ) ]
 }
 
 [sub_resource type="Animation" id=8]
@@ -232,10 +217,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.05, 0.5 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.235294 ) ]
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.235294 ) ]
 }
 
 [sub_resource type="Animation" id=7]
@@ -259,9 +244,9 @@ tracks/0/keys = {
 
 [sub_resource type="ShaderMaterial" id=2]
 shader = ExtResource( 5 )
-shader_param/fov = 0.4
-shader_param/x_stretch = 70.0
-shader_param/y_stretch = 32.0
+shader_param/fov = 0.37
+shader_param/x_stretch = 54.0
+shader_param/y_stretch = 30.0
 
 [node name="Nights" type="Node2D"]
 
@@ -281,16 +266,16 @@ path_cam_stuff = NodePath("../Camera_Elements")
 
 [node name="Tablet_Sprite" type="AnimatedSprite" parent="Tablet_Elements"]
 visible = false
-position = Vector2( -640, -675.333 )
+position = Vector2( -440, -608 )
 frames = SubResource( 5 )
 animation = "lift"
 centered = false
 
 [node name="Tablet_Button" type="Node2D" parent="Tablet_Elements"]
-z_index = 1
+z_index = 5
 
 [node name="Button" type="TextureButton" parent="Tablet_Elements/Tablet_Button"]
-modulate = Color( 1, 1, 1, 0.270588 )
+modulate = Color( 1, 1, 1, 0.2 )
 margin_left = -320.0
 margin_top = -26.0
 margin_right = 320.0
@@ -313,7 +298,7 @@ scale = Vector2( 1.5, 1.5 )
 z_index = 15
 
 [node name="room1" type="Sprite" parent="Camera_Elements/Cam_Rooms"]
-position = Vector2( 213.333, 0 )
+position = Vector2( 454.333, 98.333 )
 texture = ExtResource( 2 )
 centered = false
 vframes = 4
@@ -322,84 +307,89 @@ region_rect = Rect2( 0, 0, 1280, 2880 )
 
 [node name="room2" type="Sprite" parent="Camera_Elements/Cam_Rooms"]
 visible = false
-position = Vector2( 213.333, 0 )
-texture = ExtResource( 14 )
+position = Vector2( 454.333, 98.333 )
+texture = ExtResource( 11 )
 centered = false
 vframes = 4
 region_enabled = true
-region_rect = Rect2( 93.5047, 0, 1280, 2880 )
+region_rect = Rect2( 121.317, 0, 798, 2372 )
 
 [node name="room3" type="Sprite" parent="Camera_Elements/Cam_Rooms"]
 visible = false
-position = Vector2( 213.333, 0 )
-texture = ExtResource( 11 )
+position = Vector2( 454.333, 98.333 )
+texture = ExtResource( 14 )
 centered = false
 vframes = 2
 region_enabled = true
-region_rect = Rect2( 320, 0, 1280, 1440 )
+region_rect = Rect2( 57.3501, 0, 798, 1186 )
 
 [node name="room4" type="Sprite" parent="Camera_Elements/Cam_Rooms"]
 visible = false
-position = Vector2( 213.333, 0 )
+position = Vector2( 454.333, 98.333 )
 texture = ExtResource( 10 )
 centered = false
 vframes = 2
 region_enabled = true
-region_rect = Rect2( 119.829, 0, 1280, 1440 )
+region_rect = Rect2( 236.017, 0, 798, 1186 )
 
 [node name="Cam_Buttons" type="Node2D" parent="Camera_Elements"]
 z_index = 19
 
 [node name="room1" type="TextureButton" parent="Camera_Elements/Cam_Buttons"]
-margin_left = 1544.0
-margin_top = 530.0
-margin_right = 1592.0
-margin_bottom = 562.0
+margin_left = 1299.0
+margin_top = 635.0
+margin_right = 1347.0
+margin_bottom = 667.0
 rect_scale = Vector2( 1.5, 1.5 )
+shortcut_in_tooltip = false
 texture_normal = SubResource( 23 )
 texture_disabled = SubResource( 24 )
 
 [node name="room2" type="TextureButton" parent="Camera_Elements/Cam_Buttons"]
-margin_left = 1524.0
-margin_top = 672.0
-margin_right = 1572.0
-margin_bottom = 704.0
+margin_left = 1299.0
+margin_top = 757.0
+margin_right = 1347.0
+margin_bottom = 789.0
 rect_scale = Vector2( 1.5, 1.5 )
+shortcut_in_tooltip = false
 texture_normal = SubResource( 25 )
 texture_disabled = SubResource( 26 )
 
 [node name="room3" type="TextureButton" parent="Camera_Elements/Cam_Buttons"]
-margin_left = 1305.0
-margin_top = 615.0
-margin_right = 1353.0
-margin_bottom = 647.0
+margin_left = 1169.0
+margin_top = 777.0
+margin_right = 1217.0
+margin_bottom = 809.0
 rect_scale = Vector2( 1.5, 1.5 )
+shortcut_in_tooltip = false
 texture_normal = SubResource( 27 )
 texture_disabled = SubResource( 28 )
 
 [node name="room4" type="TextureButton" parent="Camera_Elements/Cam_Buttons"]
-margin_left = 1635.0
-margin_top = 874.0
-margin_right = 1683.0
-margin_bottom = 906.0
+margin_left = 1453.0
+margin_top = 819.0
+margin_right = 1501.0
+margin_bottom = 851.0
 rect_scale = Vector2( 1.5, 1.5 )
+shortcut_in_tooltip = false
 texture_normal = SubResource( 29 )
 texture_disabled = SubResource( 30 )
 
 [node name="Cam_HUD" type="Node2D" parent="Camera_Elements"]
-scale = Vector2( 1.5, 1.5 )
 z_index = 18
 
 [node name="Static" type="AnimatedSprite" parent="Camera_Elements/Cam_HUD"]
 modulate = Color( 1, 1, 1, 0.235294 )
+position = Vector2( 361, 147.1 )
 frames = SubResource( 3 )
-frame = 3
+frame = 2
 speed_scale = 5.0
 playing = true
 centered = false
 
 [node name="Map" type="Sprite" parent="Camera_Elements/Cam_HUD"]
-position = Vector2( 875, 300 )
+position = Vector2( 1146, 628 )
+scale = Vector2( 3, 3 )
 texture = ExtResource( 1 )
 centered = false
 
@@ -408,13 +398,13 @@ anchor_left = 1.0
 anchor_top = 0.603
 anchor_right = 1.0
 anchor_bottom = 0.603
-margin_left = 10.0
-margin_top = 10.0
-margin_right = 1270.0
-margin_bottom = 710.0
+margin_left = 374.0
+margin_top = 159.0
+margin_right = 1546.0
+margin_bottom = 1024.0
 mouse_filter = 2
 border_color = Color( 1, 1, 1, 1 )
-border_width = 2.0
+border_width = 3.0
 editor_only = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Camera_Elements"]
@@ -435,11 +425,11 @@ parameters/StaticState/playback = SubResource( 18 )
 visible = false
 script = ExtResource( 12 )
 
-[node name="BonnieTimer" type="Timer" parent="CharacterAI"]
+[node name="RedTimer" type="Timer" parent="CharacterAI"]
 wait_time = 4.97
 autostart = true
 
-[node name="FreddyTimer" type="Timer" parent="CharacterAI"]
+[node name="GreenTimer" type="Timer" parent="CharacterAI"]
 wait_time = 3.02
 autostart = true
 
@@ -460,5 +450,5 @@ mouse_filter = 2
 [connection signal="pressed" from="Camera_Elements/Cam_Buttons/room2" to="Camera_Elements" method="_on_click_cam" binds= [ 1 ]]
 [connection signal="pressed" from="Camera_Elements/Cam_Buttons/room3" to="Camera_Elements" method="_on_click_cam" binds= [ 2 ]]
 [connection signal="pressed" from="Camera_Elements/Cam_Buttons/room4" to="Camera_Elements" method="_on_click_cam" binds= [ 3 ]]
-[connection signal="timeout" from="CharacterAI/BonnieTimer" to="CharacterAI" method="_char_timer_timeout" binds= [ 0 ]]
-[connection signal="timeout" from="CharacterAI/FreddyTimer" to="CharacterAI" method="_char_timer_timeout" binds= [ 1 ]]
+[connection signal="timeout" from="CharacterAI/RedTimer" to="CharacterAI" method="_char_timer_timeout" binds= [ 0 ]]
+[connection signal="timeout" from="CharacterAI/GreenTimer" to="CharacterAI" method="_char_timer_timeout" binds= [ 1 ]]

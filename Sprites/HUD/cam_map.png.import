@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/map.png-f02e564f45460b7b7c2743604c145b53.stex"
+path="res://.import/cam_map.png-a561f056ed90ad120716ec3d5110eb52.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/HUD/map.png"
-dest_files=[ "res://.import/map.png-f02e564f45460b7b7c2743604c145b53.stex" ]
+source_file="res://Sprites/HUD/cam_map.png"
+dest_files=[ "res://.import/cam_map.png-a561f056ed90ad120716ec3d5110eb52.stex" ]
 
 [params]
 

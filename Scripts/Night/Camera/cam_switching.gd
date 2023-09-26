@@ -29,6 +29,7 @@ func _on_click_cam(extra_arg_0 : int):
 	# spamming the same camera and getting the same switching animation
 	if curr_cam != extra_arg_0:
 		tree_state_machine.start("static_boot")
+		animtree.advance(0)		# this fixes a problem where the static plays 1 frame too late
 		
 		cam_room_array[curr_cam].visible = false
 		cam_button_array[curr_cam].disabled = false
@@ -41,39 +42,38 @@ func _on_click_cam(extra_arg_0 : int):
 func update_rooms(rooms_to_update : Array):
 	# (1) This function handles the room states based on the room array's, that's modified,
 	# by the 'ai_move' function
-	# (2) You can use an 'AnimatedSprite' instead of a 'Sprite' node, to handle animations,
-	# although you'll need to switch animation to switch between states
+	# (2) If you want to have an animated sprite you'll need to use an AnimationPlayer
 	for i in rooms_to_update:
 		match i:
 			0:
 				match rooms_array[0]:
-					[1,1]:
-						cam_room_array[0].frame = 3
-					[0,1]:
-						cam_room_array[0].frame = 1
 					[0,0]:
-						cam_room_array[0].frame = 0
+						cam_room_array[0].frame = 3
 					[1,0]:
 						cam_room_array[0].frame = 2
+					[0,1]:
+						cam_room_array[0].frame = 1
+					[1,1]:
+						cam_room_array[0].frame = 0
 			1:
 				match rooms_array[1]:
 					[0,0]:
-						cam_room_array[1].frame = 0
-					[1,0]:
-						cam_room_array[1].frame = 1
-					[0,1]:
-						cam_room_array[1].frame = 2
-					[1,1]:
 						cam_room_array[1].frame = 3
+					[1,0]:
+						cam_room_array[1].frame = 2
+					[0,1]:
+						cam_room_array[1].frame = 1
+					[1,1]:
+						cam_room_array[1].frame = 0
 			2:
 				match rooms_array[2]:
 					[0,0]:
-						cam_room_array[2].frame = 0
-					[1,0]:
 						cam_room_array[2].frame = 1
+					[1,0]:
+						cam_room_array[2].frame = 0
 			3:
 				match rooms_array[3]:
 					[0,0]:
-						cam_room_array[3].frame = 0
-					[0,1]:
 						cam_room_array[3].frame = 1
+					[0,1]:
+						cam_room_array[3].frame = 0

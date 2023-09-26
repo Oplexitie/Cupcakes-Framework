@@ -58,4 +58,5 @@ func ai_move(from_room : int, var to_room : int, character : int, checknextroom 
 	cam_elements.rooms_array[to_room][character]=newstate
 	if cam_elements.curr_cam ==  from_room or cam_elements.curr_cam ==  to_room:
 		cam_elements.tree_state_machine.start("static_boot")
+		cam_elements.animtree.advance(0)	# this fixes a problem where the static plays 1 frame too late
 	cam_elements.update_rooms([from_room,to_room])

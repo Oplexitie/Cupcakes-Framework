@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/bar_click.png-7375e32840b38058c60250067ab2c992.stex"
+path="res://.import/cam_barbutton.png-74c8b45727cf65c2f05ed106b812365b.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/HUD/bar_click.png"
-dest_files=[ "res://.import/bar_click.png-7375e32840b38058c60250067ab2c992.stex" ]
+source_file="res://Sprites/HUD/cam_barbutton.png"
+dest_files=[ "res://.import/cam_barbutton.png-74c8b45727cf65c2f05ed106b812365b.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

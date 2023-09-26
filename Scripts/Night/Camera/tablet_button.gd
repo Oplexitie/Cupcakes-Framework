@@ -11,11 +11,11 @@ onready var tablet_sprite = $Tablet_Sprite
 onready var cam_stuff = get_node(path_cam_stuff)
 
 func on_mouse_enter():
-	tweener.interpolate_property(tablet_button, "modulate:a", tablet_button.modulate.a, 0.75, 0.3,Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+	tweener.interpolate_property(tablet_button, "modulate:a", tablet_button.modulate.a, 0.5, 0.3,Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 	tweener.start()
 
 func on_mouse_exit():
-	tweener.interpolate_property(tablet_button, "modulate:a", tablet_button.modulate.a, 0.29, 0.3,Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+	tweener.interpolate_property(tablet_button, "modulate:a", tablet_button.modulate.a, 0.2, 0.3,Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 	tweener.start()
 
 func _on_click():
@@ -35,6 +35,7 @@ func _tablet_animation_finished():
 		is_tablet_up = true
 		cam_stuff.visible = true
 		cam_stuff.tree_state_machine.start("static_boot")
+		cam_stuff.animtree.advance(0)	# this fixes a problem where the static plays 1 frame too late
 	else:
 		is_tablet_up = false
 		tablet_sprite.visible = false

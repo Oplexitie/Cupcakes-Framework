@@ -37,7 +37,7 @@ func _physics_process(delta):
 		pan_value = 0
 	
 	# Modifies the position of the office, while clamping it, so the office stays in frame
-	position.x = clamp(position.x + clamp(pan_value * delta, -40,40), -780,780)
+	position.x = clamp(position.x + clamp(pan_value * delta, -40,40), -620,620)
 	
 	# Modifies the buttons collision postion, makes it so the button is pressable with the shader
 	_apply_offset(delta)
