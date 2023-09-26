@@ -308,7 +308,7 @@ texture = ExtResource( 11 )
 centered = false
 vframes = 4
 region_enabled = true
-region_rect = Rect2( 0.134608, 0, 798, 2372 )
+region_rect = Rect2( 268, 0, 798, 2372 )
 
 [node name="room3" type="Sprite" parent="Camera_Elements/Cam_Rooms"]
 visible = false
@@ -317,7 +317,7 @@ texture = ExtResource( 14 )
 centered = false
 vframes = 2
 region_enabled = true
-region_rect = Rect2( 268, 0, 798, 1186 )
+region_rect = Rect2( 67.8559, 0, 798, 1186 )
 
 [node name="room4" type="Sprite" parent="Camera_Elements/Cam_Rooms"]
 visible = false
@@ -326,7 +326,7 @@ texture = ExtResource( 10 )
 centered = false
 vframes = 2
 region_enabled = true
-region_rect = Rect2( 178.532, 0, 798, 1186 )
+region_rect = Rect2( 21.4774, 0, 798, 1186 )
 
 [node name="Cam_Buttons" type="Node2D" parent="Camera_Elements"]
 z_index = 19
@@ -413,7 +413,7 @@ anims/static_idle = SubResource( 7 )
 tree_root = ExtResource( 6 )
 anim_player = NodePath("../AnimationPlayer")
 active = true
-parameters/Blend/blend_amount = 0.5
+parameters/Add2/add_amount = 1.0
 parameters/StaticState/playback = SubResource( 18 )
 
 [node name="CharacterAI" type="Node2D" parent="."]

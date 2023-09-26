@@ -1,6 +1,6 @@
 [gd_resource type="AnimationNodeBlendTree" load_steps=8 format=2]
 
-[sub_resource type="AnimationNodeBlend2" id=10]
+[sub_resource type="AnimationNodeAdd2" id=17]
 
 [sub_resource type="AnimationNodeAnimation" id=11]
 animation = "cam_scroll"
@@ -27,11 +27,11 @@ start_node = "static_boot"
 
 [resource]
 graph_offset = Vector2( -136.874, 53.1463 )
-nodes/Blend/node = SubResource( 10 )
-nodes/Blend/position = Vector2( 480, 60 )
+nodes/Add2/node = SubResource( 17 )
+nodes/Add2/position = Vector2( 480, 80 )
 nodes/CameraScroll/node = SubResource( 11 )
 nodes/CameraScroll/position = Vector2( 260, 180 )
 nodes/StaticState/node = SubResource( 16 )
 nodes/StaticState/position = Vector2( 260, 40 )
 nodes/output/position = Vector2( 680, 80 )
-node_connections = [ "output", 0, "Blend", "Blend", 0, "StaticState", "Blend", 1, "CameraScroll" ]
+node_connections = [ "Add2", 0, "StaticState", "Add2", 1, "CameraScroll", "output", 0, "Add2" ]
