@@ -25,15 +25,13 @@ Also, there's the [CF-Example-Project](https://github.com/Oplexitie/CF-Example-P
   - A flip up and down camera animation that won't break when spammed !
   - Camera movement ( like in FNAF 1 )
   - Support for smaller cameras while still supporting camera movement ( thanks to Godot's image region system )
-  - Support for animated images on the camera ( an example of this can be seen within the [CF-Example-Project](https://github.com/Oplexitie/CF-Example-Project/tree/main) )
+  - Support for animated images on the camera ( via the AnimationPlayer node )
 - Character AI ( no Jumpscares )
   - AI system faithful to the original FNAF games
   - AI difficutly based on a scale from 0 to 20 ( basically Custom Night )
   - Custom character states for alternate poses on Cameras
  
  ## Other info
-
-With the exception of the Cupcakes Framework logo, every visual asset has been made by either Emil Macko or Scott Cawthon.
 
 If you encounter any bugs with an **unmodified version of the framework**, please post the issue on Github with a video attached.
 If you want to contribute to the project, do a pull request on Github and I'll take a look at it.
