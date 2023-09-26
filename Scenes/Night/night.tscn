@@ -98,22 +98,18 @@ atlas = ExtResource( 17 )
 region = Rect2( 48, 96, 48, 32 )
 
 [sub_resource type="AtlasTexture" id=41]
-flags = 4
 atlas = ExtResource( 8 )
 region = Rect2( 0, 0, 1198, 890 )
 
 [sub_resource type="AtlasTexture" id=42]
-flags = 4
 atlas = ExtResource( 8 )
 region = Rect2( 1198, 0, 1198, 890 )
 
 [sub_resource type="AtlasTexture" id=43]
-flags = 4
 atlas = ExtResource( 8 )
 region = Rect2( 0, 890, 1198, 890 )
 
 [sub_resource type="AtlasTexture" id=44]
-flags = 4
 atlas = ExtResource( 8 )
 region = Rect2( 1198, 890, 1198, 890 )
 
@@ -312,7 +308,7 @@ texture = ExtResource( 11 )
 centered = false
 vframes = 4
 region_enabled = true
-region_rect = Rect2( 121.317, 0, 798, 2372 )
+region_rect = Rect2( 0.134608, 0, 798, 2372 )
 
 [node name="room3" type="Sprite" parent="Camera_Elements/Cam_Rooms"]
 visible = false
@@ -321,7 +317,7 @@ texture = ExtResource( 14 )
 centered = false
 vframes = 2
 region_enabled = true
-region_rect = Rect2( 57.3501, 0, 798, 1186 )
+region_rect = Rect2( 268, 0, 798, 1186 )
 
 [node name="room4" type="Sprite" parent="Camera_Elements/Cam_Rooms"]
 visible = false
@@ -330,7 +326,7 @@ texture = ExtResource( 10 )
 centered = false
 vframes = 2
 region_enabled = true
-region_rect = Rect2( 236.017, 0, 798, 1186 )
+region_rect = Rect2( 178.532, 0, 798, 1186 )
 
 [node name="Cam_Buttons" type="Node2D" parent="Camera_Elements"]
 z_index = 19
@@ -382,7 +378,6 @@ z_index = 18
 modulate = Color( 1, 1, 1, 0.235294 )
 position = Vector2( 361, 147.1 )
 frames = SubResource( 3 )
-frame = 2
 speed_scale = 5.0
 playing = true
 centered = false
