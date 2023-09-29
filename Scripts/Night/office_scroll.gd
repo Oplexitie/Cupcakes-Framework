@@ -1,5 +1,7 @@
 extends Sprite
 
+export var office_clamp : int
+export var pan_speed : int
 # An export made for objects that need a slight offset due to the equirectangular shader
 # [NodePath, PanOffset(int), SpeedClamp(int), SizeClamp(int)]
 export var list_offset_corrections : Array
@@ -30,14 +32,14 @@ func _physics_process(delta):
 	
 	# Checks if the mouse is within one the mouse movement areas, and pans the office if is
 	if mouse_position.x < border_distance.x:
-		pan_value = (border_distance.x - mouse_position.x) * int(Global.can_move) * 5
+		pan_value = (border_distance.x - mouse_position.x) * int(Global.can_move) * pan_speed
 	elif mouse_position.x > border_distance.y:
-		pan_value = (border_distance.y - mouse_position.x) * int(Global.can_move) * 5
+		pan_value = (border_distance.y - mouse_position.x) * int(Global.can_move) * pan_speed
 	else:
 		pan_value = 0
 	
 	# Modifies the position of the office, while clamping it, so the office stays in frame
-	position.x = clamp(position.x + clamp(pan_value * delta, -40,40), -620,620)
+	position.x = clamp(position.x + clamp(pan_value * delta, -40,40), -office_clamp, office_clamp)
 	
 	# Modifies the buttons collision postion, makes it so the button is pressable with the shader
 	_apply_offset(delta)

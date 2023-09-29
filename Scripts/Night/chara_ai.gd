@@ -1,9 +1,9 @@
 extends Node2D
 
-onready var cam_elements = $"../Camera_Elements"
-
 var char_levels : Array = [20,20]		# Character levels [character1,character2]
 var char_pos : Array = [0,0]	# Character positions [character1,character2]
+
+onready var cam_elements : Node2D = $"../Camera_Elements"
 
 func _ready():
 	randomize()
@@ -48,14 +48,14 @@ func ai_move(from_room : int, var to_room : int, character : int, checknextroom 
 	# if it is, it'll go into the room, otherwise it won't
 	
 	if(checknextroom == true):
-		if(cam_elements.rooms_array[to_room]==[0,0,0,0,0,0]):
+		if(cam_elements.room_content_array[to_room]==[0,0,0,0,0,0]):
 			pass
 		else:
 			char_pos[character]-=1
 			return
 			
-	cam_elements.rooms_array[from_room][character]=0
-	cam_elements.rooms_array[to_room][character]=newstate
+	cam_elements.room_content_array[from_room][character]=0
+	cam_elements.room_content_array[to_room][character]=newstate
 	if cam_elements.curr_cam ==  from_room or cam_elements.curr_cam ==  to_room:
 		cam_elements.tree_state_machine.start("static_boot")
 		cam_elements.animtree.advance(0)	# this fixes a problem where the static plays 1 frame too late

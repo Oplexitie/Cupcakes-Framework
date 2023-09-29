@@ -5,10 +5,10 @@ export var path_cam_stuff : NodePath
 
 var is_tablet_up : bool = false
 
-onready var tablet_button = $Tablet_Button/Button
+onready var tablet_button : TextureButton = $Tablet_Button/Button
 onready var tweener = $Tween
-onready var tablet_sprite = $Tablet_Sprite
-onready var cam_stuff = get_node(path_cam_stuff)
+onready var tablet_sprite : AnimatedSprite = $Tablet_Sprite
+onready var cam_stuff : Node2D = get_node(path_cam_stuff)
 
 func on_mouse_enter():
 	tweener.interpolate_property(tablet_button, "modulate:a", tablet_button.modulate.a, 0.5, 0.3,Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)

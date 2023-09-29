@@ -252,6 +252,8 @@ texture = ExtResource( 16 )
 centered = false
 offset = Vector2( -360, 0 )
 script = ExtResource( 4 )
+office_clamp = 620
+pan_speed = 5
 
 [node name="Tablet_Elements" type="Node2D" parent="."]
 position = Vector2( 960, 1013 )
@@ -308,7 +310,7 @@ texture = ExtResource( 11 )
 centered = false
 vframes = 4
 region_enabled = true
-region_rect = Rect2( 268, 0, 798, 2372 )
+region_rect = Rect2( 160.579, 0, 798, 2372 )
 
 [node name="room3" type="Sprite" parent="Camera_Elements/Cam_Rooms"]
 visible = false
@@ -317,7 +319,7 @@ texture = ExtResource( 14 )
 centered = false
 vframes = 2
 region_enabled = true
-region_rect = Rect2( 67.8559, 0, 798, 1186 )
+region_rect = Rect2( 18.0881, 0, 798, 1186 )
 
 [node name="room4" type="Sprite" parent="Camera_Elements/Cam_Rooms"]
 visible = false
@@ -326,7 +328,7 @@ texture = ExtResource( 10 )
 centered = false
 vframes = 2
 region_enabled = true
-region_rect = Rect2( 21.4774, 0, 798, 1186 )
+region_rect = Rect2( 196.755, 0, 798, 1186 )
 
 [node name="Cam_Buttons" type="Node2D" parent="Camera_Elements"]
 z_index = 19
@@ -378,6 +380,7 @@ z_index = 18
 modulate = Color( 1, 1, 1, 0.235294 )
 position = Vector2( 361, 147.1 )
 frames = SubResource( 3 )
+frame = 3
 speed_scale = 5.0
 playing = true
 centered = false

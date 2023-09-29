@@ -26,12 +26,12 @@ transitions = [ "static_boot", "static_idle", SubResource( 14 ), "static_idle", 
 start_node = "static_boot"
 
 [resource]
-graph_offset = Vector2( -136.874, 53.1463 )
+graph_offset = Vector2( -294.25, -22.2872 )
 nodes/Add2/node = SubResource( 17 )
 nodes/Add2/position = Vector2( 480, 80 )
 nodes/CameraScroll/node = SubResource( 11 )
 nodes/CameraScroll/position = Vector2( 260, 180 )
 nodes/StaticState/node = SubResource( 16 )
-nodes/StaticState/position = Vector2( 260, 40 )
+nodes/StaticState/position = Vector2( 260, -60 )
 nodes/output/position = Vector2( 680, 80 )
-node_connections = [ "Add2", 0, "StaticState", "Add2", 1, "CameraScroll", "output", 0, "Add2" ]
+node_connections = [ "output", 0, "Add2", "Add2", 0, "StaticState", "Add2", 1, "CameraScroll" ]
