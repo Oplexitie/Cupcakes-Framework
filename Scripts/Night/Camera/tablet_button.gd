@@ -6,9 +6,9 @@ extends Node2D
 var is_tablet_up : bool = false
 var tweener : Tween
 
-@onready var tablet_button = $Tablet_Button
-@onready var tablet_sprite = $Tablet_Sprite
-@onready var cam_stuff = get_node(path_cam_stuff)
+@onready var tablet_button : TextureButton = $Tablet_Button
+@onready var tablet_sprite : AnimatedSprite2D = $Tablet_Sprite
+@onready var cam_stuff : Node2D = get_node(path_cam_stuff)
 
 func on_mouse_enter():
 	if tweener:
