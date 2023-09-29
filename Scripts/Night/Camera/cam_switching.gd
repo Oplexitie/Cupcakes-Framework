@@ -7,7 +7,7 @@ var room_content_array : Array = [[1,1],[0,0],[0,0],[0,0]]
 var cam_rvisual_array : Array = []
 var cam_button_array : Array = []
 
-@onready var animtree = $AnimationTree
+@onready var animtree : AnimationTree = $AnimationTree
 @onready var tree_state_machine = animtree["parameters/StaticState/playback"]
 
 func _ready():
