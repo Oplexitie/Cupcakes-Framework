@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=2]
+[gd_scene load_steps=49 format=2]
 
 [ext_resource path="res://Sprites/HUD/cam_map.png" type="Texture" id=1]
 [ext_resource path="res://Sprites/CamRooms/room1.png" type="Texture" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://AnimationTree/animtree_camera.tres" type="AnimationNodeBlendTree" id=6]
 [ext_resource path="res://Sprites/Tablet/tablet_anim.png" type="Texture" id=7]
 [ext_resource path="res://Sprites/Static/static_anim.png" type="Texture" id=8]
+[ext_resource path="res://Shaders/crt_wave.gdshader" type="Shader" id=9]
 [ext_resource path="res://Sprites/CamRooms/room4.png" type="Texture" id=10]
 [ext_resource path="res://Sprites/CamRooms/room2.png" type="Texture" id=11]
 [ext_resource path="res://Scripts/Night/chara_ai.gd" type="Script" id=12]
@@ -96,6 +97,14 @@ region = Rect2( 0, 96, 48, 32 )
 [sub_resource type="AtlasTexture" id=30]
 atlas = ExtResource( 17 )
 region = Rect2( 48, 96, 48, 32 )
+
+[sub_resource type="ShaderMaterial" id=45]
+shader = ExtResource( 9 )
+shader_param/roll_speed = -2.0
+shader_param/roll_size = 25.0
+shader_param/roll_variation = 0.62
+shader_param/distort_intensity = 0.01
+shader_param/noise_opacity = 0.1
 
 [sub_resource type="AtlasTexture" id=41]
 atlas = ExtResource( 8 )
@@ -310,7 +319,7 @@ texture = ExtResource( 11 )
 centered = false
 vframes = 4
 region_enabled = true
-region_rect = Rect2( 160.579, 0, 798, 2372 )
+region_rect = Rect2( 137.442, 0, 798, 2372 )
 
 [node name="room3" type="Sprite" parent="Camera_Elements/Cam_Rooms"]
 visible = false
@@ -319,7 +328,7 @@ texture = ExtResource( 14 )
 centered = false
 vframes = 2
 region_enabled = true
-region_rect = Rect2( 18.0881, 0, 798, 1186 )
+region_rect = Rect2( 41.2249, 0, 798, 1186 )
 
 [node name="room4" type="Sprite" parent="Camera_Elements/Cam_Rooms"]
 visible = false
@@ -328,7 +337,7 @@ texture = ExtResource( 10 )
 centered = false
 vframes = 2
 region_enabled = true
-region_rect = Rect2( 196.755, 0, 798, 1186 )
+region_rect = Rect2( 219.892, 0, 798, 1186 )
 
 [node name="Cam_Buttons" type="Node2D" parent="Camera_Elements"]
 z_index = 19
@@ -376,11 +385,19 @@ texture_disabled = SubResource( 30 )
 [node name="Cam_HUD" type="Node2D" parent="Camera_Elements"]
 z_index = 18
 
+[node name="CRTWave_Shader" type="ColorRect" parent="Camera_Elements/Cam_HUD"]
+material = SubResource( 45 )
+margin_left = 361.0
+margin_top = 148.0
+margin_right = 1559.0
+margin_bottom = 1037.0
+mouse_filter = 2
+
 [node name="Static" type="AnimatedSprite" parent="Camera_Elements/Cam_HUD"]
 modulate = Color( 1, 1, 1, 0.235294 )
 position = Vector2( 361, 147.1 )
 frames = SubResource( 3 )
-frame = 3
+frame = 1
 speed_scale = 5.0
 playing = true
 centered = false
@@ -404,6 +421,10 @@ mouse_filter = 2
 border_color = Color( 1, 1, 1, 1 )
 border_width = 3.0
 editor_only = false
+
+[node name="BackBufferCopy" type="BackBufferCopy" parent="Camera_Elements"]
+z_index = 15
+copy_mode = 2
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Camera_Elements"]
 root_node = NodePath("../..")
@@ -431,10 +452,7 @@ autostart = true
 wait_time = 3.02
 autostart = true
 
-[node name="Effects" type="Node2D" parent="."]
-z_index = 14
-
-[node name="Perspective_Shader" type="ColorRect" parent="Effects"]
+[node name="Perspective_Shader" type="ColorRect" parent="."]
 material = SubResource( 2 )
 margin_right = 1920.0
 margin_bottom = 1080.0
