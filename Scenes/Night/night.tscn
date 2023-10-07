@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=2]
+[gd_scene load_steps=50 format=2]
 
 [ext_resource path="res://Sprites/HUD/cam_map.png" type="Texture" id=1]
 [ext_resource path="res://Sprites/CamRooms/room1.png" type="Texture" id=2]
@@ -17,6 +17,7 @@
 [ext_resource path="res://Sprites/HUD/cam_barbutton.png" type="Texture" id=15]
 [ext_resource path="res://Sprites/Office/office.png" type="Texture" id=16]
 [ext_resource path="res://Sprites/HUD/cam_buttons.png" type="Texture" id=17]
+[ext_resource path="res://Scripts/Night/Camera/room_updater.gd" type="Script" id=18]
 
 [sub_resource type="AtlasTexture" id=31]
 atlas = ExtResource( 7 )
@@ -303,6 +304,7 @@ script = ExtResource( 3 )
 position = Vector2( -320, 0 )
 scale = Vector2( 1.5, 1.5 )
 z_index = 15
+script = ExtResource( 18 )
 
 [node name="room1" type="Sprite" parent="Camera_Elements/Cam_Rooms"]
 position = Vector2( 454.333, 98.333 )
@@ -319,7 +321,7 @@ texture = ExtResource( 11 )
 centered = false
 vframes = 4
 region_enabled = true
-region_rect = Rect2( 137.442, 0, 798, 2372 )
+region_rect = Rect2( 127.741, 0, 798, 2372 )
 
 [node name="room3" type="Sprite" parent="Camera_Elements/Cam_Rooms"]
 visible = false
@@ -328,7 +330,7 @@ texture = ExtResource( 14 )
 centered = false
 vframes = 2
 region_enabled = true
-region_rect = Rect2( 41.2249, 0, 798, 1186 )
+region_rect = Rect2( 229.593, 0, 798, 1186 )
 
 [node name="room4" type="Sprite" parent="Camera_Elements/Cam_Rooms"]
 visible = false
@@ -337,7 +339,7 @@ texture = ExtResource( 10 )
 centered = false
 vframes = 2
 region_enabled = true
-region_rect = Rect2( 219.892, 0, 798, 1186 )
+region_rect = Rect2( 50.926, 0, 798, 1186 )
 
 [node name="Cam_Buttons" type="Node2D" parent="Camera_Elements"]
 z_index = 19
@@ -397,7 +399,7 @@ mouse_filter = 2
 modulate = Color( 1, 1, 1, 0.235294 )
 position = Vector2( 361, 147.1 )
 frames = SubResource( 3 )
-frame = 1
+frame = 2
 speed_scale = 5.0
 playing = true
 centered = false
