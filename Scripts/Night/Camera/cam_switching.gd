@@ -19,7 +19,7 @@ func _ready():
 		cam_button_array.append(i)
 		
 	cam_button_array[0].disabled = true
-	$Cam_Rooms.update_rooms([0,1,2,3])
+	cam_rooms.update_rooms([0,1,2,3])
 
 func _on_click_cam(extra_arg_0 : int):
 	# This function handles switching cameras, while preventing the player from
