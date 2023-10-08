@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://cthhku8fsrdeq"]
+[gd_scene load_steps=50 format=3 uid="uid://cthhku8fsrdeq"]
 
 [ext_resource type="Texture2D" uid="uid://ce3drug37ontk" path="res://Sprites/Office/office.png" id="1_nilh1"]
 [ext_resource type="Script" path="res://Scripts/Night/office_scroll.gd" id="2_okpib"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://di62ngt3q4476" path="res://Sprites/CamRooms/room1.png" id="6_eiyrw"]
 [ext_resource type="Script" path="res://Scripts/Night/Camera/cam_switching.gd" id="6_sfjgy"]
 [ext_resource type="Texture2D" uid="uid://6meury7w6l8r" path="res://Sprites/CamRooms/room2.png" id="7_6isfp"]
+[ext_resource type="Script" path="res://Scripts/Night/Camera/room_updater.gd" id="7_equqf"]
 [ext_resource type="Texture2D" uid="uid://b80o5ai6umpdd" path="res://Sprites/CamRooms/room3.png" id="8_a0gfj"]
 [ext_resource type="Texture2D" uid="uid://chjjpqp7e5mrg" path="res://Sprites/CamRooms/room4.png" id="9_bm1o6"]
 [ext_resource type="Texture2D" uid="uid://8qq5rkryuskp" path="res://Sprites/HUD/cam_buttons.png" id="11_kpl72"]
@@ -380,6 +381,7 @@ script = ExtResource("6_sfjgy")
 
 [node name="Cam_Rooms" type="Node2D" parent="Camera_Elements"]
 z_index = 15
+script = ExtResource("7_equqf")
 
 [node name="room_1" type="Sprite2D" parent="Camera_Elements/Cam_Rooms"]
 position = Vector2(361.5, 147.5)
