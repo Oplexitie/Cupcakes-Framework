@@ -1,6 +1,6 @@
 [gd_scene load_steps=50 format=2]
 
-[ext_resource path="res://Sprites/HUD/cam_map.png" type="Texture" id=1]
+[ext_resource path="res://Sprites/HUD/cam_bmap.png" type="Texture" id=1]
 [ext_resource path="res://Sprites/CamRooms/room1.png" type="Texture" id=2]
 [ext_resource path="res://Scripts/Night/Camera/cam_switching.gd" type="Script" id=3]
 [ext_resource path="res://Scripts/Night/office_scroll.gd" type="Script" id=4]
@@ -321,7 +321,7 @@ texture = ExtResource( 11 )
 centered = false
 vframes = 4
 region_enabled = true
-region_rect = Rect2( 127.741, 0, 798, 2372 )
+region_rect = Rect2( 10.5027, 0, 798, 2372 )
 
 [node name="room3" type="Sprite" parent="Camera_Elements/Cam_Rooms"]
 visible = false
@@ -330,7 +330,7 @@ texture = ExtResource( 14 )
 centered = false
 vframes = 2
 region_enabled = true
-region_rect = Rect2( 229.593, 0, 798, 1186 )
+region_rect = Rect2( 168.164, 0, 798, 1186 )
 
 [node name="room4" type="Sprite" parent="Camera_Elements/Cam_Rooms"]
 visible = false
@@ -339,15 +339,15 @@ texture = ExtResource( 10 )
 centered = false
 vframes = 2
 region_enabled = true
-region_rect = Rect2( 50.926, 0, 798, 1186 )
+region_rect = Rect2( 268, 0, 798, 1186 )
 
 [node name="Cam_Buttons" type="Node2D" parent="Camera_Elements"]
 z_index = 19
 
 [node name="room1" type="TextureButton" parent="Camera_Elements/Cam_Buttons"]
-margin_left = 1299.0
+margin_left = 1298.0
 margin_top = 635.0
-margin_right = 1347.0
+margin_right = 1346.0
 margin_bottom = 667.0
 rect_scale = Vector2( 1.5, 1.5 )
 shortcut_in_tooltip = false
@@ -355,9 +355,9 @@ texture_normal = SubResource( 23 )
 texture_disabled = SubResource( 24 )
 
 [node name="room2" type="TextureButton" parent="Camera_Elements/Cam_Buttons"]
-margin_left = 1299.0
+margin_left = 1298.0
 margin_top = 757.0
-margin_right = 1347.0
+margin_right = 1346.0
 margin_bottom = 789.0
 rect_scale = Vector2( 1.5, 1.5 )
 shortcut_in_tooltip = false
@@ -366,9 +366,9 @@ texture_disabled = SubResource( 26 )
 
 [node name="room3" type="TextureButton" parent="Camera_Elements/Cam_Buttons"]
 margin_left = 1169.0
-margin_top = 777.0
+margin_top = 778.0
 margin_right = 1217.0
-margin_bottom = 809.0
+margin_bottom = 810.0
 rect_scale = Vector2( 1.5, 1.5 )
 shortcut_in_tooltip = false
 texture_normal = SubResource( 27 )
@@ -399,30 +399,15 @@ mouse_filter = 2
 modulate = Color( 1, 1, 1, 0.235294 )
 position = Vector2( 361, 147.1 )
 frames = SubResource( 3 )
-frame = 2
 speed_scale = 5.0
 playing = true
 centered = false
 
-[node name="Map" type="Sprite" parent="Camera_Elements/Cam_HUD"]
-position = Vector2( 1146, 628 )
+[node name="Border&Map" type="Sprite" parent="Camera_Elements/Cam_HUD"]
+position = Vector2( 374, 160 )
 scale = Vector2( 3, 3 )
 texture = ExtResource( 1 )
 centered = false
-
-[node name="ReferenceRect" type="ReferenceRect" parent="Camera_Elements/Cam_HUD"]
-anchor_left = 1.0
-anchor_top = 0.603
-anchor_right = 1.0
-anchor_bottom = 0.603
-margin_left = 374.0
-margin_top = 159.0
-margin_right = 1546.0
-margin_bottom = 1024.0
-mouse_filter = 2
-border_color = Color( 1, 1, 1, 1 )
-border_width = 3.0
-editor_only = false
 
 [node name="BackBufferCopy" type="BackBufferCopy" parent="Camera_Elements"]
 z_index = 15

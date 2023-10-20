@@ -10,7 +10,7 @@ config_version=4
 
 [application]
 
-config/name="FNAF Framework"
+config/name="Cupcakes Framework"
 run/main_scene="res://Scenes/Night/night.tscn"
 config/icon="res://icon.png"
 
