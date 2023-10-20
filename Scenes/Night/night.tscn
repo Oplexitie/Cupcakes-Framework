@@ -15,9 +15,9 @@
 [ext_resource type="Texture2D" uid="uid://8qq5rkryuskp" path="res://Sprites/HUD/cam_buttons.png" id="11_kpl72"]
 [ext_resource type="Texture2D" uid="uid://c0d0jmshu18hk" path="res://Sprites/Static/static_anim.png" id="12_e8sbt"]
 [ext_resource type="Shader" path="res://Shaders/crtwave_shader.gdshader" id="12_m5wbe"]
-[ext_resource type="Texture2D" uid="uid://jpvoa65eas3n" path="res://Sprites/HUD/cam_map.png" id="13_kkuqh"]
 [ext_resource type="AnimationNodeBlendTree" uid="uid://siq8sv1mpgct" path="res://AnimationTree/animtree_camera.tres" id="14_spxkt"]
 [ext_resource type="Script" path="res://Scripts/Night/chara_ai.gd" id="15_1ap1l"]
+[ext_resource type="Texture2D" uid="uid://kfas5oiik2vw" path="res://Sprites/HUD/cam_bmap.png" id="15_yqxwu"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_b5glu"]
 atlas = ExtResource("4_q88ar")
@@ -426,9 +426,9 @@ region_rect = Rect2(320, 0, 1280, 1440)
 z_index = 19
 
 [node name="room_1" type="TextureButton" parent="Camera_Elements/Cam_Buttons"]
-offset_left = 1300.0
+offset_left = 1297.0
 offset_top = 635.0
-offset_right = 1348.0
+offset_right = 1345.0
 offset_bottom = 667.0
 scale = Vector2(1.5, 1.5)
 action_mode = 0
@@ -436,9 +436,9 @@ texture_normal = SubResource("AtlasTexture_y1mul")
 texture_disabled = SubResource("AtlasTexture_lrm77")
 
 [node name="room_2" type="TextureButton" parent="Camera_Elements/Cam_Buttons"]
-offset_left = 1299.0
+offset_left = 1296.0
 offset_top = 757.0
-offset_right = 1347.0
+offset_right = 1344.0
 offset_bottom = 789.0
 scale = Vector2(1.5, 1.5)
 action_mode = 0
@@ -446,10 +446,10 @@ texture_normal = SubResource("AtlasTexture_us2yt")
 texture_disabled = SubResource("AtlasTexture_qe3yf")
 
 [node name="room_3" type="TextureButton" parent="Camera_Elements/Cam_Buttons"]
-offset_left = 1169.0
-offset_top = 777.0
-offset_right = 1217.0
-offset_bottom = 809.0
+offset_left = 1167.0
+offset_top = 778.0
+offset_right = 1215.0
+offset_bottom = 810.0
 scale = Vector2(1.5, 1.5)
 action_mode = 0
 texture_normal = SubResource("AtlasTexture_lcwij")
@@ -468,7 +468,7 @@ texture_disabled = SubResource("AtlasTexture_lbcdr")
 [node name="Cam_HUD" type="Node2D" parent="Camera_Elements"]
 z_index = 18
 
-[node name="CRT_Wave" type="ColorRect" parent="Camera_Elements/Cam_HUD"]
+[node name="CRTWave_Shader" type="ColorRect" parent="Camera_Elements/Cam_HUD"]
 material = SubResource("ShaderMaterial_pbexm")
 offset_left = 361.0
 offset_top = 147.0
@@ -483,20 +483,10 @@ sprite_frames = SubResource("SpriteFrames_1ioo0")
 autoplay = "default"
 centered = false
 
-[node name="map" type="Sprite2D" parent="Camera_Elements/Cam_HUD"]
-position = Vector2(1319, 782)
+[node name="border&map" type="Sprite2D" parent="Camera_Elements/Cam_HUD"]
+position = Vector2(959, 592)
 scale = Vector2(3, 3)
-texture = ExtResource("13_kkuqh")
-
-[node name="cam_edge" type="ReferenceRect" parent="Camera_Elements/Cam_HUD"]
-offset_left = 373.0
-offset_top = 159.0
-offset_right = 1545.0
-offset_bottom = 1024.0
-mouse_filter = 2
-border_color = Color(1, 1, 1, 1)
-border_width = 3.0
-editor_only = false
+texture = ExtResource("15_yqxwu")
 
 [node name="BackBufferCopy" type="BackBufferCopy" parent="Camera_Elements"]
 z_index = 15
@@ -516,6 +506,7 @@ active = true
 parameters/Add2/add_amount = 1.0
 
 [node name="CharacterAI" type="Node2D" parent="."]
+visible = false
 script = ExtResource("15_1ap1l")
 
 [node name="GreenTimer" type="Timer" parent="CharacterAI"]
@@ -526,7 +517,7 @@ autostart = true
 wait_time = 4.97
 autostart = true
 
-[node name="Perspective_Effect" type="ColorRect" parent="."]
+[node name="Perspective_Shader" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_kco4d")
 offset_right = 1920.0
 offset_bottom = 1080.0

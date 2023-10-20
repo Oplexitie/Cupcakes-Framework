@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://jpvoa65eas3n"
-path="res://.godot/imported/cam_map.png-a561f056ed90ad120716ec3d5110eb52.ctex"
+uid="uid://kfas5oiik2vw"
+path="res://.godot/imported/cam_bmap.png-2c509b0220ac5aa52b1783469f2c8174.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/HUD/cam_map.png"
-dest_files=["res://.godot/imported/cam_map.png-a561f056ed90ad120716ec3d5110eb52.ctex"]
+source_file="res://Sprites/HUD/cam_bmap.png"
+dest_files=["res://.godot/imported/cam_bmap.png-2c509b0220ac5aa52b1783469f2c8174.ctex"]
 
 [params]
 
