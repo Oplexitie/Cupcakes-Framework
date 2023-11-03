@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=2]
+[gd_scene load_steps=52 format=2]
 
 [ext_resource path="res://Sprites/HUD/cam_bmap.png" type="Texture" id=1]
 [ext_resource path="res://Sprites/CamRooms/room1.png" type="Texture" id=2]
@@ -18,6 +18,10 @@
 [ext_resource path="res://Sprites/Office/office.png" type="Texture" id=16]
 [ext_resource path="res://Sprites/HUD/cam_buttons.png" type="Texture" id=17]
 [ext_resource path="res://Scripts/Night/Camera/room_updater.gd" type="Script" id=18]
+[ext_resource path="res://icon.png" type="Texture" id=19]
+
+[sub_resource type="RectangleShape2D" id=46]
+extents = Vector2( 250, 390 )
 
 [sub_resource type="AtlasTexture" id=31]
 atlas = ExtResource( 7 )
@@ -250,20 +254,37 @@ tracks/0/keys = {
 
 [sub_resource type="ShaderMaterial" id=2]
 shader = ExtResource( 5 )
-shader_param/fov = 0.37
-shader_param/x_stretch = 54.0
-shader_param/y_stretch = 30.0
+shader_param/yaxis = null
+shader_param/fov = Vector2( 0.37, 0.37 )
+shader_param/stretch = Vector2( 58, 54 )
 
 [node name="Nights" type="Node2D"]
 
 [node name="Office" type="Sprite" parent="."]
-scale = Vector2( 1.5, 1.5 )
+position = Vector2( 0, -200 )
 texture = ExtResource( 16 )
 centered = false
-offset = Vector2( -360, 0 )
+offset = Vector2( -540, 0 )
 script = ExtResource( 4 )
-office_clamp = 620
-pan_speed = 5
+office_clamp = 500
+pan_speed_x = 5.0
+pan_speed_y = 2.813
+list_offset_corrections = [ [ NodePath("ButtonExample/Area2D/CollisionShape2D"), 1.25, 70, 400, 0.07, 500, 1150 ] ]
+shader_path = NodePath("../Perspective_Shader")
+
+[node name="ButtonExample" type="Sprite" parent="Office"]
+position = Vector2( 250, 750 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 19 )
+
+[node name="Area2D" type="Area2D" parent="Office/ButtonExample"]
+position = Vector2( -150, 20 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Office/ButtonExample/Area2D"]
+position = Vector2( 60, 68 )
+z_index = 50
+shape = SubResource( 46 )
 
 [node name="Tablet_Elements" type="Node2D" parent="."]
 position = Vector2( 960, 1013 )
@@ -321,7 +342,7 @@ texture = ExtResource( 11 )
 centered = false
 vframes = 4
 region_enabled = true
-region_rect = Rect2( 10.5027, 0, 798, 2372 )
+region_rect = Rect2( 0, 0, 798, 2372 )
 
 [node name="room3" type="Sprite" parent="Camera_Elements/Cam_Rooms"]
 visible = false
@@ -330,7 +351,7 @@ texture = ExtResource( 14 )
 centered = false
 vframes = 2
 region_enabled = true
-region_rect = Rect2( 168.164, 0, 798, 1186 )
+region_rect = Rect2( 233.202, 0, 798, 1186 )
 
 [node name="room4" type="Sprite" parent="Camera_Elements/Cam_Rooms"]
 visible = false
@@ -339,7 +360,7 @@ texture = ExtResource( 10 )
 centered = false
 vframes = 2
 region_enabled = true
-region_rect = Rect2( 268, 0, 798, 1186 )
+region_rect = Rect2( 213.465, 0, 798, 1186 )
 
 [node name="Cam_Buttons" type="Node2D" parent="Camera_Elements"]
 z_index = 19
@@ -399,6 +420,7 @@ mouse_filter = 2
 modulate = Color( 1, 1, 1, 0.235294 )
 position = Vector2( 361, 147.1 )
 frames = SubResource( 3 )
+frame = 2
 speed_scale = 5.0
 playing = true
 centered = false
@@ -445,6 +467,7 @@ margin_right = 1920.0
 margin_bottom = 1080.0
 mouse_filter = 2
 
+[connection signal="input_event" from="Office/ButtonExample/Area2D" to="Office" method="_on_Area2D_input_event"]
 [connection signal="animation_finished" from="Tablet_Elements/Tablet_Sprite" to="Tablet_Elements" method="_tablet_animation_finished"]
 [connection signal="mouse_entered" from="Tablet_Elements/Tablet_Button/Button" to="Tablet_Elements" method="on_mouse_enter"]
 [connection signal="mouse_exited" from="Tablet_Elements/Tablet_Button/Button" to="Tablet_Elements" method="on_mouse_exit"]
