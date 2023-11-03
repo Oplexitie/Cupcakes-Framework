@@ -1,7 +1,8 @@
-[gd_scene load_steps=50 format=3 uid="uid://cthhku8fsrdeq"]
+[gd_scene load_steps=52 format=3 uid="uid://cthhku8fsrdeq"]
 
 [ext_resource type="Texture2D" uid="uid://ce3drug37ontk" path="res://Sprites/Office/office.png" id="1_nilh1"]
 [ext_resource type="Script" path="res://Scripts/Night/office_scroll.gd" id="2_okpib"]
+[ext_resource type="Texture2D" uid="uid://db8golpcs1uhb" path="res://icon.png" id="3_dpgb6"]
 [ext_resource type="Shader" path="res://Shaders/equirectangular_perspective.gdshader" id="3_t06hd"]
 [ext_resource type="Script" path="res://Scripts/Night/Camera/tablet_button.gd" id="4_0ml6l"]
 [ext_resource type="Texture2D" uid="uid://bwp12gkddlnns" path="res://Sprites/Tablet/tablet_anim.png" id="4_q88ar"]
@@ -18,6 +19,9 @@
 [ext_resource type="AnimationNodeBlendTree" uid="uid://siq8sv1mpgct" path="res://AnimationTree/animtree_camera.tres" id="14_spxkt"]
 [ext_resource type="Script" path="res://Scripts/Night/chara_ai.gd" id="15_1ap1l"]
 [ext_resource type="Texture2D" uid="uid://kfas5oiik2vw" path="res://Sprites/HUD/cam_bmap.png" id="15_yqxwu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a0qos"]
+size = Vector2(250, 390)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_b5glu"]
 atlas = ExtResource("4_q88ar")
@@ -332,20 +336,36 @@ _data = {
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_kco4d"]
 shader = ExtResource("3_t06hd")
-shader_parameter/fov = 0.37
-shader_parameter/x_stretch = 54.0
-shader_parameter/y_stretch = 30.0
+shader_parameter/yaxis = 0.0
+shader_parameter/fov = Vector2(0.37, 0.37)
+shader_parameter/stretch = Vector2(58, 54)
 
 [node name="Night" type="Node2D"]
 
 [node name="Office" type="Sprite2D" parent="."]
-scale = Vector2(1.5, 1.5)
+position = Vector2(0, -200)
 texture = ExtResource("1_nilh1")
 centered = false
-offset = Vector2(-360, 0)
+offset = Vector2(-540, 0)
 script = ExtResource("2_okpib")
-office_clamp = 620
-pan_speed = 5
+office_clamp = 500
+pan_speed_x = 5.0
+pan_speed_y = 2.813
+list_offset_corrections = [[NodePath("ButtonExample/Area2D/CollisionShape2D"), 2.5, 70, 200, 0.14, 500, 575]]
+shader_path = NodePath("../Perspective_Shader")
+
+[node name="ButtonExample" type="Sprite2D" parent="Office"]
+position = Vector2(250, 750)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_dpgb6")
+
+[node name="Area2D" type="Area2D" parent="Office/ButtonExample"]
+position = Vector2(-150, 20)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Office/ButtonExample/Area2D"]
+z_index = 50
+position = Vector2(30, 34)
+shape = SubResource("RectangleShape2D_a0qos")
 
 [node name="Tablet_Elements" type="Node2D" parent="."]
 z_index = 15
@@ -523,6 +543,7 @@ offset_right = 1920.0
 offset_bottom = 1080.0
 mouse_filter = 2
 
+[connection signal="input_event" from="Office/ButtonExample/Area2D" to="Office" method="_on_area_2d_input_event"]
 [connection signal="animation_finished" from="Tablet_Elements/Tablet_Sprite" to="Tablet_Elements" method="_tablet_animation_finished"]
 [connection signal="mouse_entered" from="Tablet_Elements/Tablet_Button" to="Tablet_Elements" method="on_mouse_enter"]
 [connection signal="mouse_exited" from="Tablet_Elements/Tablet_Button" to="Tablet_Elements" method="on_mouse_exit"]
