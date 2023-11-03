@@ -1,7 +1,6 @@
 shader_type canvas_item;
 
 const float PI_TWO = PI * 2.0;
-const float HALF_PI = PI / 2.0;
 
 uniform float yaxis;   
 uniform vec2 fov = vec2(0.37,0.37);
