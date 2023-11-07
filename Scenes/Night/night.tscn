@@ -267,7 +267,7 @@ centered = false
 offset = Vector2( -540, 0 )
 script = ExtResource( 4 )
 pan_speed = 5.0
-office_clamp = 500.0
+office_clamp = 500
 list_offset_corrections = [ [ NodePath("ButtonExample/Area2D/CollisionShape2D"), 1.0, 40, 500 ] ]
 
 [node name="ButtonExample" type="Sprite" parent="Office"]
@@ -340,7 +340,7 @@ texture = ExtResource( 11 )
 centered = false
 vframes = 4
 region_enabled = true
-region_rect = Rect2( 148.962, 0, 798, 2372 )
+region_rect = Rect2( 268, 0, 798, 2372 )
 
 [node name="room3" type="Sprite" parent="Camera_Elements/Cam_Rooms"]
 visible = false
@@ -349,7 +349,7 @@ texture = ExtResource( 14 )
 centered = false
 vframes = 2
 region_enabled = true
-region_rect = Rect2( 208.371, 0, 798, 1186 )
+region_rect = Rect2( 39.1754, 0, 798, 1186 )
 
 [node name="room4" type="Sprite" parent="Camera_Elements/Cam_Rooms"]
 visible = false
@@ -358,7 +358,7 @@ texture = ExtResource( 10 )
 centered = false
 vframes = 2
 region_enabled = true
-region_rect = Rect2( 29.7045, 0, 798, 1186 )
+region_rect = Rect2( 50.1579, 0, 798, 1186 )
 
 [node name="Cam_Buttons" type="Node2D" parent="Camera_Elements"]
 z_index = 19
@@ -418,7 +418,6 @@ mouse_filter = 2
 modulate = Color( 1, 1, 1, 0.235294 )
 position = Vector2( 361, 147.1 )
 frames = SubResource( 3 )
-frame = 2
 speed_scale = 5.0
 playing = true
 centered = false
