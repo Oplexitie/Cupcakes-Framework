@@ -19,6 +19,7 @@ Also, there's the [CF-Example-Project](https://github.com/Oplexitie/CF-Example-P
 
 - Office
 	- A simple scrolling system where the speed is based on how close your mouse is to the screens edge.
+ 	- A more advanced system with the ability to scroll up and down (harder than it sounds with the shader)
 	- An equirectangular perspective shader ( like the one seen in [Five Nights at Candy's Remastered](https://gamejolt.com/games/five-nights-at-candy-s-remastered/426659) )
 - Camera System
 	- A simple camera system that can be easily expanded to include more rooms
