@@ -3,7 +3,7 @@
 [ext_resource path="res://Sprites/HUD/cam_bmap.png" type="Texture" id=1]
 [ext_resource path="res://Sprites/CamRooms/room1.png" type="Texture" id=2]
 [ext_resource path="res://Scripts/Night/Camera/cam_switching.gd" type="Script" id=3]
-[ext_resource path="res://Scripts/Night/office_scroll.gd" type="Script" id=4]
+[ext_resource path="res://Scripts/Night/office_scroll_simple.gd" type="Script" id=4]
 [ext_resource path="res://Shaders/equirectangular_perspective.gdshader" type="Shader" id=5]
 [ext_resource path="res://AnimationTree/animtree_camera.tres" type="AnimationNodeBlendTree" id=6]
 [ext_resource path="res://Sprites/Tablet/tablet_anim.png" type="Texture" id=7]
@@ -21,7 +21,7 @@
 [ext_resource path="res://icon.png" type="Texture" id=19]
 
 [sub_resource type="RectangleShape2D" id=46]
-extents = Vector2( 250, 390 )
+extents = Vector2( 380, 380 )
 
 [sub_resource type="AtlasTexture" id=31]
 atlas = ExtResource( 7 )
@@ -254,7 +254,7 @@ tracks/0/keys = {
 
 [sub_resource type="ShaderMaterial" id=2]
 shader = ExtResource( 5 )
-shader_param/yaxis = null
+shader_param/yaxis = 0.0
 shader_param/fov = Vector2( 0.37, 0.37 )
 shader_param/stretch = Vector2( 58, 54 )
 
@@ -266,11 +266,9 @@ texture = ExtResource( 16 )
 centered = false
 offset = Vector2( -540, 0 )
 script = ExtResource( 4 )
-office_clamp = 500
-pan_speed_x = 5.0
-pan_speed_y = 2.813
-list_offset_corrections = [ [ NodePath("ButtonExample/Area2D/CollisionShape2D"), 1.25, 70, 400, 0.07, 500, 1150 ] ]
-shader_path = NodePath("../Perspective_Shader")
+pan_speed = 5.0
+office_clamp = 500.0
+list_offset_corrections = [ [ NodePath("ButtonExample/Area2D/CollisionShape2D"), 1.0, 40, 500 ] ]
 
 [node name="ButtonExample" type="Sprite" parent="Office"]
 position = Vector2( 250, 750 )
@@ -278,7 +276,7 @@ scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 19 )
 
 [node name="Area2D" type="Area2D" parent="Office/ButtonExample"]
-position = Vector2( -150, 20 )
+position = Vector2( -200, 0 )
 scale = Vector2( 0.5, 0.5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Office/ButtonExample/Area2D"]
@@ -342,7 +340,7 @@ texture = ExtResource( 11 )
 centered = false
 vframes = 4
 region_enabled = true
-region_rect = Rect2( 2.47282, 0, 798, 2372 )
+region_rect = Rect2( 148.962, 0, 798, 2372 )
 
 [node name="room3" type="Sprite" parent="Camera_Elements/Cam_Rooms"]
 visible = false
@@ -351,7 +349,7 @@ texture = ExtResource( 14 )
 centered = false
 vframes = 2
 region_enabled = true
-region_rect = Rect2( 268, 0, 798, 1186 )
+region_rect = Rect2( 208.371, 0, 798, 1186 )
 
 [node name="room4" type="Sprite" parent="Camera_Elements/Cam_Rooms"]
 visible = false
@@ -360,7 +358,7 @@ texture = ExtResource( 10 )
 centered = false
 vframes = 2
 region_enabled = true
-region_rect = Rect2( 176.194, 0, 798, 1186 )
+region_rect = Rect2( 29.7045, 0, 798, 1186 )
 
 [node name="Cam_Buttons" type="Node2D" parent="Camera_Elements"]
 z_index = 19
@@ -420,7 +418,7 @@ mouse_filter = 2
 modulate = Color( 1, 1, 1, 0.235294 )
 position = Vector2( 361, 147.1 )
 frames = SubResource( 3 )
-frame = 3
+frame = 2
 speed_scale = 5.0
 playing = true
 centered = false
