@@ -1,7 +1,7 @@
 [gd_scene load_steps=52 format=3 uid="uid://cthhku8fsrdeq"]
 
 [ext_resource type="Texture2D" uid="uid://ce3drug37ontk" path="res://Sprites/Office/office.png" id="1_nilh1"]
-[ext_resource type="Script" path="res://Scripts/Night/office_scroll.gd" id="2_okpib"]
+[ext_resource type="Script" path="res://Scripts/Night/office_scroll_simple.gd" id="2_drlx7"]
 [ext_resource type="Texture2D" uid="uid://db8golpcs1uhb" path="res://icon.png" id="3_dpgb6"]
 [ext_resource type="Shader" path="res://Shaders/equirectangular_perspective.gdshader" id="3_t06hd"]
 [ext_resource type="Script" path="res://Scripts/Night/Camera/tablet_button.gd" id="4_0ml6l"]
@@ -21,7 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://kfas5oiik2vw" path="res://Sprites/HUD/cam_bmap.png" id="15_yqxwu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a0qos"]
-size = Vector2(250, 390)
+size = Vector2(380, 380)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_b5glu"]
 atlas = ExtResource("4_q88ar")
@@ -347,12 +347,10 @@ position = Vector2(0, -200)
 texture = ExtResource("1_nilh1")
 centered = false
 offset = Vector2(-540, 0)
-script = ExtResource("2_okpib")
+script = ExtResource("2_drlx7")
+pan_speed = 5.0
 office_clamp = 500
-pan_speed_x = 5.0
-pan_speed_y = 2.813
-list_offset_corrections = [[NodePath("ButtonExample/Area2D/CollisionShape2D"), 2.5, 70, 200, 0.14, 500, 575]]
-shader_path = NodePath("../Perspective_Shader")
+list_offset_corrections = [[NodePath("ButtonExample/Area2D/CollisionShape2D"), 2.0, 80, 250]]
 
 [node name="ButtonExample" type="Sprite2D" parent="Office"]
 position = Vector2(250, 750)
@@ -360,7 +358,7 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("3_dpgb6")
 
 [node name="Area2D" type="Area2D" parent="Office/ButtonExample"]
-position = Vector2(-150, 20)
+position = Vector2(-200, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Office/ButtonExample/Area2D"]
 z_index = 50
