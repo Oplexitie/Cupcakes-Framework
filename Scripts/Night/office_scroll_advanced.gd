@@ -19,11 +19,11 @@ var pan_pos_y : float = 0.0
 
 func _ready():
 	# Get vertical and horizontal window size
-	var view_size : Vector2 = Vector2(get_viewport().size.x, get_viewport().size.y)
+	var view_size : Vector2 = Vector2(get_viewport().content_scale_size.x, get_viewport().content_scale_size.y)
 	# The border correcters are made to fix a 1 pixel issue in the code when moving the cursor
 	# all the way to the Right and the Bottom of the screen
-	var border_correcter_x : float = 1/(1920/view_size.x)
-	var border_correcter_y : float = 1/(1080/view_size.y)
+	var border_correcter_x : float = 1/(get_viewport().size.x/view_size.x)
+	var border_correcter_y : float = 1/(get_viewport().size.y/view_size.y)
 
 	# This calculates the area where the cursor needs to be to move the view
 	border_distance[0][0] = view_size.x / 5 # To the Left
