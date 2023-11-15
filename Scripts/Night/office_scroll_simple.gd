@@ -15,7 +15,7 @@ func _ready():
 	var view_size_x : float = get_viewport().size.x
 	# The border correcters are made to fix a 1 pixel issue in the code when moving the cursor
 	# all the way to the Right of the screen
-	var border_correcter_x : float = 1/(1920/view_size_x)
+	var border_correcter_x : float = 1/(OS.get_window_size().x/view_size_x)
 	
 	# This calculates the area where the cursor needs to be to move the view
 	border_distance[0] = view_size_x / 5 # To the Left
