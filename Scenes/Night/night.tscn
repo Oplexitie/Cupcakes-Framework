@@ -518,9 +518,11 @@ libraries = {
 }
 
 [node name="AnimationTree" type="AnimationTree" parent="Camera_Elements"]
+libraries = {
+"": SubResource("AnimationLibrary_gkfmd")
+}
 tree_root = ExtResource("14_spxkt")
 anim_player = NodePath("../AnimationPlayer")
-active = true
 parameters/Add2/add_amount = 1.0
 
 [node name="CharacterAI" type="Node2D" parent="."]
