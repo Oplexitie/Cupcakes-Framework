@@ -1,11 +1,11 @@
 extends Sprite
 
-export var pan_speed : float
-export var office_clamp : int
+export var pan_speed : float = 5
+export var office_clamp : int = 500
 # An export made for objects that need a slight offset due to the equirectangular shader (most notably hitboxes for buttons)
 # Reminder that objects need to be an Array of an Array to work
 # [NodePath, PanOffsetSpeed_x(int), SpeedClamp_x(int), SizeClamp_x(int)]
-export var list_offset_corrections : Array
+export var list_offset_corrections : Array = []
 
 # border_distance[0] is for the left border and border_distance[1] is for the right border
 var border_distance : Array = [0,0]
