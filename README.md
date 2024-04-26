@@ -9,9 +9,10 @@
 A Five Nights at Freddy's ( or FNAF ) framework made for Godot 3, with a [Godot 4 version also available](https://github.com/Oplexitie/Cupcakes-Framework/tree/main).
 
 This framework only contains the very basic nescessities to build your FNAF inspired game.
-As such I will not be adding any features that are :
-  - A - Very easy to make on your own
-  - B - Not necessary for a FNAF like game
+As such I will not be adding any features that :
+  - A - Are very easy to make on your own
+  - B - Are not necessary for a FNAF like game
+  - C - Make the project a convoluted mess
 
 Also, there's the [CF-Example-Project](https://github.com/Oplexitie/CF-Example-Project/tree/main) that was made using this framework that can be used as a reference.
 
@@ -19,17 +20,14 @@ Also, there's the [CF-Example-Project](https://github.com/Oplexitie/CF-Example-P
 
 - Office
 	- A simple scrolling system where the speed is based on how close your mouse is to the screens edge.
- 	- A more advanced system with the ability to scroll up and down (harder than it sounds with the shader)
 	- An equirectangular perspective shader ( like the one seen in [Five Nights at Candy's Remastered](https://gamejolt.com/games/five-nights-at-candy-s-remastered/426659) )
 - Camera System
 	- A simple camera system that can be easily expanded to include more rooms
   - A flip up and down camera animation that won't break when spammed !
   - Camera movement ( like in FNAF 1 )
-  - Support for smaller cameras while still supporting camera movement ( thanks to Godot's image region system )
-  - Support for animated images on the camera ( via the AnimationPlayer node )
 - Character AI ( no Jumpscares )
   - AI system faithful to the original FNAF games
-  - AI difficutly based on a scale from 0 to 20 ( basically Custom Night )
+  - AI difficutly based on a scale from 0 to 20 ( for Custom Night )
   - Custom character states for alternate poses on Cameras
  
  ## Other info
