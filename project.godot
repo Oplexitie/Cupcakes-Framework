@@ -11,12 +11,8 @@ config_version=4
 [application]
 
 config/name="Cupcakes Framework"
-run/main_scene="res://Scenes/Night/night.tscn"
+run/main_scene="res://Scenes/Nights/nights.tscn"
 config/icon="res://icon.png"
-
-[autoload]
-
-Global="*res://Scripts/Autoload/Global.gd"
 
 [display]
 
