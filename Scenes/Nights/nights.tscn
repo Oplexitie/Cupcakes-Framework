@@ -337,9 +337,9 @@ _data = {
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_kco4d"]
 shader = ExtResource("20_obh0f")
-shader_parameter/yaxis = 0.0
-shader_parameter/fov = Vector2(0.37, 0.37)
-shader_parameter/stretch = Vector2(58, 54)
+shader_parameter/pitch = null
+shader_parameter/fov = 0.32
+shader_parameter/stretch = Vector2(54, 27)
 
 [node name="Nights" type="Node2D"]
 
@@ -352,7 +352,7 @@ texture = ExtResource("2_umi2k")
 centered = false
 offset = Vector2(-540, 0)
 script = ExtResource("3_ejiio")
-item_offsets = [[NodePath("ButtonExample/Area2D"), 60, -800, 0], [NodePath("ButtonExample2/Area2D"), -40, -50, 800], [NodePath("ButtonExample3/Area2D"), 0, -40, -40]]
+item_offsets = [[NodePath("ButtonExample/Area2D"), 100, -800, -50], [NodePath("ButtonExample2/Area2D"), -60, 0, 800], [NodePath("ButtonExample3/Area2D"), -450, -400, -40]]
 
 [node name="ButtonExample" type="Sprite2D" parent="OfficeElements/Office"]
 position = Vector2(250, 750)

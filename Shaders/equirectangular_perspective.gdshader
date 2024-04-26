@@ -2,9 +2,18 @@ shader_type canvas_item;
 
 const float PI_TWO = PI * 2.0;
 
-uniform float yaxis;   
-uniform vec2 fov = vec2(0.37,0.37);
-uniform vec2 stretch = vec2(58.0, 54.0);
+// Can be used to make look up and down mechanic
+uniform float pitch;
+//
+// To get the FOV:
+// FOV = viewport_size * ( 1 / ( 360 / full_latitude_or_longitude ) ) / office_image_size
+//
+// The latitude and longitude of your equirectangular camera
+// (in your modeling software of choice) must be identical for this to work properly
+//
+uniform float fov = 0.32;
+// Stretch the screen to your needs after entering your FOV
+uniform vec2 stretch = vec2(54.0, 27.0);
 
 uniform sampler2D SCREEN_TEXTURE : hint_screen_texture;
 
@@ -18,8 +27,8 @@ void fragment(){
 	float set = sqrt(uv.x * uv.x + uv.y * uv.y);
 	float atset = atan(set), siatset = sin(atset), cosset = cos(atset);
 	
-	float long = atan(uv.x * siatset , (set * cos(yaxis) * cosset - uv.y * sin(yaxis) * siatset)) / (PI_TWO) + 0.5;
-	float lati = asin((cosset * sin(yaxis)) + (uv.y * siatset * cos(yaxis)) / set) / PI + 0.5;
+	float long = atan(uv.x * siatset , (set * cos(pitch) * cosset - uv.y * sin(pitch) * siatset)) / (PI_TWO) + 0.5;
+	float lati = asin((cosset * sin(pitch)) + (uv.y * siatset * cos(pitch)) / set) / PI + 0.5;
 	vec2 pers = vec2(long,lati);
 	
 	vec2 imst;

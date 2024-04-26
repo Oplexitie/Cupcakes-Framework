@@ -1,7 +1,7 @@
 extends Sprite2D
 
 @export var scroll_speed : float = 3
-@export var office_clamp : int = 500
+@export var office_clamp : int = 650
 # An export made for objects hitboxes that need an offset due to the equirectangular shader
 # Reminder that for each object there needs to be an Array of an Array to work
 # [NodePath, EdgeSpeed_x(int), SpeedClamp_left(int), SizeClamp_right(int)]
