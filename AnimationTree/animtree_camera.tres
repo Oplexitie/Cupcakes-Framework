@@ -34,4 +34,4 @@ nodes/CameraScroll/position = Vector2( 260, 180 )
 nodes/StaticState/node = SubResource( 16 )
 nodes/StaticState/position = Vector2( 260, -60 )
 nodes/output/position = Vector2( 680, 80 )
-node_connections = [ "Add2", 0, "StaticState", "Add2", 1, "CameraScroll", "output", 0, "Add2" ]
+node_connections = [ "output", 0, "Add2", "Add2", 0, "StaticState", "Add2", 1, "CameraScroll" ]
