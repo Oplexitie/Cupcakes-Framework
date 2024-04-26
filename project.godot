@@ -12,19 +12,15 @@ config_version=5
 
 config/name="Cupcakes Framework"
 config/tags=PackedStringArray("fnaf", "framework")
-run/main_scene="res://Scenes/Night/night.tscn"
+run/main_scene="res://Scenes/Nights/nights.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://icon.png"
-
-[autoload]
-
-Global="*res://Scripts/Autoload/Global.gd"
 
 [display]
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
-window/size/mode=4
+window/size/mode=3
 window/size/resizable=false
 window/stretch/mode="viewport"
 window/stretch/aspect="ignore"

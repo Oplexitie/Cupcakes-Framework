@@ -1,24 +1,20 @@
 extends Node2D
 
+@export var camera_path : NodePath
+@export var cam_feed_path : NodePath
+
 var char_levels : Array = [20,20]		# Character levels [character1,character2]
 var char_pos : Array = [0,0]	# Character positions [character1,character2]
 
-@onready var cam_elements : Node2D = $"../Camera_Elements"
-@onready var room_updater : Node2D = $"../Camera_Elements/Cam_Rooms"
+@onready var camera : Node2D = get_node(camera_path)
+@onready var cam_feed: Node2D = get_node(cam_feed_path)
 
 func _ready():
 	randomize()
 
-func _char_timer_timeout(extra_arg_0 : int):
-	# This function triggers when one of the character timers is done, and handles
-	# everything related to character movement
-	if (char_levels[extra_arg_0] >= randi()%20+1):
-		char_pos[extra_arg_0] +=1
-		update_ai_pos(extra_arg_0)
-
-func update_ai_pos(animatronic : int):
+func update_ai_pos(character : int):
 	# This function updates the characters position based on the 'char_pos' value
-	match animatronic:
+	match character:
 		0:
 			match char_pos[0]:
 				0:
@@ -43,21 +39,26 @@ func update_ai_pos(animatronic : int):
 					update_ai_pos(1)
 
 func ai_move(from_room : int, to_room : int, character : int, checknextroom : bool = false, newstate : int = 1):
-	# (1) This function handles the movement from one room to another or changing the characters
-	# state in a room (handled by newstate), while also playing the boot_static animation
-	# (2) You can also have the animatronic check the next room it's going to, to see if it's empty
-	# if it is, it'll go into the room, otherwise it won't
-	
-	if(checknextroom == true):
-		if(room_updater.room_content_array[to_room]==[0,0,0,0,0,0]):
+	# (1) This function handles character movement from one room to another or changing the
+	# characters state in a room (handled by newstate).
+	# (2) You can also have the character check the next room it's going to, to see if it's empty,
+	# this will determine whether the character enters the room (when false) or not (when true).
+	if checknextroom:
+		if cam_feed.room_visitors[to_room]==[0,0,0,0,0,0]:
 			pass
 		else:
 			char_pos[character]-=1
 			return
 			
-	room_updater.room_content_array[from_room][character]=0
-	room_updater.room_content_array[to_room][character]=newstate
-	if cam_elements.curr_cam ==  from_room or cam_elements.curr_cam ==  to_room:
-		cam_elements.tree_state_machine.start("static_boot")
-		cam_elements.animtree.advance(0)	# this fixes a problem where the static plays 1 frame too late
-	room_updater.update_rooms([from_room,to_room])
+	cam_feed.room_visitors[from_room][character]=0
+	cam_feed.room_visitors[to_room][character]=newstate
+	if camera.current_feed ==  from_room or camera.current_feed ==  to_room:
+		camera.tree_state_machine.start("static_boot")
+		camera.animtree.advance(0)	# this fixes a problem where the static plays 1 frame too late
+	cam_feed.update_rooms([from_room,to_room])
+
+func _char_timer_timeout(character : int):
+	# Triggers when one of the character timers is done, and handles character movement/difficutly
+	if char_levels[character] >= randi()%20+1:
+		char_pos[character] +=1
+		update_ai_pos(character)

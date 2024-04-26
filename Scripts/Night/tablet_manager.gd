@@ -1,0 +1,46 @@
+extends Node2D
+
+@export var off_scroll_path : NodePath
+@export var camera_path : NodePath
+
+var is_tablet_up : bool = false
+var tweener : Tween
+
+@onready var tablet_button : TextureButton = $Tablet_Button
+@onready var tablet_sprite : AnimatedSprite2D = $Tablet_Sprite
+@onready var off_scroll : Node2D = get_node(off_scroll_path)
+@onready var camera : Node2D = get_node(camera_path)
+
+func _on_click():
+	# This function handles if the tablet animation should be played fowards or backwards
+	if is_tablet_up == false:
+		tablet_sprite.play("lift")
+		tablet_sprite.visible = true
+		off_scroll.can_move = false
+	else:
+		tablet_sprite.play_backwards("lift")
+		tablet_button.disabled = true
+		camera.visible = false
+
+func _tablet_animation_finished():
+	# At the end of the tablet animation, this activates and disables nodes
+	if is_tablet_up == false:
+		is_tablet_up = true
+		camera.visible = true
+		camera.tree_state_machine.start("static_boot")
+		camera.animtree.advance(0)	# this fixes a problem where the static plays 1 frame too late
+	else:
+		is_tablet_up = false
+		tablet_sprite.visible = false
+		off_scroll.can_move = true
+		tablet_button.disabled = false
+
+func on_mouse_enter():
+	if tweener: tweener.kill()
+	tweener = create_tween()
+	tweener.tween_property(tablet_button, "modulate:a", 0.5, 0.3)
+
+func on_mouse_exit():
+	if tweener: tweener.kill()
+	tweener = create_tween()
+	tweener.tween_property(tablet_button, "modulate:a", 0.2, 0.3)
