@@ -14,7 +14,7 @@ config/name="Cupcakes Framework"
 config/tags=PackedStringArray("fnaf", "framework")
 run/main_scene="res://Scenes/Nights/nights.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
-config/icon="res://icon.png"
+config/icon="res://icon.svg"
 
 [display]
 

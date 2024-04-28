@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scripts/Nights/Office/office_manager.gd" id="1_pp75g"]
 [ext_resource type="Texture2D" uid="uid://ce3drug37ontk" path="res://Sprites/Office/office.png" id="2_umi2k"]
 [ext_resource type="Script" path="res://Scripts/Nights/Office/office_scrolling.gd" id="3_ejiio"]
-[ext_resource type="Texture2D" uid="uid://db8golpcs1uhb" path="res://icon.png" id="4_lh8ox"]
+[ext_resource type="Texture2D" uid="uid://2hwki8rcehtm" path="res://icon.svg" id="4_lu3yo"]
 [ext_resource type="Script" path="res://Scripts/Nights/tablet_manager.gd" id="5_h71ec"]
 [ext_resource type="Texture2D" uid="uid://bwp12gkddlnns" path="res://Sprites/Tablet/tablet_anim.png" id="6_1oog2"]
 [ext_resource type="Texture2D" uid="uid://nhd5vjnlj5y8" path="res://Sprites/HUD/cam_barbutton.png" id="7_vtngn"]
@@ -357,7 +357,7 @@ item_offsets = [[NodePath("ButtonExample/Area2D"), 100, -800, -50], [NodePath("B
 [node name="ButtonExample" type="Sprite2D" parent="OfficeElements/Office"]
 position = Vector2(250, 750)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("4_lh8ox")
+texture = ExtResource("4_lu3yo")
 
 [node name="Area2D" type="Area2D" parent="OfficeElements/Office/ButtonExample"]
 
@@ -369,7 +369,7 @@ shape = SubResource("RectangleShape2D_a0qos")
 [node name="ButtonExample2" type="Sprite2D" parent="OfficeElements/Office"]
 position = Vector2(1675, 750)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("4_lh8ox")
+texture = ExtResource("4_lu3yo")
 
 [node name="Area2D" type="Area2D" parent="OfficeElements/Office/ButtonExample2"]
 
@@ -381,7 +381,7 @@ shape = SubResource("RectangleShape2D_a0qos")
 [node name="ButtonExample3" type="Sprite2D" parent="OfficeElements/Office"]
 position = Vector2(800, 750)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("4_lh8ox")
+texture = ExtResource("4_lu3yo")
 
 [node name="Area2D" type="Area2D" parent="OfficeElements/Office/ButtonExample3"]
 
