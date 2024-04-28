@@ -390,13 +390,13 @@ z_index = 50
 position = Vector2(30, 34)
 shape = SubResource("RectangleShape2D_a0qos")
 
-[node name="TabletElements" type="Node2D" parent="."]
+[node name="TabletElements" type="Node2D" parent="." node_paths=PackedStringArray("off_scroll", "camera")]
 z_index = 15
 position = Vector2(960, 540)
 scale = Vector2(1.5, 1.5)
 script = ExtResource("5_h71ec")
-off_scroll_path = NodePath("../OfficeElements/Office")
-camera_path = NodePath("../CameraElements")
+off_scroll = NodePath("../OfficeElements/Office")
+camera = NodePath("../CameraElements")
 
 [node name="Tablet_Sprite" type="AnimatedSprite2D" parent="TabletElements"]
 visible = false
@@ -552,11 +552,11 @@ tree_root = ExtResource("18_itk3u")
 anim_player = NodePath("../AnimationPlayer")
 parameters/Add2/add_amount = 1.0
 
-[node name="CharacterAI" type="Node2D" parent="."]
+[node name="CharacterAI" type="Node2D" parent="." node_paths=PackedStringArray("camera", "cam_feed")]
 visible = false
 script = ExtResource("19_nqdqv")
-camera_path = NodePath("../CameraElements")
-cam_feed_path = NodePath("../CameraElements/CamRooms")
+camera = NodePath("../CameraElements")
+cam_feed = NodePath("../CameraElements/CamRooms")
 
 [node name="GreenTimer" type="Timer" parent="CharacterAI"]
 wait_time = 3.02

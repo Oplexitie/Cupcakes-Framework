@@ -1,5 +1,7 @@
 extends Node2D
 
+class_name CameraUpdater
+
 # Each room has an array containing all of characters postitions, each index corresponds to a character
 # 0 = Empty ; 1 = Character in Room ; Other = Possible special poses for Characters in Room
 var room_visitors : Array = [[1,1],[0,0],[0,0],[0,0]]

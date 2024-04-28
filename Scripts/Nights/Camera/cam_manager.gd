@@ -1,5 +1,7 @@
 extends Node2D
 
+class_name CameraManager
+
 var current_feed : int = 0
 var all_feeds : Array = []
 var all_buttons : Array = []

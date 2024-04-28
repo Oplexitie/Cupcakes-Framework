@@ -1,13 +1,10 @@
 extends Node2D
 
-@export var camera_path : NodePath
-@export var cam_feed_path : NodePath
+@export var camera : CameraManager
+@export var cam_feed : CameraUpdater
 
 var char_levels : Array = [20,20]		# Character difficulty levels [character1,character2]
 var char_pos : Array = [0,0]	# Character positions [character1,character2]
-
-@onready var camera : Node2D = get_node(camera_path)
-@onready var cam_feed: Node2D = get_node(cam_feed_path)
 
 func _ready():
 	randomize()

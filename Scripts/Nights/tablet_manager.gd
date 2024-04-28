@@ -1,15 +1,13 @@
 extends Node2D
 
-@export var off_scroll_path : NodePath
-@export var camera_path : NodePath
+@export var off_scroll : OfficeScroll
+@export var camera : CameraManager
 
 var is_tablet_up : bool = false
 var tweener : Tween
 
 @onready var tablet_button : TextureButton = $Tablet_Button
 @onready var tablet_sprite : AnimatedSprite2D = $Tablet_Sprite
-@onready var off_scroll : Node2D = get_node(off_scroll_path)
-@onready var camera : Node2D = get_node(camera_path)
 
 func _on_click():
 	# This function handles if the tablet animation should be played fowards or backwards

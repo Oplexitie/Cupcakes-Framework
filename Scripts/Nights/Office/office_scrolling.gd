@@ -1,5 +1,7 @@
 extends Sprite2D
 
+class_name OfficeScroll
+
 @export var scroll_speed : float = 3
 @export var office_clamp : int = 650
 # An export made for objects hitboxes that need an offset due to the equirectangular shader
