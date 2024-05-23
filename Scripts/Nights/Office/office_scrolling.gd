@@ -4,7 +4,7 @@ class_name OfficeScroll
 
 const SCROLL_SMOOTHING : int = 12 # Lower for smoother scrolling
 const SCROLL_SPEED : float = 0.07 # Lower for faster scrolling
-const SCROLL_CLAMP : int = 650 # Lower for faster scrolling
+const SCROLL_CLAMP : int = 650 # Clamps office scrolling on both sides
 
 # An export made for objects hitboxes that need an offset due to the equirectangular shader
 # Reminder that for each object there needs to be an Array of an Array to work
