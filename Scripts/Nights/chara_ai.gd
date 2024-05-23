@@ -44,12 +44,11 @@ func ai_move(from_room : int, to_room : int, character : int, checknextroom : bo
 	# (2) You can also have the character check the next room it's going to, to see if it's empty,
 	# this will determine whether the character enters the room (when false) or not (when true).
 	if checknextroom:
-		if cam_feed.room_visitors[to_room]==[0,0]:
-			pass
-		else:
+		# If used make sure the array size is the same as room_visitors
+		if cam_feed.room_visitors[to_room] != [0,0]:
 			char_pos[character]-=1
 			return
-			
+	
 	cam_feed.room_visitors[from_room][character]=0
 	cam_feed.room_visitors[to_room][character]=newstate
 	if camera.current_feed == from_room or camera.current_feed == to_room:
