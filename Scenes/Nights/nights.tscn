@@ -368,7 +368,7 @@ texture = ExtResource( 14 )
 centered = false
 vframes = 4
 region_enabled = true
-region_rect = Rect2( 125.386, 0, 798, 2372 )
+region_rect = Rect2( 93.905, 0, 798, 2372 )
 
 [node name="room3" type="Sprite" parent="CameraElements/CamRooms"]
 visible = false
@@ -377,7 +377,7 @@ texture = ExtResource( 12 )
 centered = false
 vframes = 2
 region_enabled = true
-region_rect = Rect2( 53.2809, 0, 798, 1186 )
+region_rect = Rect2( 263.428, 0, 798, 1186 )
 
 [node name="room4" type="Sprite" parent="CameraElements/CamRooms"]
 visible = false
@@ -386,7 +386,7 @@ texture = ExtResource( 15 )
 centered = false
 vframes = 2
 region_enabled = true
-region_rect = Rect2( 231.948, 0, 798, 1186 )
+region_rect = Rect2( 84.7617, 0, 798, 1186 )
 
 [node name="CamButtons" type="Node2D" parent="CameraElements"]
 z_index = 19
@@ -447,7 +447,6 @@ mouse_filter = 2
 modulate = Color( 1, 1, 1, 0.235294 )
 position = Vector2( 361, 147.1 )
 frames = SubResource( 3 )
-frame = 2
 speed_scale = 5.0
 playing = true
 centered = false
@@ -479,7 +478,6 @@ parameters/StaticState/playback = SubResource( 18 )
 [node name="CharacterAI" type="Node2D" parent="."]
 visible = false
 script = ExtResource( 2 )
-camera_path = NodePath("../CameraElements")
 cam_feed_path = NodePath("../CameraElements/CamRooms")
 
 [node name="RedTimer" type="Timer" parent="CharacterAI"]
