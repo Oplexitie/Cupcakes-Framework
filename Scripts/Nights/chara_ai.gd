@@ -1,6 +1,5 @@
 extends Node2D
 
-@export var camera : CameraManager
 @export var cam_feed : CameraUpdater
 
 var char_levels : Array = [20,20]		# Character difficulty levels [character1,character2]
@@ -48,9 +47,7 @@ func ai_move(from_room : int, to_room : int, character : int, checknextroom : bo
 	
 	cam_feed.room_visitors[from_room][character]=0
 	cam_feed.room_visitors[to_room][character]=newstate
-	if camera.current_feed == from_room or camera.current_feed == to_room:
-		camera.tree_state_machine.start("static_boot")
-		camera.animtree.advance(0)	# this fixes a problem where the static plays 1 frame too late
+	
 	cam_feed.update_rooms([from_room,to_room])
 
 func _char_timer_timeout(character : int):

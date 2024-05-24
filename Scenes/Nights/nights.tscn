@@ -549,10 +549,9 @@ tree_root = ExtResource("18_itk3u")
 anim_player = NodePath("../AnimationPlayer")
 parameters/Add2/add_amount = 1.0
 
-[node name="CharacterAI" type="Node2D" parent="." node_paths=PackedStringArray("camera", "cam_feed")]
+[node name="CharacterAI" type="Node2D" parent="." node_paths=PackedStringArray("cam_feed")]
 visible = false
 script = ExtResource("19_nqdqv")
-camera = NodePath("../CameraElements")
 cam_feed = NodePath("../CameraElements/CamRooms")
 
 [node name="GreenTimer" type="Timer" parent="CharacterAI"]
