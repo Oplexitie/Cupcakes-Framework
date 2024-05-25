@@ -554,12 +554,12 @@ visible = false
 script = ExtResource("19_nqdqv")
 cam_feed = NodePath("../CameraElements/CamRooms")
 
-[node name="GreenTimer" type="Timer" parent="CharacterAI"]
-wait_time = 3.02
-autostart = true
-
 [node name="RedTimer" type="Timer" parent="CharacterAI"]
 wait_time = 4.97
+autostart = true
+
+[node name="GreenTimer" type="Timer" parent="CharacterAI"]
+wait_time = 3.02
 autostart = true
 
 [node name="PerspectiveShader" type="ColorRect" parent="."]
@@ -579,5 +579,5 @@ mouse_filter = 2
 [connection signal="pressed" from="CameraElements/CamButtons/room_2" to="CameraElements" method="_on_click_cam" binds= [1]]
 [connection signal="pressed" from="CameraElements/CamButtons/room_3" to="CameraElements" method="_on_click_cam" binds= [2]]
 [connection signal="pressed" from="CameraElements/CamButtons/room_4" to="CameraElements" method="_on_click_cam" binds= [3]]
-[connection signal="timeout" from="CharacterAI/GreenTimer" to="CharacterAI" method="_char_timer_timeout" binds= [1]]
 [connection signal="timeout" from="CharacterAI/RedTimer" to="CharacterAI" method="_char_timer_timeout" binds= [0]]
+[connection signal="timeout" from="CharacterAI/GreenTimer" to="CharacterAI" method="_char_timer_timeout" binds= [1]]

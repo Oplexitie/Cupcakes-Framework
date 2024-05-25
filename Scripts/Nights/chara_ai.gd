@@ -52,6 +52,6 @@ func ai_move(from_room : int, to_room : int, character : int, checknextroom : bo
 
 func _char_timer_timeout(character : int):
 	# Triggers when one of the character timers is done, and handles character movement/difficutly
-	if char_levels[character] >= randi()%20+1:
+	if char_levels[character] >= randi_range(0,20):
 		char_pos[character] +=1
 		update_ai_pos(character)
