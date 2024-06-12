@@ -32,5 +32,5 @@ If you encounter any bugs with an **unmodified version of the framework**, pleas
 If you want to contribute to the project, do a pull request on Github and I'll take a look at it.
 
 The Cupcakes Framework is licensed under the MIT license.
-Meaning that you can do whatever you want as long as credit me, and include the MIT liscence contained within this repository with your software/source.
+Meaning that you can do whatever you want as long as credit me, and include the MIT license contained within this repository with your software/source.
 Reminder, this is my understanding of the MIT license. I'm not a lawyer, do your own research.
