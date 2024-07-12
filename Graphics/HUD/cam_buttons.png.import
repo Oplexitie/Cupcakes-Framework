@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/cam_buttons.png-13b0b51f44f6dac008d5769b5a89cadd.stex"
+path="res://.import/cam_buttons.png-343e3fc46859277aff770d015c9abead.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/HUD/cam_buttons.png"
-dest_files=[ "res://.import/cam_buttons.png-13b0b51f44f6dac008d5769b5a89cadd.stex" ]
+source_file="res://Graphics/HUD/cam_buttons.png"
+dest_files=[ "res://.import/cam_buttons.png-343e3fc46859277aff770d015c9abead.stex" ]
 
 [params]
 

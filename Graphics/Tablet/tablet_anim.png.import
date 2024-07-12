@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/tablet_anim.png-35841df2799e9782d2aa22f6a251c238.stex"
+path="res://.import/tablet_anim.png-cf2d617fbf347890eb4b5dff9fcc9a3a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Tablet/tablet_anim.png"
-dest_files=[ "res://.import/tablet_anim.png-35841df2799e9782d2aa22f6a251c238.stex" ]
+source_file="res://Graphics/Tablet/tablet_anim.png"
+dest_files=[ "res://.import/tablet_anim.png-cf2d617fbf347890eb4b5dff9fcc9a3a.stex" ]
 
 [params]
 
