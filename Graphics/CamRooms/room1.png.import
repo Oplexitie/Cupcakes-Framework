@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/room1.png-d0beedcd9a7002a1b8a5835cb1e597c6.stex"
+path="res://.import/room1.png-d5aced43e04a76e3d89c371e4c04a0ed.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/CamRooms/room1.png"
-dest_files=[ "res://.import/room1.png-d0beedcd9a7002a1b8a5835cb1e597c6.stex" ]
+source_file="res://Graphics/CamRooms/room1.png"
+dest_files=[ "res://.import/room1.png-d5aced43e04a76e3d89c371e4c04a0ed.stex" ]
 
 [params]
 
