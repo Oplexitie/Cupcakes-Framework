@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://8qq5rkryuskp"
-path="res://.godot/imported/cam_buttons.png-13b0b51f44f6dac008d5769b5a89cadd.ctex"
+path="res://.godot/imported/cam_buttons.png-343e3fc46859277aff770d015c9abead.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/HUD/cam_buttons.png"
-dest_files=["res://.godot/imported/cam_buttons.png-13b0b51f44f6dac008d5769b5a89cadd.ctex"]
+source_file="res://Graphics/HUD/cam_buttons.png"
+dest_files=["res://.godot/imported/cam_buttons.png-343e3fc46859277aff770d015c9abead.ctex"]
 
 [params]
 
