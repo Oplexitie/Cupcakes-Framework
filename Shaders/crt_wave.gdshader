@@ -1,11 +1,11 @@
 shader_type canvas_item;
 
 uniform float roll_speed = 8.0;
-uniform float roll_size : hint_range(0.0, 100.0) = 15.0;
-uniform float roll_variation : hint_range(0.1, 5.0) = 1.8;
-uniform float distort_intensity : hint_range(0.0, 0.2) = 0.05;
+uniform float roll_size: hint_range(0.0, 100.0) = 15.0;
+uniform float roll_variation: hint_range(0.1, 5.0) = 1.8;
+uniform float distort_intensity: hint_range(0.0, 0.2) = 0.05;
 
-uniform float noise_opacity : hint_range(0.0, 1.0) = 0.4;
+uniform float noise_opacity: hint_range(0.0, 1.0) = 0.4;
 
 void fragment()
 {
