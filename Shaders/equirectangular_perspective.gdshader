@@ -13,9 +13,9 @@ uniform float pitch;
 //
 uniform float fov = 0.32;
 // Stretch the screen to your needs after entering your FOV
-uniform vec2 stretch = vec2(54.0, 27.0);
+uniform vec2 stretch = vec2(54.0,27.0);
 
-uniform sampler2D SCREEN_TEXTURE : hint_screen_texture;
+uniform sampler2D SCREEN_TEXTURE: hint_screen_texture;
 
 float fit_to_img(float full_lat, float str){
 	return(full_lat/str);

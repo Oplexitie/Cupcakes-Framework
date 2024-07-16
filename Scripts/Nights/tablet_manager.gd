@@ -1,13 +1,13 @@
 extends Node2D
 
-@export var off_scroll : OfficeScroll
-@export var camera : CameraManager
+@export var off_scroll: OfficeScroll
+@export var camera: CameraManager
 
-var is_tablet_up : bool = false
-var tweener : Tween
+var is_tablet_up: bool = false
+var tweener: Tween
 
-@onready var tablet_button : TextureButton = $Tablet_Button
-@onready var tablet_sprite : AnimatedSprite2D = $Tablet_Sprite
+@onready var tablet_button: TextureButton = $Tablet_Button
+@onready var tablet_sprite: AnimatedSprite2D = $Tablet_Sprite
 
 func _on_click():
 	# This function handles if the tablet animation should be played fowards or backwards

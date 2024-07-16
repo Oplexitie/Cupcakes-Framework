@@ -2,11 +2,11 @@ extends Node2D
 
 class_name CameraManager
 
-var current_feed : int = 0
-var all_feeds : Array = []
-var all_buttons : Array = []
+var current_feed: int = 0
+var all_feeds: Array = []
+var all_buttons: Array = []
 
-@onready var animtree : AnimationTree = $AnimationTree
+@onready var animtree: AnimationTree = $AnimationTree
 @onready var tree_state_machine = animtree["parameters/StaticState/playback"]
 
 func _ready():
@@ -18,7 +18,7 @@ func _ready():
 		
 	$CamRooms.update_rooms([0,1,2,3])
 
-func _on_click_cam(to_feed : int):
+func _on_click_cam(to_feed: int):
 	# This handles camera switching, but blocks it when clicking the same camera button
 	if current_feed != to_feed:
 		tree_state_machine.start("static_boot")
