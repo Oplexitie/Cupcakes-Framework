@@ -1,16 +1,16 @@
 extends Node2D
 
-export var cam_feed_path : NodePath
+export var cam_feed_path: NodePath
 
-var char_levels : Array = [20,20]		# Character difficulty levels [character1,character2]
-var char_pos : Array = [0,0]	# Character positions [character1,character2]
+var char_levels: Array = [20,20]		# Character difficulty levels [character1,character2]
+var char_pos: Array = [0,0]	# Character positions [character1,character2]
 
 onready var cam_feed = get_node(cam_feed_path)
 
 func _ready():
 	randomize()
 
-func update_ai_pos(character : int):
+func update_ai_pos(character: int):
 	# This function updates the characters position based on the 'char_pos' value
 	match character:
 		0:
@@ -36,7 +36,7 @@ func update_ai_pos(character : int):
 					char_pos[1] = 0
 					update_ai_pos(1)
 
-func ai_move(from_room : int, to_room : int, character : int, checknextroom : bool = false, newstate : int = 1):
+func ai_move(from_room: int, to_room: int, character: int, checknextroom: bool = false, newstate: int = 1):
 	# (1) This function handles character movement from one room to another or changing the
 	# characters state in a room (handled by newstate).
 	# (2) You can also have the character check the next room it's going to, to see if it's empty,
@@ -52,7 +52,7 @@ func ai_move(from_room : int, to_room : int, character : int, checknextroom : bo
 	
 	cam_feed.update_rooms([from_room,to_room])
 
-func _char_timer_timeout(character : int):
+func _char_timer_timeout(character: int):
 	# Triggers when one of the character timers is done, and handles character movement/difficutly
 	if char_levels[character] >= randi()%20+1:
 		char_pos[character] +=1

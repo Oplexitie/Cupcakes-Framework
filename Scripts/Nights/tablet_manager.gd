@@ -1,14 +1,14 @@
 extends Node2D
 # warning-ignore-all:return_value_discarded
 
-export var off_scroll_path : NodePath
-export var camera_path : NodePath
+export var off_scroll_path: NodePath
+export var camera_path: NodePath
 
 var is_tablet_up : bool = false
 
-onready var tablet_button : TextureButton = $TabletButton/Button
-onready var tablet_sprite : AnimatedSprite = $TabletSprite
-onready var tweener : Tween = $Tween
+onready var tablet_button: TextureButton = $TabletButton/Button
+onready var tablet_sprite: AnimatedSprite = $TabletSprite
+onready var tweener: Tween = $Tween
 onready var off_scroll = get_node(off_scroll_path)
 onready var camera = get_node(camera_path)
 
