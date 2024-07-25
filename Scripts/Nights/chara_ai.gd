@@ -2,8 +2,8 @@ extends Node2D
 
 @export var cam_feed: CameraUpdater
 
-var char_levels: Array = [20,20]		# Character difficulty levels [character1,character2]
-var char_pos: Array = [0,0]	# Character positions [character1,character2]
+var char_levels: Array[int] = [20,20]		# Character difficulty levels [character1,character2]
+var char_pos: Array[int] = [0,0]	# Character positions [character1,character2]
 
 func _ready():
 	randomize()

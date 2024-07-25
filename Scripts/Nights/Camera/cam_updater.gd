@@ -4,11 +4,11 @@ class_name CameraUpdater
 
 # Each room has an array containing all of characters postitions, each index corresponds to a character
 # 0 = Empty ; 1 = Character in Room ; Other = Possible special poses for Characters in Room
-var room_visitors: Array = [[1,1],[0,0],[0,0],[0,0]]
+var room_visitors: Array[Array] = [[1,1],[0,0],[0,0],[0,0]]
 
 @onready var camera: Node2D = get_parent()
 
-func update_rooms(rooms_to_update: Array):
+func update_rooms(rooms_to_update: Array[int]):
 	# This handles the camera feeds based on the character positions
 	for i in rooms_to_update:
 		match i:

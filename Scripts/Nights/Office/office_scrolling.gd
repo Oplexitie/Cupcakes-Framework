@@ -9,7 +9,7 @@ const SCROLL_CLAMP: int = 650 # Clamps office scrolling on both sides
 # An export made for objects hitboxes that need an offset due to the equirectangular shader
 # Reminder that for each object there needs to be an Array of an Array to work
 # [NodePath, EdgeSpeed_x(int), SpeedClamp_left(int), SizeClamp_right(int)]
-@export var item_offsets: Array = []
+@export var item_offsets: Array[Array] = []
 
 var scroll_area: Dictionary = { "Left": 0, "Right": 0 }
 var can_move: bool = true

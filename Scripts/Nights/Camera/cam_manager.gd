@@ -3,8 +3,8 @@ extends Node2D
 class_name CameraManager
 
 var current_feed: int = 0
-var all_feeds: Array = []
-var all_buttons: Array = []
+var all_feeds: Array[Sprite2D] = []
+var all_buttons: Array[TextureButton] = []
 
 @onready var animtree: AnimationTree = $AnimationTree
 @onready var tree_state_machine = animtree["parameters/StaticState/playback"]
@@ -15,8 +15,13 @@ func _ready():
 		all_feeds.append(i)
 	for i in $CamButtons.get_children():
 		all_buttons.append(i)
-		
-	$CamRooms.update_rooms([0,1,2,3])
+	
+	# Gets the camera feed id's, then sets them up with the right frame
+	var rooms_to_setup : Array[int] = []
+	for i in all_feeds.size():
+		rooms_to_setup.append(i)
+	
+	$CamRooms.update_rooms(rooms_to_setup)
 
 func _on_click_cam(to_feed: int):
 	# This handles camera switching, but blocks it when clicking the same camera button
