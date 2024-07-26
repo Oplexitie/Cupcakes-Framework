@@ -1,35 +1,29 @@
-[gd_resource type="AnimationNodeBlendTree" load_steps=8 format=3 uid="uid://siq8sv1mpgct"]
+[gd_resource type="AnimationNodeBlendTree" load_steps=6 format=3 uid="uid://siq8sv1mpgct"]
 
 [sub_resource type="AnimationNodeAdd2" id="AnimationNodeAdd2_lqf0e"]
 
 [sub_resource type="AnimationNodeAnimation" id="11"]
 animation = &"cam_scroll"
 
-[sub_resource type="AnimationNodeAnimation" id="12"]
+[sub_resource type="AnimationNodeOneShot" id="AnimationNodeOneShot_8101j"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_wwwfo"]
 animation = &"static_boot"
 
-[sub_resource type="AnimationNodeAnimation" id="13"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ahawi"]
 animation = &"static_idle"
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="14"]
-switch_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="15"]
-
-[sub_resource type="AnimationNodeStateMachine" id="16"]
-states/static_boot/node = SubResource("12")
-states/static_boot/position = Vector2(380, 104)
-states/static_idle/node = SubResource("13")
-states/static_idle/position = Vector2(622, 62)
-transitions = ["static_boot", "static_idle", SubResource("14"), "static_idle", "static_boot", SubResource("15")]
-
 [resource]
-graph_offset = Vector2(-219.476, 27.2953)
+graph_offset = Vector2(-166.895, -51.2014)
 nodes/Add2/node = SubResource("AnimationNodeAdd2_lqf0e")
-nodes/Add2/position = Vector2(500, 60)
+nodes/Add2/position = Vector2(460, 20)
 nodes/CameraScroll/node = SubResource("11")
 nodes/CameraScroll/position = Vector2(260, 180)
-nodes/StaticState/node = SubResource("16")
-nodes/StaticState/position = Vector2(260, 40)
-nodes/output/position = Vector2(680, 80)
-node_connections = [&"Add2", 0, &"StaticState", &"Add2", 1, &"CameraScroll", &"output", 0, &"Add2"]
+nodes/OneShot/node = SubResource("AnimationNodeOneShot_8101j")
+nodes/OneShot/position = Vector2(260, -60)
+nodes/boot/node = SubResource("AnimationNodeAnimation_wwwfo")
+nodes/boot/position = Vector2(60, 60)
+nodes/idle/node = SubResource("AnimationNodeAnimation_ahawi")
+nodes/idle/position = Vector2(60, -80)
+nodes/output/position = Vector2(660, 80)
+node_connections = [&"Add2", 0, &"OneShot", &"Add2", 1, &"CameraScroll", &"OneShot", 0, &"idle", &"OneShot", 1, &"boot", &"output", 0, &"Add2"]

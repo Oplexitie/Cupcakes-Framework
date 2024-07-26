@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=3 uid="uid://cthhku8fsrdeq"]
+[gd_scene load_steps=55 format=3 uid="uid://cthhku8fsrdeq"]
 
 [ext_resource type="Script" path="res://Scripts/Nights/Office/office_manager.gd" id="1_pp75g"]
 [ext_resource type="Texture2D" uid="uid://ce3drug37ontk" path="res://Graphics/Office/office.png" id="2_umi2k"]
@@ -7,7 +7,8 @@
 [ext_resource type="Script" path="res://Scripts/Nights/tablet_manager.gd" id="5_h71ec"]
 [ext_resource type="Texture2D" uid="uid://bwp12gkddlnns" path="res://Graphics/Tablet/tablet_anim.png" id="6_1oog2"]
 [ext_resource type="Texture2D" uid="uid://nhd5vjnlj5y8" path="res://Graphics/HUD/cam_barbutton.png" id="7_vtngn"]
-[ext_resource type="Script" path="res://Scripts/Nights/Camera/Setups/default_setup.gd" id="8_a3j08"]
+[ext_resource type="Script" path="res://Scripts/Nights/Camera/cam_manager.gd" id="8_a3j08"]
+[ext_resource type="Script" path="res://Scripts/Nights/Camera/cam_updater.gd" id="9_jpxfn"]
 [ext_resource type="Texture2D" uid="uid://di62ngt3q4476" path="res://Graphics/CamRooms/room1.png" id="10_4532e"]
 [ext_resource type="Texture2D" uid="uid://6meury7w6l8r" path="res://Graphics/CamRooms/room2.png" id="11_8bov7"]
 [ext_resource type="Texture2D" uid="uid://b80o5ai6umpdd" path="res://Graphics/CamRooms/room3.png" id="12_auvf3"]
@@ -18,9 +19,9 @@
 [ext_resource type="Texture2D" uid="uid://kfas5oiik2vw" path="res://Graphics/HUD/cam_bmap.png" id="17_tmqkn"]
 [ext_resource type="AnimationNodeBlendTree" uid="uid://siq8sv1mpgct" path="res://AnimationTree/animtree_camera.tres" id="18_itk3u"]
 [ext_resource type="Script" path="res://Scripts/Nights/AI/ai_manager.gd" id="19_nqdqv"]
-[ext_resource type="Script" path="res://Scripts/Nights/AI/Characters/red_ai.gd" id="20_h065c"]
+[ext_resource type="Script" path="res://Scripts/Nights/AI/Characters/Red.gd" id="20_h065c"]
 [ext_resource type="Shader" path="res://Shaders/equirectangular_perspective.gdshader" id="20_obh0f"]
-[ext_resource type="Script" path="res://Scripts/Nights/AI/Characters/green_ai.gd" id="21_ujdr3"]
+[ext_resource type="Script" path="res://Scripts/Nights/AI/Characters/Green.gd" id="21_ujdr3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a0qos"]
 size = Vector2(380, 380)
@@ -423,10 +424,10 @@ texture_normal = ExtResource("7_vtngn")
 [node name="CameraElements" type="Node2D" parent="."]
 visible = false
 script = ExtResource("8_a3j08")
-rooms = Array[Array]([[1, 1], [0, 0], [0, 0], [0, 0]])
 
 [node name="CamRooms" type="Node2D" parent="CameraElements"]
 z_index = 15
+script = ExtResource("9_jpxfn")
 
 [node name="room_1" type="Sprite2D" parent="CameraElements/CamRooms"]
 position = Vector2(361.5, 147.5)
@@ -549,31 +550,21 @@ libraries = {
 tree_root = ExtResource("18_itk3u")
 anim_player = NodePath("../AnimationPlayer")
 parameters/Add2/add_amount = 1.0
-parameters/OneShot/active = false
-parameters/OneShot/internal_active = false
-parameters/OneShot/request = 0
 
-[node name="CharacterAI" type="Node2D" parent="." node_paths=PackedStringArray("camera")]
+[node name="CharacterAI" type="Node2D" parent="." node_paths=PackedStringArray("cam_feed")]
 visible = false
 script = ExtResource("19_nqdqv")
-red_level = 20
-green_level = 20
-camera = NodePath("../CameraElements")
+cam_feed = NodePath("../CameraElements/CamRooms")
 
-[node name="Red" type="Node2D" parent="CharacterAI"]
-script = ExtResource("20_h065c")
-
-[node name="RedTimer" type="Timer" parent="CharacterAI/Red"]
+[node name="RedTimer" type="Timer" parent="CharacterAI"]
 wait_time = 4.97
 autostart = true
+script = ExtResource("20_h065c")
 
-[node name="Green" type="Node2D" parent="CharacterAI"]
-script = ExtResource("21_ujdr3")
-character = 1
-
-[node name="GreenTimer" type="Timer" parent="CharacterAI/Green"]
+[node name="GreenTimer" type="Timer" parent="CharacterAI"]
 wait_time = 3.02
 autostart = true
+script = ExtResource("21_ujdr3")
 
 [node name="PerspectiveShader" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_kco4d")
@@ -592,5 +583,5 @@ mouse_filter = 2
 [connection signal="pressed" from="CameraElements/CamButtons/room_2" to="CameraElements" method="_on_click_cam" binds= [1]]
 [connection signal="pressed" from="CameraElements/CamButtons/room_3" to="CameraElements" method="_on_click_cam" binds= [2]]
 [connection signal="pressed" from="CameraElements/CamButtons/room_4" to="CameraElements" method="_on_click_cam" binds= [3]]
-[connection signal="timeout" from="CharacterAI/Red/RedTimer" to="CharacterAI/Red" method="_char_timer_timeout"]
-[connection signal="timeout" from="CharacterAI/Green/GreenTimer" to="CharacterAI/Green" method="_char_timer_timeout"]
+[connection signal="timeout" from="CharacterAI/RedTimer" to="CharacterAI/RedTimer" method="_char_timer_timeout"]
+[connection signal="timeout" from="CharacterAI/GreenTimer" to="CharacterAI/GreenTimer" method="_char_timer_timeout"]
