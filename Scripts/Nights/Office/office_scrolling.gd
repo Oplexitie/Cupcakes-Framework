@@ -1,7 +1,5 @@
 extends Sprite2D
 
-class_name OfficeScroll
-
 const SCROLL_SMOOTHING: int = 12 # Lower for smoother scrolling
 const SCROLL_SPEED: float = 0.07 # Lower for faster scrolling
 const SCROLL_CLAMP: int = 650 # Clamps office scrolling on both sides

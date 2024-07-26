@@ -1,7 +1,7 @@
 extends Node2D
 
-@export var off_scroll: OfficeScroll
 @export var camera: Camera
+@export var off_scroll: Node2D
 
 var is_tablet_up: bool = false
 var tweener: Tween
