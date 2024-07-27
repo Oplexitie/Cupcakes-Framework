@@ -14,7 +14,7 @@ onready var camera = get_node(camera_path)
 
 func _on_click():
 	# This function handles if the tablet animation should be played fowards or backwards
-	if !is_tablet_up:
+	if not is_tablet_up:
 		tablet_sprite.play("lift",false)
 		tablet_sprite.visible = true
 		off_scroll.can_move = false
@@ -25,11 +25,10 @@ func _on_click():
 
 func _tablet_animation_finished():
 	# At the end of the tablet animation, this activates and disables nodes
-	if !is_tablet_up:
+	if not is_tablet_up:
 		is_tablet_up = true
 		camera.visible = true
-		camera.tree_state_machine.start("static_boot")
-		camera.animtree.advance(0)	# this fixes a problem where the static plays 1 frame too late
+		camera.play_static()
 	else:
 		is_tablet_up = false
 		tablet_sprite.visible = false
