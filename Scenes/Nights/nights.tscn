@@ -553,12 +553,11 @@ parameters/OneShot/active = false
 parameters/OneShot/internal_active = false
 parameters/OneShot/request = 0
 
-[node name="CharacterAI" type="Node2D" parent="." node_paths=PackedStringArray("camera")]
+[node name="CharacterAI" type="Node2D" parent="."]
 visible = false
 script = ExtResource("19_nqdqv")
 red_level = 20
 green_level = 20
-camera = NodePath("../CameraElements")
 
 [node name="Red" type="Node2D" parent="CharacterAI"]
 script = ExtResource("20_h065c")

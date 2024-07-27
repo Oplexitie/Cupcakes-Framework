@@ -7,7 +7,7 @@ var char_level: int
 var char_pos: int
 var empty_room: Array[int]
 
-@onready var camera: Camera = get_parent().camera
+@onready var camera: Camera = get_node("/root/Nights/CameraElements")
 
 func _ready():
 	# Sets up stuff for _is_room_populated()
@@ -21,7 +21,7 @@ func _is_room_populated(room: int) -> bool:
 	return false if camera.rooms[room] == empty_room else true
 
 func move_check():
-	# Handles whether character moves or not (depending on char_levels)
+	# Handles whether character moves or not (depending on char_level)
 	if has_passed_check():
 		char_pos +=1
 		move_options()
