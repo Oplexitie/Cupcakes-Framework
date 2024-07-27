@@ -8,6 +8,22 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "Node2D",
+"class": "AI",
+"language": "GDScript",
+"path": "res://Scripts/Nights/AI/ai.gd"
+}, {
+"base": "Node2D",
+"class": "GameCamera",
+"language": "GDScript",
+"path": "res://Scripts/Nights/Camera/camera.gd"
+} ]
+_global_script_class_icons={
+"AI": "",
+"GameCamera": ""
+}
+
 [application]
 
 config/name="Cupcakes Framework"
