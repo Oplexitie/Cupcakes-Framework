@@ -7,7 +7,7 @@ var char_level: int
 var char_pos: int
 var empty_room: Array
 
-onready var camera = get_node("/root/Nights/CameraElements")
+onready var camera: GameCamera = get_node("/root/Nights/CameraElements")
 
 func _ready():
 	# Sets up stuff for _is_room_populated()
