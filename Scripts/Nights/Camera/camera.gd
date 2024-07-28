@@ -15,16 +15,18 @@ func _ready():
 	for i in $CamButtons.get_children(): all_buttons.append(i)
 	
 	# Gets the camera feed id's, then sets them up with the right frame
-	var rooms_to_setup : Array[int] = []
-	for i in all_feeds.size(): rooms_to_setup.append(i)	
-	update_rooms(rooms_to_setup)
+	var feeds_to_setup : Array[int] = []
+	for i in all_feeds.size(): feeds_to_setup.append(i)	
+	update_feeds(feeds_to_setup)
 
-func update_rooms(_rooms_to_update: Array[int]):
+func set_feed(_feed_to_update: int):
 	pass
 
-func play_static():
-	animtree["parameters/OneShot/request"] = AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE
-	animtree.advance(0)	# this fixes a problem where the static plays 1 frame too late
+func update_feeds(feeds_to_update: Array[int]):
+	for i in feeds_to_update:
+		set_feed(i)
+		if current_feed == i:
+			play_static()
 
 func switch_feed(new_feed: int):
 	# This handles camera switching, but blocks it when clicking the same camera button
@@ -38,3 +40,7 @@ func switch_feed(new_feed: int):
 		all_buttons[new_feed].disabled = true
 		
 		current_feed = new_feed
+
+func play_static():
+	animtree["parameters/OneShot/request"] = AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE
+	animtree.advance(0)	# this fixes a problem where the static plays 1 frame too late
