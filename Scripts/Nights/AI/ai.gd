@@ -42,4 +42,4 @@ func move(from_room: int, to_room: int, check_next_room: bool = false, new_state
 	camera.rooms[from_room][character] = 0
 	camera.rooms[to_room][character] = new_state
 	
-	camera.update_rooms([from_room,to_room])
+	camera.update_feeds([from_room,to_room])
