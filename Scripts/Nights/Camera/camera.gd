@@ -27,15 +27,15 @@ func play_static():
 	tree_state_machine.start("static_boot")
 	animtree.advance(0)	# this fixes a problem where the static plays 1 frame too late
 
-func switch_feed(to_feed: int):
+func switch_feed(new_feed: int):
 	# This handles camera switching, but blocks it when clicking the same camera button
-	if current_feed != to_feed:
+	if current_feed != new_feed:
 		play_static()
 		
 		all_feeds[current_feed].visible = false
 		all_buttons[current_feed].disabled = false
 		
-		all_feeds[to_feed].visible = true
-		all_buttons[to_feed].disabled = true
+		all_feeds[new_feed].visible = true
+		all_buttons[new_feed].disabled = true
 		
-		current_feed = to_feed
+		current_feed = new_feed

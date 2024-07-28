@@ -1,7 +1,7 @@
 extends Node2D
 # warning-ignore-all:return_value_discarded
 
-export var off_scroll_path: NodePath
+export var office_path: NodePath
 export var camera_path: NodePath
 
 var is_tablet_up : bool = false
@@ -9,7 +9,7 @@ var is_tablet_up : bool = false
 onready var tablet_button: TextureButton = $TabletButton/Button
 onready var tablet_sprite: AnimatedSprite = $TabletSprite
 onready var tweener: Tween = $Tween
-onready var off_scroll = get_node(off_scroll_path)
+onready var office = get_node(office_path)
 onready var camera = get_node(camera_path)
 
 func _on_click():
@@ -17,7 +17,7 @@ func _on_click():
 	if not is_tablet_up:
 		tablet_sprite.play("lift",false)
 		tablet_sprite.visible = true
-		off_scroll.can_move = false
+		office.can_move = false
 	else:
 		tablet_sprite.play("lift",true)
 		tablet_button.disabled = true
@@ -32,7 +32,7 @@ func _tablet_animation_finished():
 	else:
 		is_tablet_up = false
 		tablet_sprite.visible = false
-		off_scroll.can_move = true
+		office.can_move = true
 		tablet_button.disabled = false
 
 func on_mouse_enter():
