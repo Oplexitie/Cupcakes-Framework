@@ -317,7 +317,7 @@ position = Vector2( 960, 1013 )
 scale = Vector2( 1.5, 1.5 )
 z_index = 15
 script = ExtResource( 5 )
-off_scroll_path = NodePath("../OfficeElements/Office")
+office_path = NodePath("../OfficeElements/Office")
 camera_path = NodePath("../CameraElements")
 
 [node name="TabletSprite" type="AnimatedSprite" parent="TabletElements"]
@@ -369,7 +369,7 @@ texture = ExtResource( 14 )
 centered = false
 vframes = 4
 region_enabled = true
-region_rect = Rect2( 198.587, 0, 798, 2372 )
+region_rect = Rect2( 174.173, 0, 798, 2372 )
 
 [node name="room3" type="Sprite" parent="CameraElements/CamRooms"]
 visible = false
@@ -378,7 +378,7 @@ texture = ExtResource( 12 )
 centered = false
 vframes = 2
 region_enabled = true
-region_rect = Rect2( 0, 0, 798, 1186 )
+region_rect = Rect2( 4.49416, 0, 798, 1186 )
 
 [node name="room4" type="Sprite" parent="CameraElements/CamRooms"]
 visible = false
@@ -387,7 +387,7 @@ texture = ExtResource( 15 )
 centered = false
 vframes = 2
 region_enabled = true
-region_rect = Rect2( 158.747, 0, 798, 1186 )
+region_rect = Rect2( 183.161, 0, 798, 1186 )
 
 [node name="CamButtons" type="Node2D" parent="CameraElements"]
 z_index = 19
@@ -448,7 +448,6 @@ mouse_filter = 2
 modulate = Color( 1, 1, 1, 0.235294 )
 position = Vector2( 361, 147.1 )
 frames = SubResource( 3 )
-frame = 2
 speed_scale = 5.0
 playing = true
 centered = false
@@ -482,6 +481,7 @@ visible = false
 script = ExtResource( 2 )
 red_level = 20
 green_level = 20
+camera_path = "../../CameraElements"
 
 [node name="Red" type="Node2D" parent="CharacterAI"]
 script = ExtResource( 21 )
