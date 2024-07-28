@@ -391,13 +391,13 @@ z_index = 50
 position = Vector2(30, 34)
 shape = SubResource("RectangleShape2D_a0qos")
 
-[node name="TabletElements" type="Node2D" parent="." node_paths=PackedStringArray("camera", "off_scroll")]
+[node name="TabletElements" type="Node2D" parent="." node_paths=PackedStringArray("camera", "office")]
 z_index = 15
 position = Vector2(960, 540)
 scale = Vector2(1.5, 1.5)
 script = ExtResource("5_h71ec")
 camera = NodePath("../CameraElements")
-off_scroll = NodePath("../OfficeElements/Office")
+office = NodePath("../OfficeElements/Office")
 
 [node name="Tablet_Sprite" type="AnimatedSprite2D" parent="TabletElements"]
 visible = false
@@ -553,11 +553,12 @@ parameters/OneShot/active = false
 parameters/OneShot/internal_active = false
 parameters/OneShot/request = 0
 
-[node name="CharacterAI" type="Node2D" parent="."]
+[node name="CharacterAI" type="Node2D" parent="." node_paths=PackedStringArray("camera")]
 visible = false
 script = ExtResource("19_nqdqv")
 red_level = 20
 green_level = 20
+camera = NodePath("../CameraElements")
 
 [node name="Red" type="Node2D" parent="CharacterAI"]
 script = ExtResource("20_h065c")
