@@ -36,10 +36,6 @@ window/size/width=1920
 window/size/height=1080
 window/stretch/mode="viewport"
 
-[global]
-
-unfold=false
-
 [gui]
 
 common/drop_mouse_on_gui_input_disabled=true
