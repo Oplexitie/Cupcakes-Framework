@@ -391,13 +391,12 @@ z_index = 50
 position = Vector2(30, 34)
 shape = SubResource("RectangleShape2D_a0qos")
 
-[node name="TabletElements" type="Node2D" parent="." node_paths=PackedStringArray("camera", "office")]
+[node name="TabletElements" type="Node2D" parent="." node_paths=PackedStringArray("camera")]
 z_index = 15
 position = Vector2(960, 540)
 scale = Vector2(1.5, 1.5)
 script = ExtResource("5_h71ec")
 camera = NodePath("../CameraElements")
-office = NodePath("../OfficeElements/Office")
 
 [node name="Tablet_Sprite" type="AnimatedSprite2D" parent="TabletElements"]
 visible = false

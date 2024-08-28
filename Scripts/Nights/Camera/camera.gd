@@ -15,7 +15,7 @@ func _ready():
 	for i in $CamButtons.get_children(): all_buttons.append(i)
 	
 	# Gets the camera feed id's, then sets them up with the right frame
-	var feeds_to_setup : Array[int] = []
+	var feeds_to_setup: Array[int] = []
 	for i in all_feeds.size(): feeds_to_setup.append(i)	
 	update_feeds(feeds_to_setup)
 
