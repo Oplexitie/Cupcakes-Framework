@@ -4,7 +4,7 @@ extends Node2D
 export var office_path: NodePath
 export var camera_path: NodePath
 
-var is_tablet_up : bool = false
+var is_tablet_up: bool = false
 
 onready var tablet_button: TextureButton = $TabletButton/Button
 onready var tablet_sprite: AnimatedSprite = $TabletSprite
