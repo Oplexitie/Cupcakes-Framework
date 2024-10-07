@@ -2,11 +2,10 @@ extends Node2D
 class_name AI
 
 @export_enum("Red", "Green") var character: int
+@export var camera: Camera
 
 var char_level: int
 var char_pos: int
-
-@onready var camera: Camera = get_parent().camera
 
 func has_passed_check() -> bool:
 	return true if char_level >= randi_range(0,20) else false
