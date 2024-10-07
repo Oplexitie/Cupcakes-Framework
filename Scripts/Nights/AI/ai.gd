@@ -5,20 +5,14 @@ class_name AI
 
 var char_level: int
 var char_pos: int
-var empty_room: Array[int]
 
 @onready var camera: Camera = get_parent().camera
-
-func _ready():
-	# Sets up stuff for _is_room_populated()
-	var room_sizes: int = camera.rooms[0].size()
-	empty_room.resize(room_sizes)
 
 func has_passed_check() -> bool:
 	return true if char_level >= randi_range(0,20) else false
 
 func _is_room_populated(room: int) -> bool:
-	return false if camera.rooms[room] == empty_room else true
+	return false if camera.rooms[room].max() == 0 else true
 
 func move_check():
 	# Handles whether character moves or not (depending on char_level)

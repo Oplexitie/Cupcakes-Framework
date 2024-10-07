@@ -1,5 +1,4 @@
 extends Sprite2D
-class_name Scroll
 
 const SCROLL_SMOOTHING: int = 12 # Lower for smoother scrolling
 const SCROLL_SPEED: float = 0.07 # Lower for faster scrolling
@@ -13,8 +12,7 @@ const SCROLL_CLAMP: int = 650 # Clamps office scrolling on both sides
 var scroll_area_left: float
 var scroll_area_right: float
 var scroll_amount: float = 0
-
-static var can_move: bool = true
+var can_move: bool = true
 
 func _ready():
 	var view_size_x: float = get_viewport().content_scale_size.x

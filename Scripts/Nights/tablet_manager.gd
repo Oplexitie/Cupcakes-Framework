@@ -2,6 +2,7 @@ extends Node2D
 
 @export_group("Setup")
 @export var camera: Camera
+@export var office: Node2D
 
 var is_tablet_up: bool = false
 var tweener: Tween
@@ -14,7 +15,7 @@ func _on_click():
 	if not is_tablet_up:
 		tablet_sprite.play("lift")
 		tablet_sprite.visible = true
-		Scroll.can_move = false
+		office.can_move = false
 	else:
 		tablet_sprite.play_backwards("lift")
 		tablet_button.disabled = true
@@ -29,7 +30,7 @@ func _tablet_animation_finished():
 	else:
 		is_tablet_up = false
 		tablet_sprite.visible = false
-		Scroll.can_move = true
+		office.can_move = true
 		tablet_button.disabled = false
 
 func on_mouse_enter():
