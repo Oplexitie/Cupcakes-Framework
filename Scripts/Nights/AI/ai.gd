@@ -6,7 +6,6 @@ export var camera_path: NodePath
 
 var char_level: int
 var char_pos: int
-var empty_room: Array
 
 onready var camera: GameCamera = get_node(camera_path)
 
