@@ -369,7 +369,7 @@ texture = ExtResource( 14 )
 centered = false
 vframes = 4
 region_enabled = true
-region_rect = Rect2( 215.583, 0, 798, 2372 )
+region_rect = Rect2( 268, 0, 798, 2372 )
 
 [node name="room3" type="Sprite" parent="CameraElements/CamRooms"]
 visible = false
@@ -378,7 +378,7 @@ texture = ExtResource( 12 )
 centered = false
 vframes = 2
 region_enabled = true
-region_rect = Rect2( 141.75, 0, 798, 1186 )
+region_rect = Rect2( 17.7199, 0, 798, 1186 )
 
 [node name="room4" type="Sprite" parent="CameraElements/CamRooms"]
 visible = false
@@ -387,7 +387,7 @@ texture = ExtResource( 15 )
 centered = false
 vframes = 2
 region_enabled = true
-region_rect = Rect2( 0, 0, 798, 1186 )
+region_rect = Rect2( 71.6134, 0, 798, 1186 )
 
 [node name="CamButtons" type="Node2D" parent="CameraElements"]
 z_index = 19
@@ -448,7 +448,6 @@ mouse_filter = 2
 modulate = Color( 1, 1, 1, 0.235294 )
 position = Vector2( 361, 147.1 )
 frames = SubResource( 3 )
-frame = 1
 speed_scale = 5.0
 playing = true
 centered = false
@@ -482,10 +481,10 @@ visible = false
 script = ExtResource( 2 )
 red_level = 20
 green_level = 20
-camera_path = "../../CameraElements"
 
 [node name="Red" type="Node2D" parent="CharacterAI"]
 script = ExtResource( 21 )
+camera_path = NodePath("../../CameraElements")
 
 [node name="RedTimer" type="Timer" parent="CharacterAI/Red"]
 wait_time = 4.97
@@ -494,6 +493,7 @@ autostart = true
 [node name="Green" type="Node2D" parent="CharacterAI"]
 script = ExtResource( 22 )
 character = 1
+camera_path = NodePath("../../CameraElements")
 
 [node name="GreenTimer" type="Timer" parent="CharacterAI/Green"]
 wait_time = 3.02

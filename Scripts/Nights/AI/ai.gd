@@ -2,23 +2,19 @@ extends Node2D
 class_name AI
 
 export(int, "Red", "Green") var character: int
+export var camera_path: NodePath
 
 var char_level: int
 var char_pos: int
 var empty_room: Array
 
-onready var camera: GameCamera = get_node(get_parent().camera_path)
-
-func _ready():
-	# Sets up stuff for _is_room_populated()
-	var room_sizes: int = camera.rooms[0].size()
-	empty_room.resize(room_sizes)
+onready var camera: GameCamera = get_node(camera_path)
 
 func has_passed_check() -> bool:
 	return true if char_level >= randi()%20+1 else false
 
 func _is_room_populated(room: int) -> bool:
-	return false if camera.rooms[room] == empty_room else true
+	return false if camera.rooms[room].max() == 0 else true
 
 func move_check():
 	# Handles whether character moves or not (depending on char_level)
