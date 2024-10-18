@@ -19,10 +19,11 @@ func _ready():
 	# Made to fix a 1 pixel issue at the right of the screen when view_size_x isn't a whole number
 	var border_correcter_x: float = 1 / (get_viewport().size.x / view_size_x)
 	
-	# This calculates the scroll area on both sides of the screen
+	# Calculates the size of the scroll area on both sides of the screen
 	scroll_area_left = view_size_x / 3
 	scroll_area_right = view_size_x - (scroll_area_left + border_correcter_x)
-	
+
+	# Sets up object hitboxes	
 	for i in item_offsets:
 		i[0] = get_node(i[0])
 
