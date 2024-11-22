@@ -16,7 +16,7 @@ var can_move: bool = true
 
 func _ready():
 	var view_size_x: float = get_viewport().size.x
-	# Made to fix a 1 pixel issue at the right of the screen when view_size_x isn't a whole number
+	# Fixes a 1 pixel issue at the right of the screen when view_size_x isn't a whole number
 	var border_correcter_x: float = 1 / (OS.get_window_size().x / view_size_x)
 	
 	# Calculates the size of the scroll area on both sides of the screen
@@ -27,7 +27,11 @@ func _ready():
 	for i in item_offsets:
 		i[0] = get_node(i[0])
 
-func _physics_process(delta):
+func _physics_process(delta: float):
+	_handle_move(delta)
+	_apply_offset(scroll_amount, delta)
+
+func _handle_move(delta: float):
 	var mouse_position: Vector2 = get_global_mouse_position()
 	
 	if can_move:
@@ -37,13 +41,11 @@ func _physics_process(delta):
 		elif mouse_position.x > scroll_area_right:
 			scroll_amount += (scroll_area_right - mouse_position.x) * SCROLL_SPEED
 	
-	scroll_amount = clamp(scroll_amount, -SCROLL_CLAMP, SCROLL_CLAMP)
-	
 	# Clamps the position so the office doesn't leave the frame
+	scroll_amount = clamp(scroll_amount, -SCROLL_CLAMP, SCROLL_CLAMP)
 	position.x = lerp(position.x, scroll_amount, SCROLL_SMOOTHING * delta)
-	apply_offset(scroll_amount, delta)
 
-func apply_offset(scroll_modifier: float, delta: float):
+func _apply_offset(scroll_modifier: float, delta: float):
 	# Modifies the buttons collision postion, makes it so the button is pressable with the shader
 	for i in item_offsets:
 		i[0].position.x = clamp((position.x - i[1] + i[0].position.x/2) + scroll_modifier * delta, i[2], i[3])

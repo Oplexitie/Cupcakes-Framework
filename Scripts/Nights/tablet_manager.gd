@@ -35,10 +35,6 @@ func _tablet_animation_finished():
 		office.can_move = true
 		tablet_button.disabled = false
 
-func on_mouse_enter():
-	tweener.interpolate_property(tablet_button, "modulate:a", tablet_button.modulate.a, 0.5, 0.3,Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
-	tweener.start()
-
-func on_mouse_exit():
-	tweener.interpolate_property(tablet_button, "modulate:a", tablet_button.modulate.a, 0.2, 0.3,Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+func on_mouse_event(alpha: float):
+	tweener.interpolate_property(tablet_button, "modulate:a", tablet_button.modulate.a, alpha, 0.3,Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 	tweener.start()
