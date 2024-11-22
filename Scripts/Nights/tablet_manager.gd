@@ -33,12 +33,7 @@ func _tablet_animation_finished():
 		office.can_move = true
 		tablet_button.disabled = false
 
-func on_mouse_enter():
+func on_mouse_event(alpha: float):
 	if tweener: tweener.kill()
 	tweener = create_tween()
-	tweener.tween_property(tablet_button, "modulate:a", 0.5, 0.3)
-
-func on_mouse_exit():
-	if tweener: tweener.kill()
-	tweener = create_tween()
-	tweener.tween_property(tablet_button, "modulate:a", 0.2, 0.3)
+	tweener.tween_property(tablet_button, "modulate:a", alpha, 0.3)
