@@ -256,7 +256,6 @@ tracks/0/keys = {
 
 [sub_resource type="ShaderMaterial" id=2]
 shader = ExtResource( 7 )
-shader_param/pitch = 0.0
 shader_param/fov = 0.32
 shader_param/stretch = Vector2( 54, 27 )
 

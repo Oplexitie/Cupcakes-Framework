@@ -17,7 +17,7 @@ A Five Nights at Freddy's (or FNAF) framework made for Godot 3, with a [Godot 4 
 
 - Office
   - A simple scrolling system where the speed is based on how close your mouse is to the screens edge
-  - An equirectangular perspective shader (like the one seen in [Five Nights at Candy's Remastered](https://gamejolt.com/games/five-nights-at-candy-s-remastered/426659))
+  - An equirectangular perspective shader (an alternative version with pitch can be found [here](https://gist.github.com/Oplexitie/a856b013fd9190414cbbdb829420a94c))
 - Camera System
   - A simple camera system that can be easily expanded to include more rooms
   - Camera movement (like in FNAF 1)
