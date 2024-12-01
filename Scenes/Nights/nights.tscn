@@ -338,7 +338,6 @@ _data = {
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_kco4d"]
 shader = ExtResource("20_obh0f")
-shader_parameter/pitch = null
 shader_parameter/fov = 0.32
 shader_parameter/stretch = Vector2(54, 27)
 
