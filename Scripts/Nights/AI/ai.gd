@@ -14,14 +14,14 @@ func has_passed_check() -> bool:
 func _is_room_empty(room: int) -> bool:
 	return camera.rooms[room].max() == 0
 
-func move_check():
+func move_check() -> void:
 	if has_passed_check():
 		move_options()
 
-func move_options():
+func move_options() -> void:
 	pass
 
-func move(from_room: int, to_room: int, move_step: int = 1, new_state: int = 1):
+func move(from_room: int, to_room: int, move_step: int = 1, new_state: int = 1) -> void:
 	# Handles character movement from one room to another
 	# And character state changes in a room (handled by new_state).
 	char_pos += move_step

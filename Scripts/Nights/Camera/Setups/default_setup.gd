@@ -1,6 +1,6 @@
 extends Camera
 
-func set_feed(feed_to_update: int):
+func set_feed(feed_to_update: int) -> void:
 	# This handles the camera feeds based on the character positions
 	match feed_to_update:
 		0:
@@ -36,5 +36,5 @@ func set_feed(feed_to_update: int):
 				[0,1]:
 					all_feeds[3].frame = 0
 
-func _on_click_cam(clicked_cam: int):
+func _on_click_cam(clicked_cam: int) -> void:
 	switch_feed(clicked_cam)

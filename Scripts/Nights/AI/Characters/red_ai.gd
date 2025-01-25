@@ -1,6 +1,6 @@
 extends AI
 
-func move_options():
+func move_options() -> void:
 	match char_pos:
 		0:
 			if _is_room_empty(1):
@@ -11,5 +11,5 @@ func move_options():
 			# Returns to start position
 			move(2,0,-char_pos)
 
-func _char_timer_timeout():
+func _char_timer_timeout() -> void:
 	move_check()
