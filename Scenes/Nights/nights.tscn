@@ -270,7 +270,7 @@ texture = ExtResource( 16 )
 centered = false
 offset = Vector2( -540, 0 )
 script = ExtResource( 4 )
-item_offsets = [ [ NodePath("ButtonExample/Area2D"), 100, -800, -50 ], [ NodePath("ButtonExample2/Area2D"), -60, 0, 800 ], [ NodePath("ButtonExample3/Area2D"), -450, -400, -40 ] ]
+trigger_offsets = [ [ NodePath("ButtonExample/Area2D"), 80, -800, -100 ], [ NodePath("ButtonExample2/Area2D"), -60, 0, 800 ], [ NodePath("ButtonExample3/Area2D"), -450, -400, -40 ] ]
 
 [node name="ButtonExample" type="Sprite" parent="OfficeElements/Office"]
 position = Vector2( 250, 750 )
