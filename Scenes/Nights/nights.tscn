@@ -352,12 +352,14 @@ texture = ExtResource("2_umi2k")
 centered = false
 offset = Vector2(-540, 0)
 script = ExtResource("3_ejiio")
-item_offsets = Array[Array]([[NodePath("ButtonExample/Area2D"), 100, -800, -50], [NodePath("ButtonExample2/Area2D"), -60, 0, 800], [NodePath("ButtonExample3/Area2D"), -450, -400, -40]])
 
 [node name="ButtonExample" type="Sprite2D" parent="OfficeElements/Office"]
 position = Vector2(250, 750)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("4_lu3yo")
+metadata/XSpeed = 80
+metadata/LeftClamp = -800
+metadata/RightClamp = -100
 
 [node name="Area2D" type="Area2D" parent="OfficeElements/Office/ButtonExample"]
 
@@ -370,6 +372,9 @@ shape = SubResource("RectangleShape2D_a0qos")
 position = Vector2(1675, 750)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("4_lu3yo")
+metadata/XSpeed = -60
+metadata/LeftClamp = 0
+metadata/RightClamp = 800
 
 [node name="Area2D" type="Area2D" parent="OfficeElements/Office/ButtonExample2"]
 
@@ -382,6 +387,9 @@ shape = SubResource("RectangleShape2D_a0qos")
 position = Vector2(800, 750)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("4_lu3yo")
+metadata/XSpeed = -450
+metadata/LeftClamp = -400
+metadata/RightClamp = -40
 
 [node name="Area2D" type="Area2D" parent="OfficeElements/Office/ButtonExample3"]
 
