@@ -232,7 +232,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("CamHUD/static:modulate")
+tracks/4/path = NodePath("CamHUD/CamStatic:modulate")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -301,7 +301,7 @@ length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("CamHUD/static:modulate")
+tracks/0/path = NodePath("CamHUD/CamStatic:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -318,7 +318,7 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("CamHUD/static:modulate")
+tracks/0/path = NodePath("CamHUD/CamStatic:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -529,14 +529,14 @@ offset_right = 1560.0
 offset_bottom = 1037.0
 mouse_filter = 2
 
-[node name="static" type="AnimatedSprite2D" parent="CameraElements/CamHUD"]
+[node name="CamStatic" type="AnimatedSprite2D" parent="CameraElements/CamHUD"]
 modulate = Color(1, 1, 1, 0.392157)
 position = Vector2(361.5, 147.5)
 sprite_frames = SubResource("SpriteFrames_1ioo0")
 autoplay = "default"
 centered = false
 
-[node name="border&map" type="Sprite2D" parent="CameraElements/CamHUD"]
+[node name="Map&Border" type="Sprite2D" parent="CameraElements/CamHUD"]
 position = Vector2(959, 592)
 scale = Vector2(3, 3)
 texture = ExtResource("17_tmqkn")
