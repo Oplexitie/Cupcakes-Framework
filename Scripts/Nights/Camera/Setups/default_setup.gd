@@ -35,6 +35,3 @@ func set_feed(feed_to_update: int) -> void:
 					all_feeds[3].frame = 1
 				[0,1]:
 					all_feeds[3].frame = 0
-
-func _on_click_cam(clicked_cam: int) -> void:
-	switch_feed(clicked_cam)

@@ -9,6 +9,3 @@ func move_options() -> void:
 		2:
 			# Returns to start position
 			move(3,0,-char_pos)
-
-func _char_timer_timeout() -> void:
-	move_check()
