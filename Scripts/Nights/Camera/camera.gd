@@ -16,8 +16,8 @@ func _ready() -> void:
 
 func _initialize_buttons() -> void:
 	# Adds the camera feeds and buttons into arrays so they can be synced up in 'func _on_click_cam'
-	for i in $CamRooms.get_children(): all_feeds.append(i)
-	for i in $CamButtons.get_children(): all_buttons.append(i)
+	all_feeds.append_array($CamRooms.get_children())
+	all_buttons.append_array($CamButtons.get_children())
 
 func _initialize_feeds() -> void:
 	# Gets the camera feed id's, then sets them up with the right frame
