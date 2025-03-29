@@ -1,10 +1,11 @@
-[gd_scene load_steps=54 format=3 uid="uid://cthhku8fsrdeq"]
+[gd_scene load_steps=55 format=3 uid="uid://cthhku8fsrdeq"]
 
 [ext_resource type="Script" uid="uid://babox67oh2xx3" path="res://Scripts/Nights/Office/office_manager.gd" id="1_pp75g"]
 [ext_resource type="Texture2D" uid="uid://ce3drug37ontk" path="res://Graphics/Office/office.png" id="2_umi2k"]
 [ext_resource type="Script" uid="uid://bencescb72ut2" path="res://Scripts/Nights/Office/office_scrolling.gd" id="3_ejiio"]
 [ext_resource type="Texture2D" uid="uid://2hwki8rcehtm" path="res://icon.svg" id="4_lu3yo"]
 [ext_resource type="Script" uid="uid://cyt78opurb0y6" path="res://Scripts/Nights/tablet_manager.gd" id="5_h71ec"]
+[ext_resource type="Script" uid="uid://n6xetcvp8tiv" path="res://Scripts/Nights/Office/button_scroll.gd" id="5_hvcnl"]
 [ext_resource type="Texture2D" uid="uid://bwp12gkddlnns" path="res://Graphics/Tablet/tablet_anim.png" id="6_1oog2"]
 [ext_resource type="Texture2D" uid="uid://nhd5vjnlj5y8" path="res://Graphics/HUD/cam_barbutton.png" id="7_vtngn"]
 [ext_resource type="Script" uid="uid://dfi1a5gobjhxm" path="res://Scripts/Nights/Camera/Setups/default_setup.gd" id="8_a3j08"]
@@ -23,7 +24,7 @@
 [ext_resource type="Script" uid="uid://cgcqgc6ecwo8t" path="res://Scripts/Nights/AI/Characters/green_ai.gd" id="21_ujdr3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a0qos"]
-size = Vector2(380, 380)
+size = Vector2(256, 256)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_b5glu"]
 atlas = ExtResource("6_1oog2")
@@ -353,49 +354,54 @@ centered = false
 offset = Vector2(-540, 0)
 script = ExtResource("3_ejiio")
 
-[node name="ButtonExample" type="Sprite2D" parent="OfficeElements/Office"]
+[node name="Buttons" type="Node2D" parent="OfficeElements/Office"]
+
+[node name="ButtonExample" type="Sprite2D" parent="OfficeElements/Office/Buttons"]
 position = Vector2(250, 750)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("4_lu3yo")
-metadata/XSpeed = 80
-metadata/LeftClamp = -800
-metadata/RightClamp = -100
+script = ExtResource("5_hvcnl")
+x_speed = 210
+left_clamp = -400
 
-[node name="Area2D" type="Area2D" parent="OfficeElements/Office/ButtonExample"]
+[node name="Area2D" type="Area2D" parent="OfficeElements/Office/Buttons/ButtonExample"]
+monitoring = false
+monitorable = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="OfficeElements/Office/ButtonExample/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OfficeElements/Office/Buttons/ButtonExample/Area2D"]
 z_index = 50
-position = Vector2(30, 34)
 shape = SubResource("RectangleShape2D_a0qos")
 
-[node name="ButtonExample2" type="Sprite2D" parent="OfficeElements/Office"]
-position = Vector2(1675, 750)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("4_lu3yo")
-metadata/XSpeed = -60
-metadata/LeftClamp = 0
-metadata/RightClamp = 800
-
-[node name="Area2D" type="Area2D" parent="OfficeElements/Office/ButtonExample2"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="OfficeElements/Office/ButtonExample2/Area2D"]
-z_index = 50
-position = Vector2(30, 34)
-shape = SubResource("RectangleShape2D_a0qos")
-
-[node name="ButtonExample3" type="Sprite2D" parent="OfficeElements/Office"]
+[node name="ButtonExample2" type="Sprite2D" parent="OfficeElements/Office/Buttons"]
 position = Vector2(800, 750)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("4_lu3yo")
-metadata/XSpeed = -450
-metadata/LeftClamp = -400
-metadata/RightClamp = -40
+script = ExtResource("5_hvcnl")
+x_speed = -350
+left_clamp = -800
 
-[node name="Area2D" type="Area2D" parent="OfficeElements/Office/ButtonExample3"]
+[node name="Area2D" type="Area2D" parent="OfficeElements/Office/Buttons/ButtonExample2"]
+monitoring = false
+monitorable = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="OfficeElements/Office/ButtonExample3/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OfficeElements/Office/Buttons/ButtonExample2/Area2D"]
 z_index = 50
-position = Vector2(30, 34)
+shape = SubResource("RectangleShape2D_a0qos")
+
+[node name="ButtonExample3" type="Sprite2D" parent="OfficeElements/Office/Buttons"]
+position = Vector2(1675, 750)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_lu3yo")
+script = ExtResource("5_hvcnl")
+x_speed = -210
+right_clamp = 400
+
+[node name="Area2D" type="Area2D" parent="OfficeElements/Office/Buttons/ButtonExample3"]
+monitoring = false
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OfficeElements/Office/Buttons/ButtonExample3/Area2D"]
+z_index = 50
 shape = SubResource("RectangleShape2D_a0qos")
 
 [node name="TabletElements" type="Node2D" parent="." node_paths=PackedStringArray("camera", "office")]
@@ -589,9 +595,9 @@ offset_right = 1920.0
 offset_bottom = 1080.0
 mouse_filter = 2
 
-[connection signal="input_event" from="OfficeElements/Office/ButtonExample/Area2D" to="OfficeElements" method="_on_area_2d_input_event"]
-[connection signal="input_event" from="OfficeElements/Office/ButtonExample2/Area2D" to="OfficeElements" method="_on_area_2d_input_event"]
-[connection signal="input_event" from="OfficeElements/Office/ButtonExample3/Area2D" to="OfficeElements" method="_on_area_2d_input_event"]
+[connection signal="input_event" from="OfficeElements/Office/Buttons/ButtonExample/Area2D" to="OfficeElements" method="_on_area_2d_input_event"]
+[connection signal="input_event" from="OfficeElements/Office/Buttons/ButtonExample2/Area2D" to="OfficeElements" method="_on_area_2d_input_event"]
+[connection signal="input_event" from="OfficeElements/Office/Buttons/ButtonExample3/Area2D" to="OfficeElements" method="_on_area_2d_input_event"]
 [connection signal="animation_finished" from="TabletElements/Tablet_Sprite" to="TabletElements" method="_tablet_animation_finished"]
 [connection signal="mouse_entered" from="TabletElements/Tablet_Button" to="TabletElements" method="_on_mouse_event" binds= [0.5]]
 [connection signal="mouse_exited" from="TabletElements/Tablet_Button" to="TabletElements" method="_on_mouse_event" binds= [0.3]]
