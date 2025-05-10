@@ -9,7 +9,7 @@ var char_pos: int
 
 func has_passed_check() -> bool:
 	# Handles whether character moves or not (depending on char_level)
-	return char_level >= randi_range(0,20)
+	return char_level >= randi_range(1,20)
 
 func _is_room_empty(room: int) -> bool:
 	return camera.rooms[room].max() == 0
