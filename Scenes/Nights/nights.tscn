@@ -348,16 +348,15 @@ shader_parameter/stretch = Vector2(54, 27)
 script = ExtResource("1_pp75g")
 
 [node name="Office" type="Sprite2D" parent="OfficeElements"]
-position = Vector2(0, -200)
 texture = ExtResource("2_umi2k")
 centered = false
-offset = Vector2(-540, 0)
+offset = Vector2(-540, -210)
 script = ExtResource("3_ejiio")
 
 [node name="Buttons" type="Node2D" parent="OfficeElements/Office"]
 
 [node name="ButtonExample" type="Sprite2D" parent="OfficeElements/Office/Buttons"]
-position = Vector2(250, 750)
+position = Vector2(250, 540)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("4_lu3yo")
 script = ExtResource("5_hvcnl")
@@ -373,7 +372,7 @@ z_index = 50
 shape = SubResource("RectangleShape2D_a0qos")
 
 [node name="ButtonExample2" type="Sprite2D" parent="OfficeElements/Office/Buttons"]
-position = Vector2(800, 750)
+position = Vector2(800, 540)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("4_lu3yo")
 script = ExtResource("5_hvcnl")
@@ -389,7 +388,7 @@ z_index = 50
 shape = SubResource("RectangleShape2D_a0qos")
 
 [node name="ButtonExample3" type="Sprite2D" parent="OfficeElements/Office/Buttons"]
-position = Vector2(1675, 750)
+position = Vector2(1675, 540)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("4_lu3yo")
 script = ExtResource("5_hvcnl")
