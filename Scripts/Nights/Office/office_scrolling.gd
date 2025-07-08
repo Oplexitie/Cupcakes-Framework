@@ -2,7 +2,9 @@ extends Sprite2D
 
 const SCROLL_SMOOTHING: int = 12 # Lower for smoother scrolling
 const SCROLL_SPEED: float = 0.07 # Lower for faster scrolling
-const SCROLL_CLAMP: int = 650 # Clamps office scrolling on both sides
+const SCROLL_SCREEN_FRACTION: float = 3 # Lower for bigger scroll areas
+
+@export var scroll_clamp: int = 650 # Clamps office scrolling on both sides
 
 var scroll_area_left: float
 var scroll_area_right: float
@@ -17,12 +19,12 @@ func _physics_process(delta: float) -> void:
 
 func _initialize_scroll_areas(viewport: Viewport) -> void:
 	var view_size_x: float = viewport.content_scale_size.x
-	# Fixes a 1 pixel issue at the right of the screen when view_size_x isn't a whole number
-	var border_correcter_x: float = 1 / (viewport.size.x / view_size_x)
+	# Fixes an issue on the right edge of the screen related to how getting the mouse position works
+	var scroll_area_offset: float = 1 / (viewport.size.x / view_size_x)
 	
-	# Calculates the size of the scroll area on both sides of the screen
-	scroll_area_left = view_size_x / 3
-	scroll_area_right = view_size_x - (scroll_area_left + border_correcter_x)
+	var scroll_area_size: float = view_size_x / SCROLL_SCREEN_FRACTION
+	scroll_area_left = scroll_area_size
+	scroll_area_right = view_size_x - (scroll_area_size + scroll_area_offset)
 
 func _handle_move(delta: float) -> void:
 	if can_move:
@@ -34,5 +36,5 @@ func _handle_move(delta: float) -> void:
 			scroll_amount += (scroll_area_right - mouse_position.x) * SCROLL_SPEED
 	
 	# Clamps the position so the office doesn't leave the frame
-	scroll_amount = clamp(scroll_amount, -SCROLL_CLAMP, SCROLL_CLAMP)
+	scroll_amount = clamp(scroll_amount, -scroll_clamp, scroll_clamp)
 	position.x = lerp(position.x, scroll_amount, SCROLL_SMOOTHING * delta)
