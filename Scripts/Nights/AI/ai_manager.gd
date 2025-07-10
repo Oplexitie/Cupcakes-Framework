@@ -8,5 +8,5 @@ func _ready() -> void:
 	_initialize_char_levels()
 
 func _initialize_char_levels() -> void:
-	$Red.char_level = red_level
-	$Green.char_level = green_level
+	$Red.ai_level = red_level
+	$Green.ai_level = green_level

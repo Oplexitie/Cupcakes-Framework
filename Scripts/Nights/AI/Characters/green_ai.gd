@@ -1,11 +1,13 @@
 extends AI
 
+enum {ROOM_01, ROOM_02, ROOM_03, ROOM_04}
+
 func move_options() -> void:
-	match char_pos:
+	match step:
 		0:
-			move(0,1)
+			move_to(ROOM_02)
 		1:
-			move(1,3)
+			move_to(ROOM_04)
 		2:
 			# Returns to start position
-			move(3,0,-char_pos)
+			move_to(ROOM_01,-step)

@@ -1,18 +1,21 @@
 extends Node2D
 class_name AI
 
+enum State {ABSENT, PRESENT, ALT_1, ALT_2}
+
 @export_enum("Red", "Green") var character: int
 @export var camera: Camera
 
-var char_level: int
-var char_pos: int
+var ai_level: int
+var step: int
+var current_room: int
 
 func has_passed_check() -> bool:
 	# Handles whether character moves or not (depending on char_level)
-	return char_level >= randi_range(1,20)
+	return ai_level >= randi_range(1,20)
 
 func _is_room_empty(room: int) -> bool:
-	return camera.rooms[room].max() == 0
+	return camera.rooms[room].max() == State.ABSENT
 
 func move_check() -> void:
 	if has_passed_check():
@@ -21,12 +24,13 @@ func move_check() -> void:
 func move_options() -> void:
 	pass
 
-func move(from_room: int, to_room: int, move_step: int = 1, new_state: int = 1) -> void:
+func move_to(target_room: int, move_step: int = 1, new_state: int = State.PRESENT) -> void:
 	# Handles character movement from one room to another
-	# And character state changes in a room (handled by new_state).
-	char_pos += move_step
+	# And character state changes in a room (handled by new_state)
+	step += move_step
 	
-	camera.rooms[from_room][character] = 0
-	camera.rooms[to_room][character] = new_state
+	camera.rooms[current_room][character] = State.ABSENT
+	camera.rooms[target_room][character] = new_state
 	
-	camera.update_feeds([from_room,to_room])
+	camera.update_feeds([current_room,target_room])
+	current_room = target_room
