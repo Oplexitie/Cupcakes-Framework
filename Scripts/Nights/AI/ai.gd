@@ -24,7 +24,7 @@ func move_check() -> void:
 func move_options() -> void:
 	pass
 
-func move_to(target_room: int, move_step: int = 1, new_state: int = State.PRESENT) -> void:
+func move_to(target_room: int, new_state: int = State.PRESENT, move_step: int = 1) -> void:
 	# Handles character movement from one room to another
 	# And character state changes in a room (handled by new_state)
 	step += move_step
