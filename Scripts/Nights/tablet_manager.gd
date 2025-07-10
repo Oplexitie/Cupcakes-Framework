@@ -1,6 +1,8 @@
 extends Node2D
 # warning-ignore-all:return_value_discarded
 
+const HOVER_FADE_DURATION: float = 0.3
+
 export var office_path: NodePath
 export var camera_path: NodePath
 
@@ -12,7 +14,7 @@ onready var tweener: Tween = $Tween
 onready var office = get_node(office_path)
 onready var camera = get_node(camera_path)
 
-func _on_click() -> void:
+func _on_tablet_button_click() -> void:
 	# This function handles if the tablet animation should be played fowards or backwards
 	if not is_tablet_up:
 		tablet_sprite.play("lift",false)
@@ -24,7 +26,6 @@ func _on_click() -> void:
 		camera.visible = false
 
 func _tablet_animation_finished() -> void:
-	# At the end of the tablet animation, this activates and disables nodes
 	if not is_tablet_up:
 		is_tablet_up = true
 		camera.visible = true
@@ -35,6 +36,6 @@ func _tablet_animation_finished() -> void:
 		office.can_move = true
 		tablet_button.disabled = false
 
-func _on_mouse_event(alpha: float) -> void:
-	tweener.interpolate_property(tablet_button, "modulate:a", tablet_button.modulate.a, alpha, 0.3,Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+func _on_tablet_button_hover(alpha: float) -> void:
+	tweener.interpolate_property(tablet_button, "modulate:a", tablet_button.modulate.a, alpha, HOVER_FADE_DURATION,Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 	tweener.start()

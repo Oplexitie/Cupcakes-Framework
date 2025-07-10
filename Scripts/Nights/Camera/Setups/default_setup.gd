@@ -1,40 +1,35 @@
 extends GameCamera
 
+enum {ROOM_01, ROOM_02, ROOM_03, ROOM_04}
+
 func set_feed(feed_to_update: int) -> void:
+	var room_state: Array = rooms[feed_to_update]
+	var room_feed: Sprite = all_feeds[feed_to_update]
+	
 	# This handles the camera feeds based on the character positions
 	match feed_to_update:
-		0:
-			match rooms[0]:
+		ROOM_01, ROOM_02:
+			match room_state:
 				[0,0]:
-					all_feeds[0].frame = 3
+					room_feed.frame = 3
 				[1,0]:
-					all_feeds[0].frame = 2
+					room_feed.frame = 2
 				[0,1]:
-					all_feeds[0].frame = 1
+					room_feed.frame = 1
 				[1,1]:
-					all_feeds[0].frame = 0
-		1:
-			match rooms[1]:
+					room_feed.frame = 0
+		ROOM_03:
+			match room_state:
 				[0,0]:
-					all_feeds[1].frame = 3
+					room_feed.frame = 1
 				[1,0]:
-					all_feeds[1].frame = 2
-				[0,1]:
-					all_feeds[1].frame = 1
-				[1,1]:
-					all_feeds[1].frame = 0
-		2:
-			match rooms[2]:
+					room_feed.frame = 0
+		ROOM_04:
+			match room_state:
 				[0,0]:
-					all_feeds[2].frame = 1
-				[1,0]:
-					all_feeds[2].frame = 0
-		3:
-			match rooms[3]:
-				[0,0]:
-					all_feeds[3].frame = 1
+					room_feed.frame = 1
 				[0,1]:
-					all_feeds[3].frame = 0
+					room_feed.frame = 0
 
 func _on_click_cam(clicked_cam: int) -> void:
 	switch_feed(clicked_cam)
