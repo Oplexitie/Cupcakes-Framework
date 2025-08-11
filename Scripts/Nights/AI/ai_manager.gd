@@ -1,4 +1,4 @@
-extends Node2D
+extends Node
 
 @export_range(0, 20) var red_level: int
 @export_range(0, 20) var green_level: int

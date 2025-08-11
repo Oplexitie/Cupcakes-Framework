@@ -1,4 +1,4 @@
-extends Node2D
+extends Node
 class_name AI
 
 enum State {ABSENT, PRESENT, ALT_1, ALT_2}

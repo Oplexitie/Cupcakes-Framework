@@ -565,13 +565,12 @@ parameters/OneShot/active = false
 parameters/OneShot/internal_active = false
 parameters/OneShot/request = 0
 
-[node name="CharacterAI" type="Node2D" parent="."]
-visible = false
+[node name="CharacterAI" type="Node" parent="."]
 script = ExtResource("19_nqdqv")
 red_level = 20
 green_level = 20
 
-[node name="Red" type="Node2D" parent="CharacterAI" node_paths=PackedStringArray("camera")]
+[node name="Red" type="Node" parent="CharacterAI" node_paths=PackedStringArray("camera")]
 script = ExtResource("20_h065c")
 camera = NodePath("../../CameraElements")
 
@@ -579,7 +578,7 @@ camera = NodePath("../../CameraElements")
 wait_time = 4.97
 autostart = true
 
-[node name="Green" type="Node2D" parent="CharacterAI" node_paths=PackedStringArray("camera")]
+[node name="Green" type="Node" parent="CharacterAI" node_paths=PackedStringArray("camera")]
 script = ExtResource("21_ujdr3")
 character = 1
 camera = NodePath("../../CameraElements")
