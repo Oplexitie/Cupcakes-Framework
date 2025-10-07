@@ -14,7 +14,7 @@ animation = &"static_boot"
 animation = &"static_idle"
 
 [resource]
-graph_offset = Vector2(-166.895, -51.2014)
+nodes/output/position = Vector2(660, 80)
 nodes/Add2/node = SubResource("AnimationNodeAdd2_lqf0e")
 nodes/Add2/position = Vector2(460, 20)
 nodes/CameraScroll/node = SubResource("11")
@@ -25,5 +25,4 @@ nodes/boot/node = SubResource("AnimationNodeAnimation_wwwfo")
 nodes/boot/position = Vector2(60, 60)
 nodes/idle/node = SubResource("AnimationNodeAnimation_ahawi")
 nodes/idle/position = Vector2(60, -80)
-nodes/output/position = Vector2(660, 80)
-node_connections = [&"Add2", 0, &"OneShot", &"Add2", 1, &"CameraScroll", &"OneShot", 0, &"idle", &"OneShot", 1, &"boot", &"output", 0, &"Add2"]
+node_connections = [&"output", 0, &"Add2", &"Add2", 0, &"OneShot", &"Add2", 1, &"CameraScroll", &"OneShot", 0, &"idle", &"OneShot", 1, &"boot"]

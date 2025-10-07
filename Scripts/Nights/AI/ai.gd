@@ -1,5 +1,6 @@
-extends Node
+@abstract
 class_name AI
+extends Node
 
 enum State {ABSENT, PRESENT, ALT_1, ALT_2}
 

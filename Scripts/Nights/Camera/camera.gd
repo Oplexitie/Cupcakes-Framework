@@ -1,5 +1,6 @@
-extends Node2D
+@abstract
 class_name Camera
+extends Node2D
 
 @export var rooms: Array[Array]
 
