@@ -1,5 +1,5 @@
-extends Node2D
 class_name GameCamera
+extends Node2D
 
 export var rooms: Array
 

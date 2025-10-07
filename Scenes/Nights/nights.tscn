@@ -164,6 +164,42 @@ tracks/1/keys = {
 "update": 0,
 "values": [ Rect2( 0, 0, 1280, 2880 ) ]
 }
+tracks/2/type = "value"
+tracks/2/path = NodePath("CameraElements/CamRooms/room2:region_rect")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Rect2( 268, 0, 798, 2372 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("CameraElements/CamRooms/room3:region_rect")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Rect2( 0, 0, 798, 1186 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("CameraElements/CamRooms/room4:region_rect")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Rect2( 268, 0, 798, 1186 ) ]
+}
 
 [sub_resource type="Animation" id=9]
 resource_name = "cam_scroll"
@@ -376,7 +412,7 @@ texture = ExtResource( 14 )
 centered = false
 vframes = 4
 region_enabled = true
-region_rect = Rect2( 85.5517, 0, 798, 2372 )
+region_rect = Rect2( 268, 0, 798, 2372 )
 
 [node name="room3" type="Sprite" parent="CameraElements/CamRooms"]
 visible = false
@@ -385,7 +421,7 @@ texture = ExtResource( 12 )
 centered = false
 vframes = 2
 region_enabled = true
-region_rect = Rect2( 268, 0, 798, 1186 )
+region_rect = Rect2( 0, 0, 798, 1186 )
 
 [node name="room4" type="Sprite" parent="CameraElements/CamRooms"]
 visible = false
@@ -394,7 +430,7 @@ texture = ExtResource( 15 )
 centered = false
 vframes = 2
 region_enabled = true
-region_rect = Rect2( 93.115, 0, 798, 1186 )
+region_rect = Rect2( 268, 0, 798, 1186 )
 
 [node name="CamButtons" type="Node2D" parent="CameraElements"]
 z_index = 19
@@ -483,13 +519,12 @@ active = true
 parameters/Add2/add_amount = 1.0
 parameters/StaticState/playback = SubResource( 18 )
 
-[node name="CharacterAI" type="Node2D" parent="."]
-visible = false
+[node name="CharacterAI" type="Node" parent="."]
 script = ExtResource( 2 )
 red_level = 20
 green_level = 20
 
-[node name="Red" type="Node2D" parent="CharacterAI"]
+[node name="Red" type="Node" parent="CharacterAI"]
 script = ExtResource( 21 )
 camera_path = NodePath("../../CameraElements")
 
@@ -497,7 +532,7 @@ camera_path = NodePath("../../CameraElements")
 wait_time = 4.97
 autostart = true
 
-[node name="Green" type="Node2D" parent="CharacterAI"]
+[node name="Green" type="Node" parent="CharacterAI"]
 script = ExtResource( 22 )
 character = 1
 camera_path = NodePath("../../CameraElements")
