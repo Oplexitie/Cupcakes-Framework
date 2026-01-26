@@ -1,0 +1,12 @@
+TONY - REQUIRED AUDIO
+=====================
+
+Sound effects (WAV or OGG recommended):
+- tony_scream.ogg     - The disruptive scream (plays when audio disruption triggers)
+- tony_tantrum.ogg    - Looping tantrum sound (optional, can reuse scream)
+- tony_movement.ogg   - Footstep/movement sound (optional, plays when moving)
+
+Notes:
+- Scream should be loud and jarring - it's meant to be annoying!
+- Keep files under 1MB each for good performance
+- OGG format recommended for smaller file size
