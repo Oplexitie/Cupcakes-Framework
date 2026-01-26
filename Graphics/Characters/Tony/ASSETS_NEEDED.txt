@@ -1,0 +1,18 @@
+TONY - REQUIRED ASSETS
+======================
+
+Camera sprites (PNG, match existing room sprite sizes):
+- tony_room01.png     - Tony in Room 1 (starting position)
+- tony_room02.png     - Tony in Room 2
+- tony_room03.png     - Tony in Room 3
+- tony_room04.png     - Tony in Room 4
+- tony_tantrum.png    - Tony throwing a tantrum (screaming pose)
+- tony_office.png     - Tony at office door (optional, for attack)
+
+Sprite sheets (if using animation):
+- tony_spritesheet.png - All poses in one sheet (alternative to individual files)
+
+Notes:
+- Sprites should be same resolution as existing room sprites
+- Tantrum pose should look visually distinct (mouth open, angry, etc.)
+- Office sprite only needed if you want a jumpscare or door appearance
