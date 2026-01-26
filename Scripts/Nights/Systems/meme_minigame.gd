@@ -13,21 +13,22 @@ enum MemeType {
 	UNDANK   # Anime, dead trends, etc. DON'T UPVOTE THESE
 }
 
-# Meme database - add your meme images here
-# Format: { "texture_path": "res://path", "type": MemeType.DANK or UNDANK, "name": "Meme Name" }
+# Meme database - uses actual assets from Graphics/Characters/Mikie/
 var meme_database: Array[Dictionary] = [
 	# DANK MEMES (upvote these to survive)
-	{"path": "res://Graphics/Minigames/MemeGame/doge.png", "type": MemeType.DANK, "name": "Doge"},
-	{"path": "res://Graphics/Minigames/MemeGame/illuminati.png", "type": MemeType.DANK, "name": "Illuminati"},
-	{"path": "res://Graphics/Minigames/MemeGame/mlg.png", "type": MemeType.DANK, "name": "MLG"},
-	{"path": "res://Graphics/Minigames/MemeGame/troll_face.png", "type": MemeType.DANK, "name": "Troll Face"},
-	{"path": "res://Graphics/Minigames/MemeGame/nyan_cat.png", "type": MemeType.DANK, "name": "Nyan Cat"},
-	{"path": "res://Graphics/Minigames/MemeGame/rick_roll.png", "type": MemeType.DANK, "name": "Rick Roll"},
+	{"path": "res://Graphics/Characters/Mikie/dank memes/79c8d8edfa6ec31bbce482b082e0b8de.png", "type": MemeType.DANK, "name": "Dank 1"},
+	{"path": "res://Graphics/Characters/Mikie/dank memes/7anehc.png", "type": MemeType.DANK, "name": "Dank 2"},
+	{"path": "res://Graphics/Characters/Mikie/dank memes/DtOSPsRXoAAQ-P_.jpg", "type": MemeType.DANK, "name": "Dank 3"},
+	{"path": "res://Graphics/Characters/Mikie/dank memes/avatars-000445817805-nlylxn-t108.png", "type": MemeType.DANK, "name": "Dank 4"},
+	{"path": "res://Graphics/Characters/Mikie/dank memes/dank.png", "type": MemeType.DANK, "name": "Dank 5"},
+	{"path": "res://Graphics/Characters/Mikie/dank memes/o590h4swjt441.png", "type": MemeType.DANK, "name": "Dank 6"},
 
 	# UNDANK MEMES (don't upvote these or die)
-	{"path": "res://Graphics/Minigames/MemeGame/anime1.png", "type": MemeType.UNDANK, "name": "Anime"},
-	{"path": "res://Graphics/Minigames/MemeGame/anime2.png", "type": MemeType.UNDANK, "name": "Anime"},
-	{"path": "res://Graphics/Minigames/MemeGame/dead_meme.png", "type": MemeType.UNDANK, "name": "Dead Meme"},
+	{"path": "res://Graphics/Characters/Mikie/undank memes BOII/1c6207b5866f4587224215bc2b1b34d1.jpg", "type": MemeType.UNDANK, "name": "Undank 1"},
+	{"path": "res://Graphics/Characters/Mikie/undank memes BOII/a-possibility-in-the-future-v0-a.png", "type": MemeType.UNDANK, "name": "Undank 2"},
+	{"path": "res://Graphics/Characters/Mikie/undank memes BOII/all-he-did-was-stand-there-v0-xz.png", "type": MemeType.UNDANK, "name": "Undank 3"},
+	{"path": "res://Graphics/Characters/Mikie/undank memes BOII/images (1).jpg", "type": MemeType.UNDANK, "name": "Undank 4"},
+	{"path": "res://Graphics/Characters/Mikie/undank memes BOII/images.jpg", "type": MemeType.UNDANK, "name": "Undank 5"},
 ]
 
 @export var time_limit: float = 5.0  # Seconds to vote before auto-fail
