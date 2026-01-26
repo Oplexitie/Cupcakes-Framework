@@ -1,0 +1,32 @@
+MEME MINIGAME - REQUIRED ASSETS
+================================
+
+DANK MEMES (upvote to survive):
+- doge.png           - Classic Doge
+- illuminati.png     - Illuminati confirmed triangle
+- mlg.png            - MLG glasses/montage parody stuff
+- troll_face.png     - U mad bro?
+- nyan_cat.png       - Rainbow cat
+- rick_roll.png      - Never gonna give you up
+
+UNDANK MEMES (don't upvote or die):
+- anime1.png         - Any anime meme
+- anime2.png         - Another anime meme
+- dead_meme.png      - Something cringe/dead
+
+UI ELEMENTS:
+- upvote_button.png  - Reddit-style upvote arrow (optional)
+- downvote_button.png - Reddit-style downvote arrow (optional)
+- panel_bg.png       - Background for the minigame popup (optional)
+
+Notes:
+- Meme images should be roughly 400x400 or similar square-ish
+- Add more memes by editing meme_minigame.gd's meme_database array
+- The more variety, the better!
+
+To add new memes in code:
+  meme_database.append({
+    "path": "res://Graphics/Minigames/MemeGame/your_meme.png",
+    "type": MemeType.DANK,  # or MemeType.UNDANK
+    "name": "Meme Name"
+  })
