@@ -26,6 +26,7 @@ var game_manager: GameManager
 var corruption_system: CorruptionSystem
 var audio_disruption: AudioDisruptionSystem
 var rage_system: RageSystem
+var door_system: DoorSystem
 
 
 func has_passed_check() -> bool:

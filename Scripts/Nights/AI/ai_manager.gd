@@ -29,6 +29,7 @@ extends Node
 @export var corruption_system: CorruptionSystem
 @export var audio_disruption: AudioDisruptionSystem
 @export var rage_system: RageSystem
+@export var door_system: DoorSystem
 
 
 func _ready() -> void:
@@ -68,3 +69,4 @@ func _connect_systems() -> void:
 			child.corruption_system = corruption_system
 			child.audio_disruption = audio_disruption
 			child.rage_system = rage_system
+			child.door_system = door_system

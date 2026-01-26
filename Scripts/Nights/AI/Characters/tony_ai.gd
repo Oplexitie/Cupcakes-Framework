@@ -11,6 +11,9 @@ signal tantrum_ended
 
 enum Room {ROOM_01, ROOM_02, ROOM_03, ROOM_04}
 
+# Door assignment
+const TARGET_DOOR: int = 0  # Left door (0 = left, 1 = right)
+
 # Scream settings
 @export var min_scream_interval: float = 20.0
 @export var max_scream_interval: float = 40.0
@@ -142,16 +145,19 @@ func flash_light() -> void:
 
 
 func _arrive_at_office() -> void:
-	## Tony reached the office - trigger attack.
+	## Tony reached the office via LEFT DOOR - check if blocked.
 	reached_office.emit()
-	attack_started.emit()
 
-	# For now, trigger game over if player doesn't defend
-	# This will be expanded with proper defense mechanics
+	# Check if left door is closed
+	if door_system and door_system.is_door_closed(TARGET_DOOR):
+		# Blocked! Tony retreats to start
+		attack_blocked.emit()
+		move_to(Room.ROOM_01, State.PRESENT, -step)
+		return
+
+	# Door open - attack succeeds
+	attack_started.emit()
 	if game_manager:
-		# Give player a moment to react, then check defenses
-		await get_tree().create_timer(0.5).timeout
-		# TODO: Check if door is closed or player is looking at Tony
 		game_manager.trigger_death()
 
 
