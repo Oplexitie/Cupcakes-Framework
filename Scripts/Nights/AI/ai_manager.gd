@@ -17,6 +17,7 @@ extends Node
 @export_group("Support Cast")
 @export_range(0, 20) var ciaaik_level: int
 @export_range(0, 20) var kitty_level: int
+@export_range(0, 20) var mikie_level: int
 
 @export_group("Supercharged Variants")
 @export_range(0, 20) var mad_conedude_level: int
@@ -30,6 +31,7 @@ extends Node
 @export var audio_disruption: AudioDisruptionSystem
 @export var rage_system: RageSystem
 @export var door_system: DoorSystem
+@export var meme_minigame: MemeMinigame
 
 
 func _ready() -> void:
@@ -53,6 +55,7 @@ func _initialize_char_levels() -> void:
 	_set_ai_level("CrazedTony", crazed_tony_level)
 	_set_ai_level("InfernalKiber", infernal_kiber_level)
 	_set_ai_level("BustedSquish", busted_squish_level)
+	_set_ai_level("Mikie", mikie_level)
 
 
 func _set_ai_level(node_name: String, level: int) -> void:
@@ -70,3 +73,8 @@ func _connect_systems() -> void:
 			child.audio_disruption = audio_disruption
 			child.rage_system = rage_system
 			child.door_system = door_system
+
+	# Special connection for Mikie's meme minigame
+	var mikie := get_node_or_null("Mikie")
+	if mikie and meme_minigame:
+		mikie.meme_minigame = meme_minigame
