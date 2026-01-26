@@ -34,11 +34,19 @@ var meme_database: Array[Dictionary] = [
 @export var time_limit: float = 5.0  # Seconds to vote before auto-fail
 @export var memes_per_round: int = 3  # How many memes to judge
 
+# Mikie's character sprites
+const MIKIE_NORMAL := "res://Graphics/Characters/Mikie/normalmikie.png"
+const MIKIE_ENRAGED := "res://Graphics/Characters/Mikie/enragedmikie.png"
+const MIKIE_UNAMUSED := "res://Graphics/Characters/Mikie/unamused.png"
+const UPVOTE_TEXTURE := "res://Graphics/Characters/Mikie/updoot.png"
+const DOWNVOTE_TEXTURE := "res://Graphics/Characters/Mikie/downbote.png"
+
 # UI References (set in editor or created dynamically)
 @onready var panel: Control = $Panel
 @onready var meme_display: TextureRect = $Panel/MemeDisplay
-@onready var upvote_button: Button = $Panel/UpvoteButton
-@onready var downvote_button: Button = $Panel/DownvoteButton
+@onready var mikie_display: TextureRect = $Panel/MikieDisplay  # Shows Mikie's reactions
+@onready var upvote_button: TextureButton = $Panel/UpvoteButton
+@onready var downvote_button: TextureButton = $Panel/DownvoteButton
 @onready var timer_label: Label = $Panel/TimerLabel
 @onready var title_label: Label = $Panel/TitleLabel
 
@@ -47,12 +55,26 @@ var memes_judged: int = 0
 var time_remaining: float = 0.0
 var is_active: bool = false
 
+# Preloaded textures
+var mikie_normal_tex: Texture2D
+var mikie_enraged_tex: Texture2D
+var mikie_unamused_tex: Texture2D
+
 
 func _ready() -> void:
 	visible = false
+
+	# Preload Mikie's textures
+	mikie_normal_tex = load(MIKIE_NORMAL)
+	mikie_enraged_tex = load(MIKIE_ENRAGED)
+	mikie_unamused_tex = load(MIKIE_UNAMUSED)
+
+	# Set up button textures and connections
 	if upvote_button:
+		upvote_button.texture_normal = load(UPVOTE_TEXTURE)
 		upvote_button.pressed.connect(_on_upvote)
 	if downvote_button:
+		downvote_button.texture_normal = load(DOWNVOTE_TEXTURE)
 		downvote_button.pressed.connect(_on_downvote)
 
 
@@ -79,8 +101,11 @@ func start_game() -> void:
 	is_active = true
 	memes_judged = 0
 	visible = true
-	game_started.emit()
 
+	# Show Mikie's normal face
+	_set_mikie_expression(mikie_normal_tex)
+
+	game_started.emit()
 	_show_next_meme()
 
 
@@ -143,8 +168,23 @@ func _meme_judged_correctly() -> void:
 
 func _end_game(won: bool) -> void:
 	is_active = false
+
+	# Show Mikie's reaction before hiding
+	if won:
+		_set_mikie_expression(mikie_unamused_tex)  # Mikie is unamused you survived
+	else:
+		_set_mikie_expression(mikie_enraged_tex)  # Mikie is enraged you failed
+
+	# Brief delay to show reaction, then hide
+	await get_tree().create_timer(0.5).timeout
 	visible = false
 	game_ended.emit(won)
+
+
+func _set_mikie_expression(texture: Texture2D) -> void:
+	## Updates Mikie's displayed expression.
+	if mikie_display and texture:
+		mikie_display.texture = texture
 
 
 func add_meme(texture_path: String, type: MemeType, meme_name: String = "") -> void:
