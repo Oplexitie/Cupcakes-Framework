@@ -8,22 +8,22 @@ A Five Nights at Freddy's (or FNAF) framework made for Godot 4, with a [Godot 3 
 
 >[!IMPORTANT]
 >This framework only contains the very basic necessities to build your FNAF inspired game.
->As such, I will not be adding any features that :
+>As such, I will not be adding any features that:
 >  - A - Are very easy to make on your own
->  - B - Are not necessary for a FNAF like game
+>  - B - Are not necessary for a FNAF-like game
 >  - C - Make the project a convoluted mess
 
 ## Features
 
 - Office
-  - A simple scrolling system where the speed is based on how close your mouse is to the screens edge
+  - A simple scrolling system where the speed is based on how close your mouse is to the screen's edge
   - An equirectangular perspective shader (an alternative version with pitch can be found [here](https://gist.github.com/Oplexitie/a856b013fd9190414cbbdb829420a94c))
 - Camera System
   - A simple camera system that can be easily expanded to include more rooms
   - Camera movement (like in FNAF 1)
-- Character AI (No Jumpscares)
+- Character AI (no jumpscares)
   - AI system faithful to the original FNAF games with difficulty scaled from 0 to 20 (for Custom Night)
-  - Support for custom character states for alternate poses on Cameras
+  - Support for custom character states for alternate poses on cameras
  
  ## Other info
 

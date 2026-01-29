@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=3 uid="uid://cthhku8fsrdeq"]
+[gd_scene format=3 uid="uid://cthhku8fsrdeq"]
 
 [ext_resource type="Script" uid="uid://babox67oh2xx3" path="res://Scripts/Nights/Office/office_manager.gd" id="1_pp75g"]
 [ext_resource type="Texture2D" uid="uid://ce3drug37ontk" path="res://Graphics/Office/office.png" id="2_umi2k"]
@@ -342,20 +342,20 @@ shader = ExtResource("20_obh0f")
 shader_parameter/fov = 0.32
 shader_parameter/stretch = Vector2(54, 27)
 
-[node name="Nights" type="Node2D"]
+[node name="Nights" type="Node" unique_id=1722971519]
 
-[node name="OfficeElements" type="Node2D" parent="."]
+[node name="OfficeElements" type="Node" parent="." unique_id=938061930]
 script = ExtResource("1_pp75g")
 
-[node name="Office" type="Sprite2D" parent="OfficeElements"]
+[node name="Office" type="Sprite2D" parent="OfficeElements" unique_id=1112427948]
 texture = ExtResource("2_umi2k")
 centered = false
 offset = Vector2(-540, -210)
 script = ExtResource("3_ejiio")
 
-[node name="Buttons" type="Node2D" parent="OfficeElements/Office"]
+[node name="Buttons" type="Node2D" parent="OfficeElements/Office" unique_id=746205185]
 
-[node name="ButtonExample" type="Sprite2D" parent="OfficeElements/Office/Buttons"]
+[node name="ButtonExample" type="Sprite2D" parent="OfficeElements/Office/Buttons" unique_id=1485033522]
 position = Vector2(250, 540)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("4_lu3yo")
@@ -363,15 +363,15 @@ script = ExtResource("5_hvcnl")
 x_speed = 210
 left_clamp = -400
 
-[node name="Area2D" type="Area2D" parent="OfficeElements/Office/Buttons/ButtonExample"]
+[node name="Area2D" type="Area2D" parent="OfficeElements/Office/Buttons/ButtonExample" unique_id=1370616974]
 monitoring = false
 monitorable = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="OfficeElements/Office/Buttons/ButtonExample/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OfficeElements/Office/Buttons/ButtonExample/Area2D" unique_id=1065955462]
 z_index = 50
 shape = SubResource("RectangleShape2D_a0qos")
 
-[node name="ButtonExample2" type="Sprite2D" parent="OfficeElements/Office/Buttons"]
+[node name="ButtonExample2" type="Sprite2D" parent="OfficeElements/Office/Buttons" unique_id=1132201315]
 position = Vector2(800, 540)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("4_lu3yo")
@@ -379,15 +379,15 @@ script = ExtResource("5_hvcnl")
 x_speed = -350
 left_clamp = -800
 
-[node name="Area2D" type="Area2D" parent="OfficeElements/Office/Buttons/ButtonExample2"]
+[node name="Area2D" type="Area2D" parent="OfficeElements/Office/Buttons/ButtonExample2" unique_id=347439269]
 monitoring = false
 monitorable = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="OfficeElements/Office/Buttons/ButtonExample2/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OfficeElements/Office/Buttons/ButtonExample2/Area2D" unique_id=1583598967]
 z_index = 50
 shape = SubResource("RectangleShape2D_a0qos")
 
-[node name="ButtonExample3" type="Sprite2D" parent="OfficeElements/Office/Buttons"]
+[node name="ButtonExample3" type="Sprite2D" parent="OfficeElements/Office/Buttons" unique_id=281477664]
 position = Vector2(1675, 540)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("4_lu3yo")
@@ -395,15 +395,15 @@ script = ExtResource("5_hvcnl")
 x_speed = -210
 right_clamp = 400
 
-[node name="Area2D" type="Area2D" parent="OfficeElements/Office/Buttons/ButtonExample3"]
+[node name="Area2D" type="Area2D" parent="OfficeElements/Office/Buttons/ButtonExample3" unique_id=1060993914]
 monitoring = false
 monitorable = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="OfficeElements/Office/Buttons/ButtonExample3/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OfficeElements/Office/Buttons/ButtonExample3/Area2D" unique_id=1317403377]
 z_index = 50
 shape = SubResource("RectangleShape2D_a0qos")
 
-[node name="TabletElements" type="Node2D" parent="." node_paths=PackedStringArray("camera", "office")]
+[node name="TabletElements" type="Node2D" parent="." unique_id=368574339 node_paths=PackedStringArray("camera", "office")]
 z_index = 15
 position = Vector2(960, 540)
 scale = Vector2(1.5, 1.5)
@@ -411,13 +411,13 @@ script = ExtResource("5_h71ec")
 camera = NodePath("../CameraElements")
 office = NodePath("../OfficeElements/Office")
 
-[node name="Tablet_Sprite" type="AnimatedSprite2D" parent="TabletElements"]
+[node name="Tablet_Sprite" type="AnimatedSprite2D" parent="TabletElements" unique_id=325494294]
 visible = false
 position = Vector2(0, 34)
 sprite_frames = SubResource("SpriteFrames_5t1j5")
 animation = &"lift"
 
-[node name="Tablet_Button" type="TextureButton" parent="TabletElements"]
+[node name="Tablet_Button" type="TextureButton" parent="TabletElements" unique_id=1930100673]
 modulate = Color(1, 1, 1, 0.2)
 z_index = 5
 anchors_preset = 14
@@ -432,15 +432,15 @@ grow_horizontal = 2
 grow_vertical = 2
 texture_normal = ExtResource("7_vtngn")
 
-[node name="CameraElements" type="Node2D" parent="."]
+[node name="CameraElements" type="Node2D" parent="." unique_id=1530483995]
 visible = false
 script = ExtResource("8_a3j08")
 rooms = Array[Array]([[1, 1], [0, 0], [0, 0], [0, 0]])
 
-[node name="CamRooms" type="Node2D" parent="CameraElements"]
+[node name="CamRooms" type="Node2D" parent="CameraElements" unique_id=569997575]
 z_index = 15
 
-[node name="room_1" type="Sprite2D" parent="CameraElements/CamRooms"]
+[node name="room_1" type="Sprite2D" parent="CameraElements/CamRooms" unique_id=338755421]
 position = Vector2(361.5, 147.5)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("10_4532e")
@@ -449,7 +449,7 @@ vframes = 4
 region_enabled = true
 region_rect = Rect2(0, 0, 1280, 2880)
 
-[node name="room_2" type="Sprite2D" parent="CameraElements/CamRooms"]
+[node name="room_2" type="Sprite2D" parent="CameraElements/CamRooms" unique_id=479438245]
 visible = false
 position = Vector2(361.5, 147.5)
 scale = Vector2(1.5, 1.5)
@@ -459,7 +459,7 @@ vframes = 4
 region_enabled = true
 region_rect = Rect2(268, 0, 1280, 2880)
 
-[node name="room_3" type="Sprite2D" parent="CameraElements/CamRooms"]
+[node name="room_3" type="Sprite2D" parent="CameraElements/CamRooms" unique_id=1694002791]
 visible = false
 position = Vector2(361.5, 147.5)
 scale = Vector2(1.5, 1.5)
@@ -469,7 +469,7 @@ vframes = 2
 region_enabled = true
 region_rect = Rect2(0, 0, 1280, 1440)
 
-[node name="room_4" type="Sprite2D" parent="CameraElements/CamRooms"]
+[node name="room_4" type="Sprite2D" parent="CameraElements/CamRooms" unique_id=2113243644]
 visible = false
 position = Vector2(361.5, 147.5)
 scale = Vector2(1.5, 1.5)
@@ -479,10 +479,10 @@ vframes = 2
 region_enabled = true
 region_rect = Rect2(268, 0, 1280, 1440)
 
-[node name="CamButtons" type="Node2D" parent="CameraElements"]
+[node name="CamButtons" type="Node2D" parent="CameraElements" unique_id=333511353]
 z_index = 19
 
-[node name="room_1" type="TextureButton" parent="CameraElements/CamButtons"]
+[node name="room_1" type="TextureButton" parent="CameraElements/CamButtons" unique_id=1309544715]
 offset_left = 1297.0
 offset_top = 635.0
 offset_right = 1345.0
@@ -493,7 +493,7 @@ action_mode = 0
 texture_normal = SubResource("AtlasTexture_y1mul")
 texture_disabled = SubResource("AtlasTexture_lrm77")
 
-[node name="room_2" type="TextureButton" parent="CameraElements/CamButtons"]
+[node name="room_2" type="TextureButton" parent="CameraElements/CamButtons" unique_id=416823045]
 offset_left = 1296.0
 offset_top = 757.0
 offset_right = 1344.0
@@ -503,7 +503,7 @@ action_mode = 0
 texture_normal = SubResource("AtlasTexture_us2yt")
 texture_disabled = SubResource("AtlasTexture_qe3yf")
 
-[node name="room_3" type="TextureButton" parent="CameraElements/CamButtons"]
+[node name="room_3" type="TextureButton" parent="CameraElements/CamButtons" unique_id=1037267751]
 offset_left = 1167.0
 offset_top = 778.0
 offset_right = 1215.0
@@ -513,7 +513,7 @@ action_mode = 0
 texture_normal = SubResource("AtlasTexture_lcwij")
 texture_disabled = SubResource("AtlasTexture_60mtv")
 
-[node name="room_4" type="TextureButton" parent="CameraElements/CamButtons"]
+[node name="room_4" type="TextureButton" parent="CameraElements/CamButtons" unique_id=25550069]
 offset_left = 1453.0
 offset_top = 819.0
 offset_right = 1501.0
@@ -523,10 +523,10 @@ action_mode = 0
 texture_normal = SubResource("AtlasTexture_deh3i")
 texture_disabled = SubResource("AtlasTexture_lbcdr")
 
-[node name="CamHUD" type="Node2D" parent="CameraElements"]
+[node name="CamHUD" type="Node2D" parent="CameraElements" unique_id=265637972]
 z_index = 18
 
-[node name="CRTWave_Shader" type="ColorRect" parent="CameraElements/CamHUD"]
+[node name="CRTWave_Shader" type="ColorRect" parent="CameraElements/CamHUD" unique_id=1177926900]
 material = SubResource("ShaderMaterial_pbexm")
 offset_left = 361.0
 offset_top = 147.0
@@ -534,30 +534,28 @@ offset_right = 1560.0
 offset_bottom = 1037.0
 mouse_filter = 2
 
-[node name="CamStatic" type="AnimatedSprite2D" parent="CameraElements/CamHUD"]
+[node name="CamStatic" type="AnimatedSprite2D" parent="CameraElements/CamHUD" unique_id=2101194051]
 modulate = Color(1, 1, 1, 0.23529412)
 position = Vector2(361.5, 147.5)
 sprite_frames = SubResource("SpriteFrames_1ioo0")
 autoplay = "default"
 centered = false
 
-[node name="Map&Border" type="Sprite2D" parent="CameraElements/CamHUD"]
+[node name="Map&Border" type="Sprite2D" parent="CameraElements/CamHUD" unique_id=1963821963]
 position = Vector2(959, 592)
 scale = Vector2(3, 3)
 texture = ExtResource("17_tmqkn")
 
-[node name="BackBufferCopy" type="BackBufferCopy" parent="CameraElements"]
+[node name="BackBufferCopy" type="BackBufferCopy" parent="CameraElements" unique_id=1418494419]
 z_index = 15
 position = Vector2(960, 540)
 scale = Vector2(9.6, 5.4)
 copy_mode = 2
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="CameraElements"]
-libraries = {
-&"": SubResource("AnimationLibrary_gkfmd")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CameraElements" unique_id=525232898]
+libraries/ = SubResource("AnimationLibrary_gkfmd")
 
-[node name="AnimationTree" type="AnimationTree" parent="CameraElements"]
+[node name="AnimationTree" type="AnimationTree" parent="CameraElements" unique_id=14065810]
 tree_root = ExtResource("18_itk3u")
 anim_player = NodePath("../AnimationPlayer")
 parameters/Add2/add_amount = 1.0
@@ -565,29 +563,29 @@ parameters/OneShot/active = false
 parameters/OneShot/internal_active = false
 parameters/OneShot/request = 0
 
-[node name="CharacterAI" type="Node" parent="."]
+[node name="CharacterAI" type="Node" parent="." unique_id=204980587]
 script = ExtResource("19_nqdqv")
 red_level = 20
 green_level = 20
 
-[node name="Red" type="Node" parent="CharacterAI" node_paths=PackedStringArray("camera")]
+[node name="Red" type="Node" parent="CharacterAI" unique_id=399948491 node_paths=PackedStringArray("camera")]
 script = ExtResource("20_h065c")
 camera = NodePath("../../CameraElements")
 
-[node name="RedTimer" type="Timer" parent="CharacterAI/Red"]
+[node name="RedTimer" type="Timer" parent="CharacterAI/Red" unique_id=1094894549]
 wait_time = 4.97
 autostart = true
 
-[node name="Green" type="Node" parent="CharacterAI" node_paths=PackedStringArray("camera")]
+[node name="Green" type="Node" parent="CharacterAI" unique_id=1639406583 node_paths=PackedStringArray("camera")]
 script = ExtResource("21_ujdr3")
 character = 1
 camera = NodePath("../../CameraElements")
 
-[node name="GreenTimer" type="Timer" parent="CharacterAI/Green"]
+[node name="GreenTimer" type="Timer" parent="CharacterAI/Green" unique_id=1938396488]
 wait_time = 3.02
 autostart = true
 
-[node name="PerspectiveShader" type="ColorRect" parent="."]
+[node name="PerspectiveShader" type="ColorRect" parent="." unique_id=259069941]
 material = SubResource("ShaderMaterial_kco4d")
 offset_right = 1920.0
 offset_bottom = 1080.0
