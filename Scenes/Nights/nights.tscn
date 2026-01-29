@@ -296,9 +296,9 @@ shader = ExtResource( 7 )
 shader_param/fov = 0.32
 shader_param/stretch = Vector2( 54, 27 )
 
-[node name="Nights" type="Node2D"]
+[node name="Nights" type="Node"]
 
-[node name="OfficeElements" type="Node2D" parent="."]
+[node name="OfficeElements" type="Node" parent="."]
 script = ExtResource( 3 )
 
 [node name="Office" type="Sprite" parent="OfficeElements"]
