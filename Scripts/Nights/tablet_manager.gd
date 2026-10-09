@@ -15,11 +15,11 @@ var tweener: Tween
 func _on_tablet_button_click() -> void:
 	# This function handles if the tablet animation should be played fowards or backwards
 	if not is_tablet_up:
-		tablet_sprite.play("lift")
+		tablet_sprite.play(&"lift")
 		tablet_sprite.visible = true
 		office.can_move = false
 	else:
-		tablet_sprite.play_backwards("lift")
+		tablet_sprite.play_backwards(&"lift")
 		tablet_button.disabled = true
 		camera.visible = false
 
@@ -37,4 +37,4 @@ func _tablet_animation_finished() -> void:
 func _on_tablet_button_hover(alpha: float) -> void:
 	if tweener: tweener.kill()
 	tweener = create_tween()
-	tweener.tween_property(tablet_button, "modulate:a", alpha, HOVER_FADE_DURATION)
+	tweener.tween_property(tablet_button, ^"modulate:a", alpha, HOVER_FADE_DURATION)
