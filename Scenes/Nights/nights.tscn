@@ -360,7 +360,7 @@ position = Vector2(250, 540)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("4_lu3yo")
 script = ExtResource("5_hvcnl")
-x_speed = 210
+horiz_speed = 210
 left_clamp = -400
 
 [node name="Area2D" type="Area2D" parent="OfficeElements/Office/Buttons/ButtonExample" unique_id=1370616974]
@@ -376,7 +376,7 @@ position = Vector2(800, 540)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("4_lu3yo")
 script = ExtResource("5_hvcnl")
-x_speed = -350
+horiz_speed = -350
 left_clamp = -800
 
 [node name="Area2D" type="Area2D" parent="OfficeElements/Office/Buttons/ButtonExample2" unique_id=347439269]
@@ -392,7 +392,7 @@ position = Vector2(1675, 540)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("4_lu3yo")
 script = ExtResource("5_hvcnl")
-x_speed = -210
+horiz_speed = -210
 right_clamp = 400
 
 [node name="Area2D" type="Area2D" parent="OfficeElements/Office/Buttons/ButtonExample3" unique_id=1060993914]
@@ -403,13 +403,11 @@ monitorable = false
 z_index = 50
 shape = SubResource("RectangleShape2D_a0qos")
 
-[node name="TabletElements" type="Node2D" parent="." unique_id=368574339 node_paths=PackedStringArray("camera", "office")]
+[node name="TabletElements" type="Node2D" parent="." unique_id=368574339]
 z_index = 15
 position = Vector2(960, 540)
 scale = Vector2(1.5, 1.5)
 script = ExtResource("5_h71ec")
-camera = NodePath("../CameraElements")
-office = NodePath("../OfficeElements/Office")
 
 [node name="Tablet_Sprite" type="AnimatedSprite2D" parent="TabletElements" unique_id=325494294]
 visible = false
@@ -591,13 +589,18 @@ offset_right = 1920.0
 offset_bottom = 1080.0
 mouse_filter = 2
 
-[connection signal="input_event" from="OfficeElements/Office/Buttons/ButtonExample/Area2D" to="OfficeElements" method="_on_area_2d_input_event"]
-[connection signal="input_event" from="OfficeElements/Office/Buttons/ButtonExample2/Area2D" to="OfficeElements" method="_on_area_2d_input_event"]
-[connection signal="input_event" from="OfficeElements/Office/Buttons/ButtonExample3/Area2D" to="OfficeElements" method="_on_area_2d_input_event"]
-[connection signal="animation_finished" from="TabletElements/Tablet_Sprite" to="TabletElements" method="_tablet_animation_finished"]
-[connection signal="mouse_entered" from="TabletElements/Tablet_Button" to="TabletElements" method="_on_tablet_button_hover" binds= [0.5]]
-[connection signal="mouse_exited" from="TabletElements/Tablet_Button" to="TabletElements" method="_on_tablet_button_hover" binds= [0.3]]
-[connection signal="pressed" from="TabletElements/Tablet_Button" to="TabletElements" method="_on_tablet_button_click"]
+[connection signal="input_event" from="OfficeElements/Office/Buttons/ButtonExample/Area2D" to="OfficeElements" method="on_area_2d_input_event"]
+[connection signal="input_event" from="OfficeElements/Office/Buttons/ButtonExample2/Area2D" to="OfficeElements" method="on_area_2d_input_event"]
+[connection signal="input_event" from="OfficeElements/Office/Buttons/ButtonExample3/Area2D" to="OfficeElements" method="on_area_2d_input_event"]
+[connection signal="tablet_entered" from="TabletElements" to="CameraElements" method="play_static"]
+[connection signal="tablet_entered" from="TabletElements" to="CameraElements" method="set_visible" binds= [true]]
+[connection signal="tablet_entering" from="TabletElements" to="OfficeElements/Office" method="set_move" binds= [false]]
+[connection signal="tablet_exited" from="TabletElements" to="OfficeElements/Office" method="set_move" binds= [true]]
+[connection signal="tablet_exiting" from="TabletElements" to="CameraElements" method="set_visible" binds= [false]]
+[connection signal="animation_finished" from="TabletElements/Tablet_Sprite" to="TabletElements" method="tablet_animation_finished"]
+[connection signal="mouse_entered" from="TabletElements/Tablet_Button" to="TabletElements" method="tablet_button_hovered" binds= [0.5]]
+[connection signal="mouse_exited" from="TabletElements/Tablet_Button" to="TabletElements" method="tablet_button_hovered" binds= [0.3]]
+[connection signal="pressed" from="TabletElements/Tablet_Button" to="TabletElements" method="tablet_button_clicked"]
 [connection signal="pressed" from="CameraElements/CamButtons/room_1" to="CameraElements" method="switch_feed" binds= [0]]
 [connection signal="pressed" from="CameraElements/CamButtons/room_2" to="CameraElements" method="switch_feed" binds= [1]]
 [connection signal="pressed" from="CameraElements/CamButtons/room_3" to="CameraElements" method="switch_feed" binds= [2]]

@@ -17,6 +17,9 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	_handle_move(delta)
 
+func set_move(value: bool) -> void:
+	can_move = value
+
 func _initialize_scroll_areas(viewport: Viewport) -> void:
 	var view_size_x: float = viewport.content_scale_size.x
 	# Fixes an issue on the right edge of the screen related to how getting the mouse position works
