@@ -14,15 +14,6 @@ func _ready() -> void:
 	_initialize_buttons()
 	_initialize_feeds()
 
-func _initialize_buttons() -> void:
-	# Adds the camera feeds and buttons into arrays so they can be synced up in 'func _on_click_cam'
-	all_feeds.append_array($CamRooms.get_children())
-	all_buttons.append_array($CamButtons.get_children())
-
-func _initialize_feeds() -> void:
-	# Gets the camera feed id's, then sets them up with the right frame
-	update_feeds(range(all_feeds.size()))
-
 func set_feed(_feed_to_update: int) -> void:
 	pass
 
@@ -48,3 +39,12 @@ func switch_feed(new_feed: int) -> void:
 func play_static() -> void:
 	tree_state_machine.start("static_boot")
 	animtree.advance(0) # this fixes a problem where the static plays 1 frame too late
+
+func _initialize_buttons() -> void:
+	# Adds the camera feeds and buttons into arrays so they can be synced up in 'func _on_click_cam'
+	all_feeds.append_array($CamRooms.get_children())
+	all_buttons.append_array($CamButtons.get_children())
+
+func _initialize_feeds() -> void:
+	# Gets the camera feed id's, then sets them up with the right frame
+	update_feeds(range(all_feeds.size()))

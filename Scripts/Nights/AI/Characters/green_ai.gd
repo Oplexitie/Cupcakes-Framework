@@ -10,7 +10,7 @@ func move_options() -> void:
 			move_to(ROOM_04)
 		2:
 			# Returns to start position
-			move_to(ROOM_01,State.PRESENT,-step)
+			move_to(ROOM_01, State.PRESENT, -step)
 
 func _char_timer_timeout() -> void:
 	move_check()
